@@ -11,9 +11,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
 
     "install-server":"npm install",
-    "start-server":"npm run server",
+    "start-server":"npm run start",
     "install-client":"cd client && npm install",
-    "start-client":"cd client && npm start --prefix ./client"
+    "start-client":"npm run client"
   },
   "keywords": [],
   "author": "",
