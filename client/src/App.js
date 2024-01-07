@@ -4,10 +4,6 @@ import { useEffect, useState } from "react";
 import {Routes, Route} from 'react-router-dom'
 import PageNotFound from './pages/PageNotFound';
 
-import Control from './pages/UserTypes/Control';
-import Treatment1 from './pages/UserTypes/Treatment1';
-import Treatment2 from './pages/UserTypes/Treatment2';
-
 import Intro1 from './pages/Introduction/Intro1';
 import Intro2 from './pages/Introduction/Intro2';
 import Intro3 from './pages/Introduction/Intro3';
@@ -46,18 +42,17 @@ import Demographics from './pages/Outtro/Demographics';
 import End from './pages/Outtro/End';
 
 function App() {
-  const [message, setMessage] = useState("")
 
-  useEffect(() => {
-    fetch("https://research-backend-3mwd.onrender.com")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://research-backend-3mwd.onrender.com")
+  //     .then((res) => res.json())
+  //     .then((data) => setMessage(data.message));
+  // }, []);
   return (
     <>
     <Routes>
       {/* Control Group */}
-      <Route path='/D1UQDV' element={<Control />}>
+      <Route path='/D1UQDV'>
         <Route path='welcome'>
           <Route path='' element={<Intro1 />} />
           <Route path='2' element={<Intro2 />} />
@@ -147,7 +142,7 @@ function App() {
       </Route>
 
       {/* Treatment 2 */}
-      <Route path='/L53NNR' element={<Treatment2 />}>
+      <Route path='/L53NNR'>
       <Route path='welcome'>
           <Route path='' element={<Intro1 />} />
           <Route path='2' element={<Intro2 />} />
