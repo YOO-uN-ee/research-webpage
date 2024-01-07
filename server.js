@@ -16,8 +16,8 @@ const corsOptions = {
     origin: "https://mart-experience.onrender.com"
 }
 
-const path = require('path');
-app.use(express.static(path.join(__dirname, 'build')));
+// const path = require('path');
+// app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(cors(corsOptions)); // needs to stay as this
 // app.use(cors())

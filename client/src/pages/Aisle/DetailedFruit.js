@@ -23,7 +23,7 @@ const Detailed = () => {
 
   const getAllProducts = async()=> {
     try {
-      const { data } = await axios.get("/api/item/productcategory/fruit");
+      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/item/productcategory/fruit");
       setProduct(data.products);
     } catch (error) {
       console.log(error);
