@@ -1,9 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const Footer = () => {
+function Footer(prev, after) {
     return (
         <div className="bg-dark text-light p-3">
-            <h4 className="text-center">Footer</h4>
+            <NavLink to={prev}><button className="prev_button">Previous</button></NavLink>
+            <NavLink to={after}><button className="after_button">Next</button></NavLink>
         </div>
     );
 };

@@ -3,9 +3,11 @@ import Layout from '../components/Layout/Layout'
 
 const PageNotFound = () => {
   return (
-    <Layout>
-        <div>PageNotFound</div>
-    </Layout>
+    <>
+      <div class='container mx-auto'>
+        404 page not found
+      </div>
+    </>
   )
 }
 

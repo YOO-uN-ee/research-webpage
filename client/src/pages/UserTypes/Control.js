@@ -4,8 +4,8 @@ import Layout from '../../components/Layout/Layout'
 
 const Control = () => {
   return (
-    <Layout>
-        <div>Control Group</div>
+    <Layout class='layout'>
+        <div></div>
         <Outlet />
     </Layout>
         

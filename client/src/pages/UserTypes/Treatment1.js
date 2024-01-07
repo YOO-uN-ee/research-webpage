@@ -5,8 +5,7 @@ import Layout from '../../components/Layout/Layout'
 const Treatment1 = () => {
   return (
     <Layout>
-        <div>Treatment1 Group</div>
-        <Outlet />
+      <Outlet />
     </Layout>
         
     

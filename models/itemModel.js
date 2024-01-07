@@ -4,22 +4,28 @@ const itemSchema = new mongoose.Schema({
     name:{
         type:String,
         required:true,
-        trim:true
+    },
+    slug:{
+        type:String,
+        required:true,
     },
     category:{
         type:String,
         required:true,
     },
+    option:{
+        type:String,
+        required:true,
+    },
     price:{
-        type:Integer,
+        type:Number,
         required:true,
     },
     image:{
-        type:String,
-        required:true,
+        data: Buffer,
+        contentType: String,
     }
-
 }
 )
 
-export default mongoose.model('item', itemSchema);
+export default mongoose.model('items', itemSchema);

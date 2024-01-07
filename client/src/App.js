@@ -1,3 +1,4 @@
+import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import PageNotFound from './pages/PageNotFound';
 
@@ -12,18 +13,35 @@ import Intro4 from './pages/Introduction/Intro4';
 import Intro5 from './pages/Introduction/Intro5';
 import Intro6 from './pages/Introduction/Intro6';
 
-import Aisle1 from './pages/Aisle/Aisle1';
-import Aisle2 from './pages/Aisle/Aisle2';
-import Aisle3 from './pages/Aisle/Aisle3';
-import Aisle4 from './pages/Aisle/Aisle4';
-import Aisle5 from './pages/Aisle/Aisle5';
-import Aisle6 from './pages/Aisle/Aisle6';
-import Aisle7 from './pages/Aisle/Aisle7';
-import Aisle8 from './pages/Aisle/Aisle8';
-import Aisle9 from './pages/Aisle/Aisle9';
-import Aisle10 from './pages/Aisle/Aisle10';
+import AisleFruit from './pages/Aisle/AisleFruit';
+import DetailedFruit from './pages/Aisle/DetailedFruit';
+import AisleVegetable from './pages/Aisle/AisleVegetable';
+import DetailedVegetable from './pages/Aisle/DetailedVegetable';
+import AisleCondiment from './pages/Aisle/AisleCondiment';
+import DetailedCondiment from './pages/Aisle/DetailedCondiment';
+import AisleDessert from './pages/Aisle/AisleDessert';
+import DetailedDessert from './pages/Aisle/DetailedDessert';
+import AisleSnack from './pages/Aisle/AisleSnack';
+import DetailedSnack from './pages/Aisle/DetailedSnack';
+
+import Robot1 from './pages/Robot/Robot1'
+import Robot2 from './pages/Robot/Robot2'
+import Robot3 from './pages/Robot/Robot3'
+import Robot4 from './pages/Robot/Robot4'
+import Robot5 from './pages/Robot/Robot5'
+
+import Dance from './pages/Robot/Options/Dance'
+import HandShake from './pages/Robot/Options/HandShake'
+import Where from './pages/Robot/Options/Where'
+import Recommend from './pages/Robot/Options/Recommend'
+import RecommendOption from './pages/Robot/Options/RecommendOption'
+import Arrive from './pages/Robot/Options/Arrive'
+import MoreHelp from './pages/Robot/Options/MoreHelp'
 
 import Checkout from './pages/Aisle/Checkout';
+import PostSurvey from './pages/Outtro/PostSurvey';
+import Demographics from './pages/Outtro/Demographics';
+import End from './pages/Outtro/End';
 
 function App() {
   return (
@@ -32,40 +50,120 @@ function App() {
       {/* Control Group */}
       <Route path='/D1UQDV' element={<Control />}>
         <Route path='welcome'>
-            <Route path='1' element={<Intro1 />} />
-            <Route path='2' element={<Intro2 />} />
-            <Route path='3' element={<Intro3 />} />
-            <Route path='4' element={<Intro4 />} />
-            <Route path='5' element={<Intro5 />} />
-            <Route path='6' element={<Intro6 />} />
-        </Route>
-
-        <Route path='aisle'>
-          <Route path='fruit' element={<Aisle1 />} />
-        </Route>
-      </Route>
-
-      {/* Treatment 1 */}
-      <Route path='/FFSRWM' element={<Treatment1 />}>
-        <Route path='welcome'>
-          <Route path='1' element={<Intro1 />} />
+          <Route path='' element={<Intro1 />} />
           <Route path='2' element={<Intro2 />} />
           <Route path='3' element={<Intro3 />} />
           <Route path='4' element={<Intro4 />} />
           <Route path='5' element={<Intro5 />} />
           <Route path='6' element={<Intro6 />} />
         </Route>
+
+        <Route path='aisle'>
+          <Route path='fruit' element={<AisleFruit />} />
+          <Route path='fruit/detail' element={<DetailedFruit />} />
+
+          <Route path='vegetable' element={<AisleVegetable />} />
+          <Route path='vegetable/detail' element={<DetailedVegetable />} />
+          
+          <Route path='condiment' element={<AisleCondiment />} />
+          <Route path='condiment/detail' element={<DetailedCondiment />} />
+
+          <Route path='dessert' element={<AisleDessert />} />
+          <Route path='dessert/detail' element={<DetailedDessert />} />
+
+          <Route path='snack' element={<AisleSnack />} />
+          <Route path='snack/detail' element={<DetailedSnack />} />
+
+          <Route path='checkout' element={<Checkout />} />
+        </Route>
+
+        <Route path='thankyou'>
+          <Route path='survey' element={<PostSurvey />} />
+          <Route path='2' element={<Demographics />} />
+          <Route path='end' element={<End />} />
+        </Route>
+      </Route>
+
+      {/* Treatment 1 */}
+      <Route path='/FFSRWM'>
+        <Route path='welcome'>
+          <Route path='' element={<Intro1 />} />
+          <Route path='2' element={<Intro2 />} />
+          <Route path='3' element={<Intro3 />} />
+          <Route path='4' element={<Intro4 />} />
+          <Route path='5' element={<Intro5 />} />
+          <Route path='6' element={<Intro6 />} />
+        </Route>
+
+        <Route path='aisle'>
+          <Route path='fruit' element={<AisleFruit />} />
+          <Route path='fruit/detail' element={<DetailedFruit />} />
+
+          <Route path='vegetable' element={<AisleVegetable />} />
+          <Route path='vegetable/detail' element={<DetailedVegetable />} />
+          
+          <Route path='condiment' element={<AisleCondiment />} />
+          <Route path='condiment/detail' element={<DetailedCondiment />} />
+
+          <Route path='dessert' element={<AisleDessert />} />
+          <Route path='dessert/detail' element={<DetailedDessert />} />
+
+          <Route path='snack' element={<AisleSnack />} />
+          <Route path='snack/detail' element={<DetailedSnack />} />
+
+          <Route path='checkout' element={<Checkout />} />
+        </Route>
+
+        <Route path='help'>
+          <Route path='1' element={<Robot1 />}/>
+          <Route path='2' element={<Robot2 />}/>
+          <Route path='3' element={<Robot3 />}/>
+          <Route path='4' element={<Robot4 />}/>
+          <Route path='5' element={<Robot5 />}/>
+
+          <Route path='dance' element={<Dance />}/>
+          <Route path='handshake' element={<HandShake />}/>
+          <Route path='where' element={<Where />}/>
+          <Route path='recommend' element={<Recommend />}/>
+          <Route path='recommend/option' element={<RecommendOption />}/>
+          <Route path='arrive' element={<Arrive />}/>
+          <Route path='more' element={<MoreHelp />}/>
+        </Route>
+
+        <Route path='thankyou'>
+          <Route path='survey' element={<PostSurvey />} />
+          <Route path='2' element={<Demographics />} />
+          <Route path='end' element={<End />} />
+        </Route>
       </Route>
 
       {/* Treatment 2 */}
       <Route path='/L53NNR' element={<Treatment2 />}>
         <Route path='welcome'>
-            <Route path='1' element={<Intro1 />} />
+            <Route path='' element={<Intro1 />} />
             <Route path='2' element={<Intro2 />} />
             <Route path='3' element={<Intro3 />} />
             <Route path='4' element={<Intro4 />} />
             <Route path='5' element={<Intro5 />} />
             <Route path='6' element={<Intro6 />} />
+        </Route>
+        
+        <Route path='aisle'>
+      
+        </Route>
+
+        <Route path='help'>
+          <Route path='1' element={<Robot1 />}/>
+          <Route path='2' element={<Robot2 />}/>
+          <Route path='3' element={<Robot3 />}/>
+          <Route path='4' element={<Robot4 />}/>
+          <Route path='5' element={<Robot5 />}/>
+        </Route>
+
+        <Route path='thankyou'>
+          <Route path='survey' element={<PostSurvey />} />
+          <Route path='2' element={<Demographics />} />
+          <Route path='end' element={<End />} />
         </Route>
       </Route>
 
