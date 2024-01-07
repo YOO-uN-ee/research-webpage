@@ -1,4 +1,6 @@
 import './App.css';
+import { useEffect, useState } from "react";
+
 import {Routes, Route} from 'react-router-dom'
 import PageNotFound from './pages/PageNotFound';
 
@@ -44,6 +46,13 @@ import Demographics from './pages/Outtro/Demographics';
 import End from './pages/Outtro/End';
 
 function App() {
+  const [message, setMessage] = useState("")
+
+  useEffect(() => {
+    fetch("https://research-webpage.onrender.com")
+      .then((res) => res.json())
+      .then((data) => setMessage(data.message));
+  }, []);
   return (
     <>
     <Routes>
