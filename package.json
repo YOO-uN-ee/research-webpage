@@ -13,7 +13,8 @@
     "install-server":"npm install",
     "start-server":"npm run start",
     "install-client":"cd client && npm install",
-    "start-client":"npm run client"
+    "build-client":"cd client && npm run build",
+    "start-client":"cd client && npm run start"
   },
   "keywords": [],
   "author": "",
