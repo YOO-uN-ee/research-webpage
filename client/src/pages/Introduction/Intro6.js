@@ -1,15 +1,10 @@
 import React from "react";
-import { Model, settings } from "survey-core";
+import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import * as SurveyTheme from "survey-core/themes";
 import { surveyJSON } from "../Survey";
 
-import Layout from './IntroLayout'
-
 const Intro6 = () => {
-  var currentUser = "";
-  var surveyComplete = 0;
-
   localStorage.setItem('my_cart', JSON.stringify([]));
 
   const survey = new Model(surveyJSON);

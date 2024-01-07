@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
-import Dropdown from 'react-bootstrap/Dropdown';
 
-import { slug_mapping, item_list_kr } from '../Items'
+import { item_list_kr } from '../Items'
 import Layout from "./Options/OptionLayout";
 import Option from './Options/RightOption'
 

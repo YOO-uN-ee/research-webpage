@@ -23,7 +23,7 @@ const Robot = () => {
 
       <div className='footer'>
         <div />
-        <Link to='../2'><img src='/media/images/forward.svg' class='icon-button' /></Link>
+        <Link to='../2'><img src='/media/images/forward.svg' class='icon-button' alt='next'/></Link>
     </div>  
     </Layout>
   )

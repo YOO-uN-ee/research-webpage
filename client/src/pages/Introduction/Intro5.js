@@ -16,8 +16,8 @@ const Intro5 = () => {
       </div>
 
       <div className='footer'>
-        <Link to='../4'><img src='/media/images/back.svg' class='icon-button' /></ Link>
-        <Link to='../6'><img src='/media/images/forward.svg' class='icon-button' /></Link>
+        <Link to='../4'><img src='/media/images/back.svg' class='icon-button' alt='back'/></ Link>
+        <Link to='../6'><img src='/media/images/forward.svg' class='icon-button' alt='forward'/></Link>
       </div>
     </Layout>
   )

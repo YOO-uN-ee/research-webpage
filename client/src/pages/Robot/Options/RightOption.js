@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
-
-import { category_mapping, slug_mapping, modify_list } from '../../Items'
 
 const Options = () => {
     const [item_list, setItemList] = useState(JSON.parse(localStorage.getItem('item_list')))
@@ -33,7 +31,7 @@ const Options = () => {
               </div>
             ))}
             
-            {extension !== 'FFSRWM' && rec1_used == 0 &&
+            {extension !== 'FFSRWM' && rec1_used === 0 &&
               <div>
                 <Link to='../recommend' onClick={() => {
                   localStorage.setItem('rec_item', item1)
@@ -44,7 +42,7 @@ const Options = () => {
               </div>
             }
 
-            {extension !== 'FFSRWM' && rec2_used == 0 &&
+            {extension !== 'FFSRWM' && rec2_used === 0 &&
               <div>
                 <Link to='../recommend' onClick={() => {
                   localStorage.setItem('rec_item', item2)

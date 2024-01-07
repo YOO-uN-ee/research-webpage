@@ -3,9 +3,6 @@ import Option from './RightOption'
 import Layout from "./OptionLayout";
 
 const MoreHelp = () => {
-  const extension = window.location.pathname.split('/')[1]
-  var TreatmentSet = JSON.parse(localStorage.getItem('treatment_questions'));
-
   const help_location = localStorage.getItem('help_location')
 
   return (
