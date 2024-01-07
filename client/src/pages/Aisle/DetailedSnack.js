@@ -45,7 +45,7 @@ const Detailed = () => {
     if(extension !== 'D1UQDV' && !localStorage.getItem('robot_interacted')){
       const int = setTimeout(() => {
         localStorage.setItem('robot_interacted', true);
-        console.log(localStorage.getItem('robot_interacted'))
+        console.log(localStorage.getItem('robot_interacted'))        
         window.location.replace('../../help/1');
       }, 15000);
     }

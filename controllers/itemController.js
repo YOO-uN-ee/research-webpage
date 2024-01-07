@@ -112,7 +112,7 @@ export const productIDController = async (req, res) => {
 export const productCategoryController = async (req, res) => {
     try {
         // const category = await categoryModel.findOne({slug: req.params.slug});
-        const products = await itemModel.find({"category":req.params.category});
+        const products = await itemModel.find({"category":req.params.category}).select("-image");
         res.status(200).send({
             success:true,
             products,
