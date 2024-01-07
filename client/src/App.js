@@ -49,7 +49,7 @@ function App() {
   const [message, setMessage] = useState("")
 
   useEffect(() => {
-    fetch("https://research-webpage.onrender.com")
+    fetch("https://research-backend-3mwd.onrender.com")
       .then((res) => res.json())
       .then((data) => setMessage(data.message));
   }, []);
@@ -148,17 +148,32 @@ function App() {
 
       {/* Treatment 2 */}
       <Route path='/L53NNR' element={<Treatment2 />}>
-        <Route path='welcome'>
-            <Route path='' element={<Intro1 />} />
-            <Route path='2' element={<Intro2 />} />
-            <Route path='3' element={<Intro3 />} />
-            <Route path='4' element={<Intro4 />} />
-            <Route path='5' element={<Intro5 />} />
-            <Route path='6' element={<Intro6 />} />
+      <Route path='welcome'>
+          <Route path='' element={<Intro1 />} />
+          <Route path='2' element={<Intro2 />} />
+          <Route path='3' element={<Intro3 />} />
+          <Route path='4' element={<Intro4 />} />
+          <Route path='5' element={<Intro5 />} />
+          <Route path='6' element={<Intro6 />} />
         </Route>
-        
+
         <Route path='aisle'>
-      
+          <Route path='fruit' element={<AisleFruit />} />
+          <Route path='fruit/detail' element={<DetailedFruit />} />
+
+          <Route path='vegetable' element={<AisleVegetable />} />
+          <Route path='vegetable/detail' element={<DetailedVegetable />} />
+          
+          <Route path='condiment' element={<AisleCondiment />} />
+          <Route path='condiment/detail' element={<DetailedCondiment />} />
+
+          <Route path='dessert' element={<AisleDessert />} />
+          <Route path='dessert/detail' element={<DetailedDessert />} />
+
+          <Route path='snack' element={<AisleSnack />} />
+          <Route path='snack/detail' element={<DetailedSnack />} />
+
+          <Route path='checkout' element={<Checkout />} />
         </Route>
 
         <Route path='help'>
@@ -167,6 +182,14 @@ function App() {
           <Route path='3' element={<Robot3 />}/>
           <Route path='4' element={<Robot4 />}/>
           <Route path='5' element={<Robot5 />}/>
+
+          <Route path='dance' element={<Dance />}/>
+          <Route path='handshake' element={<HandShake />}/>
+          <Route path='where' element={<Where />}/>
+          <Route path='recommend' element={<Recommend />}/>
+          <Route path='recommend/option' element={<RecommendOption />}/>
+          <Route path='arrive' element={<Arrive />}/>
+          <Route path='more' element={<MoreHelp />}/>
         </Route>
 
         <Route path='thankyou'>
@@ -175,20 +198,6 @@ function App() {
           <Route path='end' element={<End />} />
         </Route>
       </Route>
-
-      {/* Admin */}
-      <Route path='/5JO271' element={<Treatment2 />}>
-        <Route path='welcome' element={<Intro1 />} />
-        <Route path='2' element={<Intro2 />} />
-        <Route path='3' element={<Intro3 />} />
-        <Route path='4' element={<Intro4 />} />
-        <Route path='5' element={<Intro5 />} />
-        <Route path='6' element={<Intro6 />} />
-      </Route>
-
-      {/* <Route path='/' element={<HomePage />} />
-      <Route path='/D1UQDV' element={<SecondPage />} />
-      <Route path='/about' element={<About />} /> */}
       <Route path='/*' element={<PageNotFound />} />
     </Routes>
     </>

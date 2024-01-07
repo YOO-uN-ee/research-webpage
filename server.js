@@ -24,13 +24,15 @@ app.use(morgan('dev'));
 app.use('/api/auth', authRoutes);
 app.use('/api/item', itemRoutes);
 
+const PORT = process.env.PORT || 8080;
+
 app.get('/', (req, res) => {
     res.send({
-        message:'Welcome'
+        message:`Welcome Server Running on ${PORT}`
     })
 });
 
-const PORT = process.env.PORT || 8080;
+
 
 app.listen(PORT, () => {
     console.log(`Server Running on ${PORT}`)
