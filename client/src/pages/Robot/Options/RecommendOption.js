@@ -20,7 +20,7 @@ const RecommendOption = () => {
 
   const getAllOptions = async()=> {
     try {
-      const { data } = await axios.get(`/api/item/getProduct/${slug}/${option}`);
+      const { data } = await axios.get(`https://research-backend-3mwd.onrender.com/api/item/getProduct/${slug}/${option}`);
       const tmp_products = data.products
       setMain(tmp_products[0]);
 
@@ -53,7 +53,7 @@ const RecommendOption = () => {
           선택하신 옵션 중에서는 이 제품을 추천드립니다. 자세한 내용은 이미지를 클릭해 주세요.
           <div class=''>
             <Popup trigger={<img 
-              src={`/api/item/productphoto/${main._id}`} 
+              src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`} 
               alt={`${main.name}`}
               className='recommend-image' 
               onClick={() => {
@@ -61,7 +61,7 @@ const RecommendOption = () => {
               }} 
             />} modal>
               <img 
-              src={`/api/item/productphoto/${main._id}`}
+              src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`}
               alt={`${main.name}`}
               className='modal-image' 
               onClick={() => {
@@ -99,7 +99,7 @@ const RecommendOption = () => {
           <>
             <div>
                 <Popup trigger={<img
-                src={`/api/item/productphoto/${p._id}`}
+                src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${p._id}`}
                 alt={`${p.name}`}
                 className="recommend-image" 
                 onClick={() => {
@@ -107,7 +107,7 @@ const RecommendOption = () => {
                 }}
               />} modal>
                 <img
-                src={`/api/item/productphoto/${p._id}`}
+                src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${p._id}`}
                 alt={`${p.name}`}
                 className="modal-image" 
                 onClick={() => {
@@ -156,7 +156,7 @@ const RecommendOption = () => {
                 <div class='flex justify-between items-center select'>
                   <div class='flex items-center'>
                     <img
-                      src={`/api/item/productphoto/${item._id}`} alt={`${item.name}`} class='mini-image' />
+                      src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} alt={`${item.name}`} class='mini-image' />
                     <div>{item.name}<br />{item.price}원</div>
                   </div>
                   <img src={'/media/images/delete.svg'} alt='지우기' class='delete-icon' onClick={() => {
