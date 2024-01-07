@@ -12,7 +12,12 @@ connectDB();
 
 const app = express()
 
-app.use(cors());
+const corsOptions = {
+    origin: "https://mart-experience.onrender.com"
+}
+
+// app.use(cors(corsOption));
+app.use(cors())
 app.use(express.json());
 app.use(morgan('dev'));
 
