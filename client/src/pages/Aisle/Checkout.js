@@ -42,7 +42,7 @@ const Checkout = () => {
                   <div class='flex flex-row items-center '>
                     <div class='w-1/5'>
                       <img
-                        src={`/api/item/productphoto/${item._id}`} alt={`${item.name}`}/>
+                        src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} alt={`${item.name}`}/>
                     </div>
                     <div class='w-4/5'>
                       <div class='mini-text'>&nbsp;&nbsp;{item.name}<br/>&nbsp;&nbsp;{item.price}원</div>

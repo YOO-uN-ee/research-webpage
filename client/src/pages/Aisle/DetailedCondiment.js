@@ -22,7 +22,7 @@ const Detailed = () => {
 
   const getAllProducts = async()=> {
     try {
-      const { data } = await axios.get("/api/item/productcategory/condiment");
+      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/item/productcategory/condiment");
       setProduct(data.products);
     } catch (error) {
       console.log(error);
@@ -70,7 +70,7 @@ const Detailed = () => {
             <div>
               <Popup trigger={
                 <img
-                  src={`/api/item/productphoto/${p._id}`}
+                  src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${p._id}`}
                   className="card-img-top" 
                   alt={`${p.name}`}
                   onClick={() => {
@@ -78,7 +78,7 @@ const Detailed = () => {
                   }}/>} 
                 modal>
                 <img
-                  src={`/api/item/productphoto/${p._id}`}
+                  src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${p._id}`}
                   className="modal-image" 
                   alt={`${p.name}`}
                   onClick={() => {
@@ -134,7 +134,7 @@ const Detailed = () => {
                   <div class='flex justify-between items-center select'>
                     <div class='flex items-center'>
                       <img
-                        src={`/api/item/productphoto/${item._id}`} class='mini-image' alt={`${item.name}`}/>
+                        src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} class='mini-image' alt={`${item.name}`}/>
                       <div>{item.name}<br />{item.price}원</div>
                     </div>
                     <img src={'/media/images/delete.svg'} class='delete-icon' alt={`${item.name}`} onClick={() => {

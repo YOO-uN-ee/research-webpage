@@ -5,7 +5,7 @@ import Layout from "../Introduction/IntroLayout";
 
 const Final= () => {
   const storeData = async() => {
-    const res = await axios.post("/api/auth/add", {
+    const res = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
       "ip":localStorage.getItem('ip'), "experiment_type":localStorage.getItem('experiment_type'),
       "pre_fun":localStorage.getItem('pre-fun'), "pre_exciting":localStorage.getItem('pre-exciting'), "pre_delightful":localStorage.getItem('pre-delightful'), 
       "pre_thrilling":localStorage.getItem('pre-thrilling'), "pre_enjoyable":localStorage.getItem('pre-enjoyable'),

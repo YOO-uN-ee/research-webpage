@@ -48,7 +48,7 @@ const Aisle = () => {
                       <div class='flex justify-between items-center select'>
                         <div class='flex items-center'>
                           <img
-                            src={`/api/item/productphoto/${item._id}`} class='mini-image' alt={`${item.name}`}/>
+                            src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} class='mini-image' alt={`${item.name}`}/>
                           <div>{item.name}<br />{item.price}원</div>
                         </div>
                         <img src={'/media/images/delete.svg'} class='delete-icon' alt='delete' onClick={() => {
