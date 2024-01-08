@@ -11,9 +11,10 @@ const Admin = () => {
 
     const getData = async()=> {
         try {
-          const { res } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getData");
+          const { res } = await axios.get('https://research-backend-3mwd.onrender.com/api/auth/getData');
+          console.log(res)
           setData(res.udata);
-          console.log(res.udata);
+        //   console.log(res.udata);
 
         //   console.log(data)
         } catch (error) {
@@ -23,24 +24,25 @@ const Admin = () => {
 
     useEffect(() => {
         getData();
+        console.log(data)
     }, []);
 
-    // const mockData = [
-    //     {
-    //       name: "Rouky",
-    //       date: "2023-09-01",
-    //       percentage: 0.4,
-    //       quoted: '"Pickles"',
-    //     },
-    //     {
-    //       name: "Keiko",
-    //       date: "2023-09-01",
-    //       percentage: 0.9,
-    //       quoted: '"Cactus"',
-    //     },
-    //   ];
+    const mockData = [
+        {
+          name: "Rouky",
+          date: "2023-09-01",
+          percentage: 0.4,
+          quoted: '"Pickles"',
+        },
+        {
+          name: "Keiko",
+          date: "2023-09-01",
+          percentage: 0.9,
+          quoted: '"Cactus"',
+        },
+      ];
       
-    const csv = generateCsv(csvConfig)(data);
+    const csv = generateCsv(csvConfig)(mockData);
       
 
   return (
