@@ -41,6 +41,8 @@ import PostSurvey from './pages/Outtro/PostSurvey';
 import Demographics from './pages/Outtro/Demographics';
 import End from './pages/Outtro/End';
 
+import DownloadData from './pages/UserTypes/Admin'
+
 function App() {
 
   // useEffect(() => {
@@ -193,6 +195,7 @@ function App() {
           <Route path='end' element={<End />} />
         </Route>
       </Route>
+      <Route path='/admin' element={<DownloadData />} />
       <Route path='/*' element={<PageNotFound />} />
     </Routes>
     </>
