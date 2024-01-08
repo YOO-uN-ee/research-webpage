@@ -20,7 +20,7 @@ const Detailed = () => {
   const item2 = localStorage.getItem('item2')
   var startTime = new Date();
 
-  const exitScreen = async()=>{
+  const exitScreen = ()=>{
     const elapsedTime = JSON.parse(localStorage.getItem('fruit_time'))
     var endTime = new Date()
     var timeDiff = endTime - startTime

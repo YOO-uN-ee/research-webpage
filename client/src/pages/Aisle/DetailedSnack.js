@@ -21,7 +21,7 @@ const Detailed = () => {
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
   var startTime = new Date();
-  const exitScreen = async()=>{
+  const exitScreen = ()=>{
     const elapsedTime = JSON.parse(localStorage.getItem('snack_time'))
     var endTime = new Date()
     var timeDiff = endTime - startTime

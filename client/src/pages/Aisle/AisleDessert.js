@@ -34,10 +34,7 @@ const Aisle = () => {
             <Link to='detail' className="btn btn-primary" onClick={() => {localStorage.setItem('my_cart', JSON.stringify(my_cart))}}>살펴보기</Link>
           </div>
           
-          <div className='aisle-footer-left'>
-            <Link to='../condiment'><img src='/media/images/back.svg' class='icon-button' alt='back'/></ Link>
-            <div />
-          </div>
+          <div class='right-button-parent'><Link to='../condiment'><img src='/media/images/back.svg' class='icon-button' alt='back'/></ Link></div>
         </div>
 
         <div class='w-1/4'>
