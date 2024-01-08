@@ -35,7 +35,7 @@ const Aisle = () => {
           </div>
           
           
-          <div class='right-button-parent'><Link to='../vegetable'><img src='/media/images/back.svg' alt='전으로' class='icon-button' /></ Link></div>
+          <div class='left-button-parent'><Link to='../vegetable'><img src='/media/images/back.svg' alt='전으로' class='left-button' /></ Link></div>
         </div>
 
         <div class='w-1/4'>

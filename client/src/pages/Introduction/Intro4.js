@@ -43,8 +43,8 @@ const Intro4 = () => {
       </div>
 
       <div className='footer'>
-        <Link to='../3'><img src='/media/images/back.svg' alt='전으로' class='icon-button' /></Link>
-        <Link to='../5'><img src='/media/images/forward.svg' alt='다음' class='icon-button' /></Link>
+      <div class='left-button-parent'><Link to='../3'><img src='/media/images/back.svg' alt='전으로' class='left-button' /></Link></div>
+      <div class='right-button-parent'><Link to='../5'><img src='/media/images/forward.svg' alt='다음' class='right-button' /></Link></div>
       </div>
   </Layout>
   )

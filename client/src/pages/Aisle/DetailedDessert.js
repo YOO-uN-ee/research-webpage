@@ -57,6 +57,8 @@ const Detailed = () => {
         console.log(localStorage.getItem('robot_interacted'))
         window.location.replace('../../help/1');
       }, 10000);
+
+      clearTimeout(int);
     }
 
     // clearTimeout(int);
