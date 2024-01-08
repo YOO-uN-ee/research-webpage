@@ -16,13 +16,13 @@ const Intro4 = () => {
     
     localStorage.setItem('item1', utilitarian_list[row1_idx]);
     localStorage.setItem('item2', hedonic_list[row2_idx]);
-    localStorage.setItem('item1_bool', 0);
-    localStorage.setItem('item2_bool', 0);
+    localStorage.setItem('item1_bool', -1);
+    localStorage.setItem('item2_bool', -1);
   }
   
   return (
     <Layout>
-      <div>
+      <div class='general-body'>
         <img src={'/media/images/Intro/intro4.jpg'} alt="지갑" className='img' />
         <div class='main-text'>
           <br />
@@ -46,7 +46,7 @@ const Intro4 = () => {
         <Link to='../3'><img src='/media/images/back.svg' alt='전으로' class='icon-button' /></Link>
         <Link to='../5'><img src='/media/images/forward.svg' alt='다음' class='icon-button' /></Link>
       </div>
-    </Layout>
+  </Layout>
   )
 }
 

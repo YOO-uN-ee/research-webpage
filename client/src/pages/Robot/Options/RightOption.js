@@ -26,7 +26,7 @@ const Options = () => {
                   TreatmentSet.splice(idx, 1)
                   localStorage.setItem('treatment_questions', JSON.stringify(TreatmentSet))}
                 }>
-                  <div>{item[0]}<br/><br/></div>
+                  <div class='robot-option-text'>{`➤ ${item[0]}`}<br/><br/></div>
                 </Link>
               </div>
             ))}
@@ -37,7 +37,7 @@ const Options = () => {
                   localStorage.setItem('rec_item', item1)
                   localStorage.setItem('rec1_used', 1)
                 }}>
-                  <div>{localStorage.getItem('item1') + ' 관련 품목을 추천해 줄래?'}<br/><br/></div>
+                  <div>{`-> ${localStorage.getItem('item1')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
                 </Link>
               </div>
             }
@@ -49,14 +49,14 @@ const Options = () => {
                   localStorage.setItem('rec2_used', 1)
 
                 }}>
-                  <div>{localStorage.getItem('item2') + ' 관련 품목을 추천해 줄래?'}<br/><br/></div>
+                  <div>{`-> ${localStorage.getItem('item2')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
                 </Link>
               </div>
             }
 
             {extension === 'FFSRWM' && 
             <>
-              <div class='flex items-center'>
+              <div class='flex horizontal-center items-center robot-option-text'>
                 <Dropdown>
                   <Dropdown.Toggle variant='success' id='dropdown-basic'>
                     품목 선택
@@ -70,13 +70,13 @@ const Options = () => {
                     <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'snack')}}>과자/라면</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-                <div> 섹션으로 이동하고 싶어.</div>
+                <div>&nbsp;섹션으로 이동하고 싶어.</div>
               </div> 
               <br/>
             </>
             }
 
-            <div class='flex items-center'>
+            <div class='flex horizontal-center items-center robot-option-text'>
               <Dropdown>
                 <Dropdown.Toggle variant='success' id='dropdown-basic'>
                   상품 선택
@@ -92,13 +92,13 @@ const Options = () => {
                   ))}
                 </Dropdown.Menu>
               </Dropdown>
-              <div> 관련 품목을 추천해 줄래?</div>
+              <div>&nbsp;관련 품목을 추천해 줄래?</div>
             </div>
 
             {localStorage.getItem('robot_visit') > 2 &&
               <>
               <br/>
-              <Link to={`../../aisle/${help_location}`}>이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link>
+              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`}>이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
               </>
             }
 

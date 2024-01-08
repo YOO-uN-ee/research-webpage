@@ -58,9 +58,9 @@
 
 .accent-green {
     font-weight: bold;
-    color: green;
+    color: red;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .shopping-header {
@@ -116,6 +116,9 @@
 }
 .cart-button {
     height: 60px;
+    right: 20px;
+    bottom: 60px;
+    position: fixed;
 }
 .cart-button:hover{
     filter: invert(54%) sepia(92%) saturate(796%) hue-rotate(29deg) brightness(99%) contrast(87%);
@@ -171,7 +174,7 @@
 }
 
 .general-body {
-    padding-bottom: 60px
+    padding-bottom: 75px
 }
 
 .footer {
@@ -179,11 +182,18 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
+}
+.top-border {
+    border-top: 2px solid #6a760c;
+    padding-top: 20px;
 }
 
 .mini-image {
@@ -224,6 +234,22 @@
     margin-right: auto;
     height: 55vh;
     display: block
+}
+
+.robot-option-text {
+    color: black;
+}
+.robot-option-text:hover {
+    color: #9aae00;
+}
+.robot-option-dropdown {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+.robot-option-dropdown:hover {
+    background-color: #9aae00;
+    border: 1px solid #6a760c;
 }
 
 .modal-image {

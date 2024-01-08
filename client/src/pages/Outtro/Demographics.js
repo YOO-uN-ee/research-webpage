@@ -5,13 +5,13 @@ import "survey-core/defaultV2.min.css";
 import * as SurveyTheme from "survey-core/themes";
 
 export const demographicsJSON = {
-    "logoPosition": "right",
+    "locale": "ko",
     "pages": [
      {
       "name": "page1",
       "elements": [
        {
-        "type": "dropdown",
+        "type": "radiogroup",
         "name": "gender",
         "title": "성별",
         "choices": [
@@ -31,18 +31,45 @@ export const demographicsJSON = {
         "name": "age",
         "title": "나이",
         "inputType": "number",
-        "min": 0,
+        "min": 18,
         "max": 100,
         "isRequired": true,
        },
        {
-        "type": "text",
+        "type": "dropdown",
+        "name":"location",
+        "title":"주거지역",
+        "choices":[
+          '서울특별시', 
+          '부산광역시', 
+          '대구광역시', 
+          '인천광역시', 
+          '광주광역시', 
+          '대전광역시', 
+          '울산광역시', 
+          '세종특별자치시', 
+          '경기도', 
+          '강원도', 
+          '충청북도 (충북)', 
+          '충청남도 (충남)', 
+          '전라북도 (전북)', 
+          '전라남도 (전남)', 
+          '경상북도 (경북)', 
+          '경상남도 (경남)', 
+          '제주특별자치도'
+        ],
+        "isRequired":true,
+       },
+       {
+        "type": "radiogroup",
         "name": "frequency",
         "title": "장보기 빈도수",
-        "description":"1주일을 기준으로 몇 번 정도 장을 보시나요? 1주일에 1번은 1, 2주일에 1번은 0.5로 기입해주세요.",
-        "inputType":"number",
-        "min": 0,
-        "max": 7,
+        "choices": [
+          '1주에 1번 이상',
+          '1주에 1번',
+          '2주에 1번',
+          '한달에 1번, 혹은 1달에 1번 이하'
+         ],
         "isRequired": true,
        },
        {

@@ -1,13 +1,13 @@
 export const surveyJSON = {
+    "locale": "ko",
     "pages": [
         {
             "name": "page1",
             "elements": [
                 {
                     "type": "rating",
-                    "rateType": "smileys",
                     "name": "fun",
-                    "title": "재미있는",
+                    "title": "재미있는 (Fun)",
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
@@ -17,9 +17,8 @@ export const surveyJSON = {
                 },
                 {
                     "type": "rating",
-                    "rateType": "smileys",
                     "name": "exciting",
-                    "title": "흥미로운",
+                    "title": "흥미로운 (Exciting)",
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
@@ -29,9 +28,8 @@ export const surveyJSON = {
                 },
                 {
                     "type": "rating",
-                    "rateType": "smileys",
                     "name": "delightful",
-                    "title": "즐거운",
+                    "title": "즐거운 (Delightful)",
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
@@ -41,9 +39,8 @@ export const surveyJSON = {
                 },
                 {
                     "type": "rating",
-                    "rateType": "smileys",
                     "name": "thrilling",
-                    "title": "짜릿한",
+                    "title": "짜릿한 (Thrilling)",
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
@@ -53,9 +50,8 @@ export const surveyJSON = {
                 },
                 {
                     "type": "rating",
-                    "rateType": "smileys",
                     "name": "enjoyable",
-                    "title": "만족스러운",
+                    "title": "만족스러운 (Enjoyable)",
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",

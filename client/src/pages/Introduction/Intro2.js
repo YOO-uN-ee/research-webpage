@@ -6,7 +6,7 @@ import Layout from "./IntroLayout";
 const Intro2 = () => {
   return (
     <Layout>
-      <div>
+      <div class='general-body'>
         <img src={'/media/images/Intro/intro2.png'} alt='마트 이미지' class='intro-img' />
         <div class='main-text'>
           <br />
@@ -16,8 +16,8 @@ const Intro2 = () => {
       </div>
 
       <div className='footer'>
-        <Link to='../'><img src='/media/images/back.svg' class='icon-button' /></ Link>
-        <Link to='../3'><img src='/media/images/forward.svg' class='icon-button' /></Link>
+        <Link to='../'><img src='/media/images/back.svg' class='icon-button' alt='back'/></ Link>
+        <Link to='../3'><img src='/media/images/forward.svg' class='icon-button' alt='forward'/></Link>
       </div>
     </Layout>
   )

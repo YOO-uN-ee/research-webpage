@@ -35,7 +35,11 @@ const Aisle = () => {
         </div>
 
         <div class='w-1/4'>
-          <img src={'/media/images/Maps/snack_map.jpg'} alt="마트 과자 및 라면섹션 위치" className='aisle-map-image' />
+          <img src={'/media/images/Maps/snack_map.jpg'} alt="마트 과자 및 라면섹션 위치" className='aisle-map-image'  
+            onClick={() => {
+              localStorage.setItem('my_cart', JSON.stringify(my_cart))
+              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('./checkout')}
+          }}/>
           <div className='aisle-footer-right'>
             <div />
             <div>
@@ -54,12 +58,12 @@ const Aisle = () => {
                         <img src={'/media/images/delete.svg'} class='delete-icon' alt='delete' onClick={() => {
                           setMyCart(my_cart.filter(i => i.name !== item.name))
                           if(item.slug === slug_mapping[item1]){
-                            setBoolItem1(0)
-                            localStorage.setItem('item1_bool', 0)
+                            setBoolItem1(-1)
+                            localStorage.setItem('item1_bool', item1_bool)
                           }
                           else if(item.slug === slug_mapping[item2]){
-                            setBoolItem2(0)
-                            localStorage.setItem('item2_bool', 0)
+                            setBoolItem2(-1)
+                            localStorage.setItem('item2_bool', item2_bool)
                           }
                         }}/>
                       </div>

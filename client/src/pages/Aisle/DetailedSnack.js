@@ -17,8 +17,8 @@ const Detailed = () => {
 
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
-  const [item1_bool, setBoolItem1] = useState(localStorage.getItem('item1_bool'))
-  const [item2_bool, setBoolItem2] = useState(localStorage.getItem('item2_bool'))
+  const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
+  const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
   const elapsedTime = JSON.parse(localStorage.getItem('snack_time'))
   var startTime = new Date();
@@ -47,7 +47,7 @@ const Detailed = () => {
         localStorage.setItem('robot_interacted', true);
         console.log(localStorage.getItem('robot_interacted'))        
         window.location.replace('../../help/1');
-      }, 15000);
+      }, 10000);
     }
 
     // clearTimeout(int);
@@ -62,7 +62,11 @@ const Detailed = () => {
 
         <div class='columns-2'>
           <img src='/media/images/Aisle/snack_aisle.jpg' class='detailed-header-image' alt='snack aisle'/>
-          <img src='/media/images/Maps/snack_map.jpg' class='detailed-header-image' alt='snack map'/>
+          <img src='/media/images/Maps/snack_map.jpg' class='detailed-header-image' alt='snack map' 
+            onClick={() => {
+              localStorage.setItem('my_cart', JSON.stringify(my_cart))
+              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('./checkout')}
+          }}/>
         </div>
       </div>
 
@@ -102,13 +106,10 @@ const Detailed = () => {
               onClick={() => {
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price}]);
                 if(p.slug === slug_mapping[item1]){
-                  setBoolItem1(1)
-                  localStorage.setItem('item1_bool', 1)
-                  localStorage(item1_bool)
+                  setItem1Bool(1)
                 }
                 else if(p.slug === slug_mapping[item2]){
-                  setBoolItem2(1)
-                  localStorage.setItem('item2_bool', 1)
+                  setItem2Bool(1)
                 }
               }}
             />
@@ -127,6 +128,8 @@ const Detailed = () => {
             var endTime = new Date()
             var timeDiff = endTime - startTime
             localStorage.setItem('snack_time', elapsedTime + timeDiff)
+            localStorage.setItem('item1_bool', item1_bool)
+            localStorage.setItem('item2_bool', item2_bool)
           }}><img src='/media/images/back.svg' class='icon-button' alt='back'/></Link>
         </div>
 
@@ -146,12 +149,10 @@ const Detailed = () => {
                     <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
                       setMyCart(my_cart.filter(i => i.name !== item.name))
                       if(item.slug === slug_mapping[item1]){
-                        setBoolItem1(0)
-                        localStorage.setItem('item1_bool', 0)
+                        setItem1Bool(-1)
                       }
                       else if(item.slug === slug_mapping[item2]){
-                        setBoolItem2(0)
-                        localStorage.setItem('item2_bool', 0)
+                        setItem2Bool(-1)
                       }
                     }}/>
                   </div>
@@ -165,6 +166,8 @@ const Detailed = () => {
             var endTime = new Date()
             var timeDiff = endTime - startTime
             localStorage.setItem('snack_time', elapsedTime + timeDiff)
+            localStorage.setItem('item1_bool', item1_bool)
+            localStorage.setItem('item2_bool', item2_bool)
           }}><img src='/media/images/forward.svg' class='icon-button align-right' alt='앞으로'/></Link>}
         </div>
       </div>

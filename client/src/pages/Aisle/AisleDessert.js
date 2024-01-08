@@ -8,6 +8,9 @@ import { slug_mapping } from "../Items";
 
 const Aisle = () => {
   const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
+  const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
+  const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
+
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
 
@@ -32,7 +35,11 @@ const Aisle = () => {
         </div>
 
         <div class='w-1/4'>
-          <img src={'/media/images/Maps/dessert_map.jpg'} alt="마트 디저트섹션 위치" className='aisle-map-image' />
+          <img src={'/media/images/Maps/dessert_map.jpg'} alt="마트 디저트섹션 위치" className='aisle-map-image'  
+            onClick={() => {
+              localStorage.setItem('my_cart', JSON.stringify(my_cart))
+              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('./checkout')}
+          }}/>
           <div className='aisle-footer-right'>
             <div />
             <div>
@@ -51,10 +58,12 @@ const Aisle = () => {
                         <img src={'/media/images/delete.svg'} class='delete-icon' alt='delete' onClick={() => {
                           setMyCart(my_cart.filter(i => i.name !== item.name))
                           if(item.slug === slug_mapping[item1]){
-                            localStorage.setItem('item1_bool', 0)
+                            setItem1Bool(-1)
+                            localStorage.setItem('item1_bool', item1_bool)
                           }
                           else if(item.slug === slug_mapping[item2]){
-                            localStorage.setItem('item2_bool', 0)
+                            setItem2Bool(-1)
+                            localStorage.setItem('item2_bool', item2_bool)
                           }
                         }}/>
                       </div>

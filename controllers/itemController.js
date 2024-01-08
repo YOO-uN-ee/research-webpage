@@ -3,7 +3,7 @@ import fs from 'fs'
 
 export const addProductController = async (req, res) => {
     try {
-      const { name, slug, price, category, option, quantity } = req.fields;
+      const { name, slug, price, category, option, quantity, index } = req.fields;
       const { image } = req.files;
   
       const products = new itemModel({ ...req.fields });
@@ -112,7 +112,7 @@ export const productIDController = async (req, res) => {
 export const productCategoryController = async (req, res) => {
     try {
         // const category = await categoryModel.findOne({slug: req.params.slug});
-        const products = await itemModel.find({"category":req.params.category}).select("-image");
+        const products = await itemModel.find({"category":req.params.category}).select("-image").sort({ index: 1 });
         res.status(200).send({
             success:true,
             products,
@@ -129,7 +129,7 @@ export const productCategoryController = async (req, res) => {
 
 export const productOptionController = async (req, res) => {
     try {
-        const products = await itemModel.find({"slug":req.params.slug, "option":req.params.option});
+        const products = await itemModel.find({"slug":req.params.slug, "option":req.params.option}).select("-image").sort({ createdAt: 1 });
         res.status(200).send({
             success:true,
             products,

@@ -33,7 +33,7 @@ const Intro1 = () => {
 
   return (
     <Layout>
-      <div class='main-text'>
+      <div class='main-text general-body'>
         이 실험에 참여해 주셔서 감사합니다! <br></br><br></br>
 
         이 실험에서 당신은 동네 슈퍼마켓에서 쇼핑하는 상황을 온라인에서 재현하게 될 것입니다.<br></br>
@@ -43,7 +43,7 @@ const Intro1 = () => {
       <div className='footer'>
         <div></div>
         <Link to='./2'><img src='/media/images/forward.svg' alt='앞으로' class='icon-button' /></Link>
-    </div>  
+      </div>  
     </Layout>
   )
 }

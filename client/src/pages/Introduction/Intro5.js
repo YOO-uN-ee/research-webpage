@@ -6,7 +6,7 @@ import Layout from './IntroLayout'
 const Intro5 = () => {
   return (
     <Layout>
-      <div>
+      <div class='general-body'>
       <img src={'/media/images/Maps/checkout_map.jpg'} alt="마트 계산대" className='intro-img' />
         <div class='main-text'>
           <br />
