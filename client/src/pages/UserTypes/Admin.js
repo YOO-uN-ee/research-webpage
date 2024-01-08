@@ -8,8 +8,8 @@ const Detailed = () => {
 
   const getAllProducts = async()=> {
     try {
-      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/item/productcategory/snack");
-      setProduct(data.products);
+      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
+      setProduct(data.userdata);
     } catch (error) {
       console.log(error);
     }
@@ -24,7 +24,7 @@ const Detailed = () => {
   return (
     <>
       sample
-      {product}
+      {product.ip}
     </>
   )
 }

@@ -150,13 +150,13 @@
 
 .left-button-parent {
     position: fixed;
-    height: 44px;
-    width: 44px;
+    height: 35px;
+    width: 35px;
     left: 20px;
     bottom: 20px;
     align-items: center;
     background: white;
-    border-radius: 22px;
+    border-radius: 15px;
 }
 .left-button {
     position: relative;

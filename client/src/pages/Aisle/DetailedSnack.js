@@ -159,10 +159,10 @@ const Detailed = () => {
       </div>
 
       <div class='footer'>
-        <Link to='../vegetable'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
+        <Link to='../condiment'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
 
         {item1_bool > 0 && item2_bool > 0 &&
-        <Link to='../condiment'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link>}
+        <Link to='../checkout'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link>}
         {(item1_bool < 0 || item2_bool < 0) &&
         <div class='right-button'></div>}
       </div>

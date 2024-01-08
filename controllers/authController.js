@@ -71,9 +71,7 @@ export const updateController = async (req, res) => {
 
 export const getData = async (req, res) => {
     try {
-        const userdata = await userModel
-            .find({})
-            .sort({ createdAt: -1 });
+        const userdata = await userModel.find({ "experiment_type":req.params.group });
         res.status(200).send({
             success: true,
             message: "Got all data",
