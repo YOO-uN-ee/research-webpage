@@ -25,6 +25,7 @@ const Admin = () => {
 
     useEffect(() => {
         getData();
+        console.log(`under effect ${userData}`)
     }, []);
 
     const mockData = [
