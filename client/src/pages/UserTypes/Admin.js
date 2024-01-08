@@ -11,7 +11,7 @@ const Admin = () => {
 
     const getData = async()=> {
         try {
-          const { res } = await axios.get('https://research-backend-3mwd.onrender.com/api/item/getproducts');
+          const { res } = await axios.get('https://research-backend-3mwd.onrender.com/api/auth/getData');
           console.log(`this ${res.userdata}`)
           setUserData(res.userdata);
           console.log(`setting working? ${userData}`)

@@ -91,7 +91,6 @@ const Demographics = () => {
     localStorage.setItem('age', sender.data.age);
     localStorage.setItem('location', sender.data.location);
     localStorage.setItem('frequency', sender.data.frequency);
-    localStorage.setItem('familiar', sender.data.familiar);
     window.location.replace('./end');
   });
 
