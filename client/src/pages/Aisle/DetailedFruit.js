@@ -29,7 +29,6 @@ const Detailed = () => {
     localStorage.setItem('fruit_time', elapsedTime + timeDiff)
     localStorage.setItem('item1_bool', item1_bool)
     localStorage.setItem('item2_bool', item2_bool)
-
   }
 
   const getAllProducts = async()=> {
@@ -146,7 +145,7 @@ const Detailed = () => {
       </Popup>
       </div>
 
-      <div class='flex flex-row justify-between'>
+      <div class='footer'>
         <Link to='../fruit'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
         <Link to='../vegetable'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link>
       </div>

@@ -20,8 +20,17 @@ const Detailed = () => {
   const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
-  const elapsedTime = JSON.parse(localStorage.getItem('snack_time'))
   var startTime = new Date();
+  const exitScreen = async()=>{
+    const elapsedTime = JSON.parse(localStorage.getItem('snack_time'))
+    var endTime = new Date()
+    var timeDiff = endTime - startTime
+
+    localStorage.setItem('my_cart', JSON.stringify(my_cart))
+    localStorage.setItem('snack_time', elapsedTime + timeDiff)
+    localStorage.setItem('item1_bool', item1_bool)
+    localStorage.setItem('item2_bool', item2_bool)
+  }
 
   const getAllProducts = async()=> {
     try {
@@ -120,58 +129,41 @@ const Detailed = () => {
         </div>
       </div>
 
-      <div class='footer'>
-        <div>
-          <div class='cart-button'></div>
-          <Link to='../snack' onClick={() => {
-            localStorage.setItem('my_cart', JSON.stringify(my_cart))
-            var endTime = new Date()
-            var timeDiff = endTime - startTime
-            localStorage.setItem('snack_time', elapsedTime + timeDiff)
-            localStorage.setItem('item1_bool', item1_bool)
-            localStorage.setItem('item2_bool', item2_bool)
-          }}><img src='/media/images/back.svg' class='icon-button' alt='back'/></Link>
-        </div>
-
-        <div>
-          <Popup 
-            trigger={<img src='/media/images/cart.svg' class='cart-button' alt='cart'/>}
-            position="top right"
-            className='item-in-cart'>
-              <div>
-                {my_cart.map(item => (
-                  <div class='flex justify-between items-center select'>
-                    <div class='flex items-center'>
-                      <img
-                        src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} class='mini-image' alt={`${item.name}`} />
-                      <div>{item.name}<br />{item.price}원</div>
-                    </div>
-                    <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
-                      setMyCart(my_cart.filter(i => i.name !== item.name))
-                      if(item.slug === slug_mapping[item1]){
-                        setItem1Bool(-1)
-                        console.log(item1_bool)
-                      }
-                      else if(item.slug === slug_mapping[item2]){
-                        setItem2Bool(-1)
-                        console.log(item2_bool)
-                      }
-                    }}/>
-                  </div>
-                ))}
+      <div class='cart-button-parent'>
+      <Popup 
+        trigger={<img src='/media/images/cart.svg' class='cart-button' alt='cart'/>}
+        position="top right"
+        className='item-in-cart'>
+          <div>
+            {my_cart.map(item => (
+              <div class='flex justify-between items-center select'>
+                <div class='flex items-center'>
+                  <img
+                    src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} class='mini-image' alt={`${item.name}`}/>
+                  <div>{item.name}<br />{item.price}원</div>
+                </div>
+                <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
+                  setMyCart(my_cart.filter(i => i.name !== item.name))
+                  if(item.slug === slug_mapping[item1]){
+                    setItem1Bool(-1)
+                  }
+                  else if(item.slug === slug_mapping[item2]){
+                    setItem2Bool(-1)
+                  }
+                }}/>
               </div>
-          </Popup>
-          
-          {item1_bool > 0 && item2_bool > 0 &&
-          <Link to='../checkout' onClick={() => {
-            localStorage.setItem('my_cart', JSON.stringify(my_cart))
-            var endTime = new Date()
-            var timeDiff = endTime - startTime
-            localStorage.setItem('snack_time', elapsedTime + timeDiff)
-            localStorage.setItem('item1_bool', item1_bool)
-            localStorage.setItem('item2_bool', item2_bool)
-          }}><img src='/media/images/forward.svg' class='icon-button align-right' alt='앞으로'/></Link>}
-        </div>
+            ))}
+          </div>
+      </Popup>
+      </div>
+
+      <div class='footer'>
+        <Link to='../vegetable'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
+
+        {item1_bool > 0 && item2_bool > 0 &&
+        <Link to='../condiment'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link>}
+        {(item1_bool < 0 || item2_bool < 0) &&
+        <div class='right-button'></div>}
       </div>
     </Layout>
   )
