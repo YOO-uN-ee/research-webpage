@@ -110,7 +110,7 @@ const userSchema = new mongoose.Schema({
         required:true
     },
     frequency: {
-        type:Number,
+        type:String,
         required:true
     },
     familiar: {
