@@ -106,11 +106,6 @@ const Demographics = () => {
     window.location.replace('./end');
   });
 
-  const my_cart = JSON.parse(localStorage.getItem('my_cart'))
-  const item_names = my_cart.map(value => value.name)
-  localStorage.setItem('item_names', JSON.stringify(item_names))
-
-
   return (
     <div class='layout'>
       <div>

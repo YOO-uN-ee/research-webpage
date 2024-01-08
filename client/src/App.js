@@ -22,6 +22,9 @@ import DetailedDessert from './pages/Aisle/DetailedDessert';
 import AisleSnack from './pages/Aisle/AisleSnack';
 import DetailedSnack from './pages/Aisle/DetailedSnack';
 
+import Treatment3 from './pages/Robot/Treatment3'
+import Treatment3Pre from './pages/Robot/Treatment3Pre'
+import Treatment3Post from './pages/Robot/Treatment3Post'
 import Robot1 from './pages/Robot/Robot1'
 import Robot2 from './pages/Robot/Robot2'
 import Robot3 from './pages/Robot/Robot3'
@@ -195,6 +198,29 @@ function App() {
           <Route path='end' element={<End />} />
         </Route>
       </Route>
+
+      <Route path='/ZOX019'>
+        <Route path='welcome' element={<Treatment3 />} />
+        <Route path='welcome/2' element={<Treatment3Pre />} />
+
+        <Route path='help'>
+          <Route path='1' element={<Robot1 />}/>
+          <Route path='2' element={<Robot2 />}/>
+          <Route path='3' element={<Robot3 />}/>
+          <Route path='4' element={<Robot4 />}/>
+          <Route path='5' element={<Robot5 />}/>
+
+          <Route path='dance' element={<Dance />}/>
+          <Route path='handshake' element={<HandShake />}/>
+          <Route path='where' element={<Where />}/>
+        </Route>
+
+        <Route path='thankyou/1' element={<PostSurvey />} />
+        <Route path='thankyou/2' element={<Treatment3Post />} />
+        <Route path='thankyou/end' element={<End />} />
+
+      </Route>
+
       <Route path='/admin' element={<DownloadData />} />
       <Route path='/*' element={<PageNotFound />} />
     </Routes>

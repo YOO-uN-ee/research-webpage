@@ -37,7 +37,7 @@ const Options = () => {
                   localStorage.setItem('rec_item', item1)
                   localStorage.setItem('rec1_used', 1)
                 }}>
-                  <div>{`-> ${localStorage.getItem('item1')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
+                  <div>{`${localStorage.getItem('item1')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
                 </Link>
               </div>
             }
@@ -49,7 +49,7 @@ const Options = () => {
                   localStorage.setItem('rec2_used', 1)
 
                 }}>
-                  <div>{`-> ${localStorage.getItem('item2')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
+                  <div>{`${localStorage.getItem('item2')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
                 </Link>
               </div>
             }
@@ -76,29 +76,35 @@ const Options = () => {
             </>
             }
 
-            <div class='flex horizontal-center items-center robot-option-text'>
-              <Dropdown>
-                <Dropdown.Toggle variant='success' id='dropdown-basic'>
-                  상품 선택
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  {item_list.map((item) => (
-                    <Dropdown.Item href={'recommend'} onClick={() => {
-                      localStorage.setItem('rec_item', item)
-                      setItemList(item_list.filter(i => i !== item))
-                      }}>
-                      {item}
-                    </Dropdown.Item>
-                  ))}
-                </Dropdown.Menu>
-              </Dropdown>
-              <div>&nbsp;관련 품목을 추천해 줄래?</div>
-            </div>
+            {extension !== 'ZOX019' && 
+              <div class='flex horizontal-center items-center robot-option-text'>
+                <Dropdown>
+                  <Dropdown.Toggle variant='success' id='dropdown-basic'>
+                    상품 선택
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    {item_list.map((item) => (
+                      <Dropdown.Item href={'recommend'} onClick={() => {
+                        localStorage.setItem('rec_item', item)
+                        setItemList(item_list.filter(i => i !== item))
+                        }}>
+                        {item}
+                      </Dropdown.Item>
+                    ))}
+                  </Dropdown.Menu>
+                </Dropdown>
+                <div>&nbsp;관련 품목을 추천해 줄래?</div>
+              </div>
+            }
 
             {localStorage.getItem('robot_visit') > 2 &&
               <>
               <br/>
-              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`}>이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
+              {extension !== 'ZOX019' &&
+                <div class='robot-option-text'><Link to={`../../aisle/${help_location}`}>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>}
+
+              {extension === 'ZOX019' &&
+                <div class='robot-option-text'><Link to={`../../thankyou/1`}>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>}
               </>
             }
 

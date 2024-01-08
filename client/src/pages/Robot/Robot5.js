@@ -17,7 +17,7 @@ const Robot5 = () => {
   localStorage.setItem('rec2_used', 0)
 
   if (!TreatmentSet){
-    if (extension === 'FFSRWM'){
+    if (extension === 'FFSRWM' || extension === 'ZOX019'){
       TreatmentSet = [
         ['너는 어디에서 왔니?', '../where'],
         ['춤을 출 수 있다며. 한번 보여줄래?', '../dance'],

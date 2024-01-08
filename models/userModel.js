@@ -31,51 +31,51 @@ const userSchema = new mongoose.Schema({
     },
     items_bought: {
         type:[String],
-        required:true,
+        default:[],
     },
     total_price: {
         type:Number,
-        required:true,
+        default:0,
     },
     fruit_visit: {
         type:Number,
-        required:true,
+        default:0,
     },
     fruit_time: {
         type:Number,
-        required:true,
+        default:0,
     },
     vegetable_visit: {
         type:Number,
-        required:true,
+        default:0,
     },
     vegetable_time: {
         type:Number,
-        required:true,
+        default:0,
     },
     condiment_visit: {
         type:Number,
-        required:true,
+        default:0,
     },
     condiment_time: {
         type:Number,
-        required:true,
+        default:0,
     },
     dessert_visit: {
         type:Number,
-        required:true,
+        default:0,
     },
     dessert_time: {
         type:Number,
-        required:true,
+        default:0,
     },
     snack_visit: {
         type:Number,
-        required:true,
+        default:0,
     },
     snack_time: {
         type:Number,
-        required:true,
+        default:0,
     },
     post_fun: {
         type:Number,
@@ -103,6 +103,10 @@ const userSchema = new mongoose.Schema({
     },
     age: {
         type:Number,
+        required:true
+    },
+    location: {
+        type:String,
         required:true
     },
     frequency: {

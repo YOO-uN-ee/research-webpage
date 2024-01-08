@@ -17,7 +17,7 @@ const Final= () => {
       "snack_visit":localStorage.getItem('snack_visits') || 0, "snack_time":localStorage.getItem('snack_time')/1000 || 0,
       "post_fun":localStorage.getItem('post-fun'), "post_exciting":localStorage.getItem('post-exciting'), "post_delightful":localStorage.getItem('post-delightful'), 
       "post_thrilling":localStorage.getItem('post-thrilling'), "post_enjoyable":localStorage.getItem('post-enjoyable'),
-      "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar'),
+      "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar'),
     });
   };
 
