@@ -10,23 +10,23 @@ const Admin = () => {
     const [userData, setUserData] = useState([]);
 
     const getData = async()=> {
-        try {
-          const { res } = await axios.get('https://research-backend-3mwd.onrender.com/api/auth/getData');
-          console.log(res);
-          // console.log(`this ${res.userdata}`)
-          // setUserData(res.userdata);
-          // console.log(`setting working? ${userdata}`)
-        //   console.log(res.udata);
+      try {
+        const { res } = await axios.get('https://research-backend-3mwd.onrender.com/api/auth/getData');
+        console.log(res);
+        // console.log(`this ${res.userdata}`)
+        // setUserData(res.userdata);
+        // console.log(`setting working? ${userdata}`)
+      //   console.log(res.udata);
 
-        //   console.log(data)
-        } catch (error) {
-          console.log(error);
-        }
+      //   console.log(data)
+      } catch (error) {
+        console.log(error);
+      }
     }
 
     useEffect(() => {
-        getData();
-        console.log(`under effect ${userData}`)
+      getData();
+      console.log(`under effect ${userData}`)
     }, []);
 
     const mockData = [

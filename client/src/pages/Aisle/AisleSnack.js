@@ -14,7 +14,7 @@ const Aisle = () => {
   const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
-  const exitScreen = async()=>{
+  const exitScreen = ()=>{
     localStorage.setItem('my_cart', JSON.stringify(my_cart))
     localStorage.setItem('item1_bool', item1_bool)
     localStorage.setItem('item2_bool', item2_bool)
