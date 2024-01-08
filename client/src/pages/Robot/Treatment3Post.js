@@ -71,17 +71,6 @@ export const demographicsJSON = {
           '한달에 1번, 혹은 1달에 1번 이하'
          ],
         "isRequired": true,
-       },
-       {
-        "type": "rating",
-        "name": "familiar",
-        "title": "마트에 구비되어 있는 아이템들과 얼마나 친숙하셨나요?",
-        "description":"대부분 이미 알고 계신 아이템이었다면 7을, 잘 모르는 아이템들이었다면 1을 기준으로 해서 1-7 사이를 선택해주세요.",
-        "rateMin": 1,
-        "rateMax": 7,
-        "minRateDescription":'전혀',
-        "maxRateDescription":'매우',
-        "isRequired": true,
        }
       ]
      }

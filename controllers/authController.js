@@ -23,7 +23,7 @@ export const registerController = async (req, res) => {
             dessert_visit, dessert_time, 
             snack_visit, snack_time,
             post_fun, post_exciting, post_delightful, post_thrilling, post_enjoyable,
-            gender, age, frequency, familiar
+            gender, age, location, frequency, familiar
         }).save();
 
         res.status(200).send({
