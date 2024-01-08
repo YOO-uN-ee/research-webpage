@@ -69,6 +69,26 @@ export const updateController = async (req, res) => {
     }
 };
 
+export const getData = async (req, res) => {
+    try {
+        const udata = await userModel
+            .find({})
+            .sort({ createdAt: -1 });
+        res.status(200).send({
+            success: true,
+            message: "Got all data",
+            udata,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            success: false,
+            message: "Error getting all data",
+            error: error.message,
+        });
+    }
+};
+
 export const getController = async (req, res) => {
     try {
         const user = await userModel.findById(user._id);
