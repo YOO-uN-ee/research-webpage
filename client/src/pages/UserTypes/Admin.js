@@ -7,13 +7,14 @@ import { mkConfig, generateCsv, download } from "export-to-csv";
 
 const Admin = () => {
     const csvConfig = mkConfig({ useKeysAsHeaders: true });
-    const [data, setData] = useState([]);
+    const [userData, setUserData] = useState([]);
 
     const getData = async()=> {
         try {
-          const { res } = await axios.get('https://research-backend-3mwd.onrender.com/api/auth/getData');
-          console.log(res)
-          setData(res.udata);
+          const { res } = await axios.get('https://research-backend-3mwd.onrender.com/api/item/getproducts');
+          console.log(`this ${res.userdata}`)
+          setUserData(res.userdata);
+          console.log(`setting working? ${userData}`)
         //   console.log(res.udata);
 
         //   console.log(data)
@@ -24,7 +25,6 @@ const Admin = () => {
 
     useEffect(() => {
         getData();
-        console.log(data)
     }, []);
 
     const mockData = [

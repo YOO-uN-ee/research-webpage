@@ -71,13 +71,13 @@ export const updateController = async (req, res) => {
 
 export const getData = async (req, res) => {
     try {
-        const udata = await userModel
+        const userdata = await userModel
             .find({})
             .sort({ createdAt: -1 });
         res.status(200).send({
             success: true,
             message: "Got all data",
-            udata,
+            userdata,
         });
     } catch (error) {
         console.log(error);
