@@ -117,17 +117,22 @@
 
 .cart-button-parent {
     position: fixed;
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    width: 80px;
     right: 20px;
     bottom: 60px;
-    align-items: center;
     background: white;
+    border: 2px solid #6a760c;
     border-radius: 15px;
+    display: block;
+    align-items: center;
+    justify-content: center;
 }
 .cart-button {
     height: 60px;
     position: relative;
+    left: 5px;
+    top: 8px;
     width: auto;
 }
 .cart-button:hover{

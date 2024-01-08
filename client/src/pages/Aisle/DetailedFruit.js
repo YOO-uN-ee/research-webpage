@@ -146,8 +146,10 @@ const Detailed = () => {
       </Popup>
       </div>
 
-      <div class='left-button-parent'><Link to='../fruit'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link></div>
-      <div class='right-button-parent'><Link to='../vegetable'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link></div>
+      <div class='flex flex-row justify-between'>
+        <Link to='../fruit'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
+        <Link to='../vegetable'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link>
+      </div>
 
       {/* <div class='footer'>
         <div>
