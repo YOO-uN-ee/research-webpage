@@ -65,7 +65,7 @@ const Detailed = () => {
           <img src='/media/images/Maps/snack_map.jpg' class='detailed-header-image' alt='snack map' 
             onClick={() => {
               localStorage.setItem('my_cart', JSON.stringify(my_cart))
-              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('./checkout')}
+              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('../checkout')}
           }}/>
         </div>
       </div>
@@ -150,9 +150,11 @@ const Detailed = () => {
                       setMyCart(my_cart.filter(i => i.name !== item.name))
                       if(item.slug === slug_mapping[item1]){
                         setItem1Bool(-1)
+                        console.log(item1_bool)
                       }
                       else if(item.slug === slug_mapping[item2]){
                         setItem2Bool(-1)
+                        console.log(item2_bool)
                       }
                     }}/>
                   </div>

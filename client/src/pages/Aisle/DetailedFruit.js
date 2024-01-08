@@ -63,7 +63,7 @@ const Detailed = () => {
           <img src='/media/images/Maps/fruit_map.jpg' alt='과일지도' class='detailed-header-image'  
             onClick={() => {
               localStorage.setItem('my_cart', JSON.stringify(my_cart))
-              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('./checkout')}
+              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('../checkout')}
           }}/>
         </div>
       </div>
@@ -118,6 +118,7 @@ const Detailed = () => {
         </div>
       </div>
 
+      <div class='cart-button-parent'>
       <Popup 
         trigger={<img src='/media/images/cart.svg' class='cart-button' alt='cart'/>}
         position="top right"
@@ -143,11 +144,10 @@ const Detailed = () => {
             ))}
           </div>
       </Popup>
-
-      <div class='footer'>
-        <img src='/media/images/back.svg' class='icon-button' alt='back' onClick={()=>(exitScreen())}/>
-        <img src='/media/images/forward.svg' class='icon-button' alt='forward'onClick={()=>(exitScreen())}/>
       </div>
+
+      <div class='left-button-parent'><Link to='../fruit'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link></div>
+      <div class='right-button-parent'><Link to='../vegetable'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link></div>
 
       {/* <div class='footer'>
         <div>

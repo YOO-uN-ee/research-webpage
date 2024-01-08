@@ -114,11 +114,21 @@
 .checkout-button {
     height: 60px;
 }
-.cart-button {
+
+.cart-button-parent {
+    position: fixed;
     height: 60px;
+    width: 60px;
     right: 20px;
     bottom: 60px;
-    position: fixed;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+}
+.cart-button {
+    height: 60px;
+    position: relative;
+    width: auto;
 }
 .cart-button:hover{
     filter: invert(54%) sepia(92%) saturate(796%) hue-rotate(29deg) brightness(99%) contrast(87%);
@@ -131,6 +141,44 @@
 }
 .item-in-cart-arrow{
     background-color: transparent;
+}
+
+.left-button-parent {
+    position: fixed;
+    height: 35px;
+    width: 35px;
+    left: 20px;
+    bottom: 20px;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+}
+.left-button {
+    position: relative;
+    height: 35px;
+    width: auto;
+}
+.left-button:hover{
+    filter: invert(54%) sepia(92%) saturate(796%) hue-rotate(29deg) brightness(99%) contrast(87%);
+}
+
+.right-button-parent {
+    position: fixed;
+    height: 35px;
+    width: 35px;
+    right: 20px;
+    bottom: 20px;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+}
+.right-button {
+    position: relative;
+    height: 35px;
+    width: auto;
+}
+.right-button:hover{
+    filter: invert(54%) sepia(92%) saturate(796%) hue-rotate(29deg) brightness(99%) contrast(87%);
 }
 
 .cart-icon {

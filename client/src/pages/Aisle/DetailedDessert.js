@@ -65,7 +65,7 @@ const Detailed = () => {
           <img src='/media/images/Maps/dessert_map.jpg' class='detailed-header-image' alt='dessert map' 
             onClick={() => {
               localStorage.setItem('my_cart', JSON.stringify(my_cart))
-              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('./checkout')}
+              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('../checkout')}
           }}/>
         </div>
       </div>
