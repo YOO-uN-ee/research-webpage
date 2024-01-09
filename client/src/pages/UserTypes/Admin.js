@@ -80,19 +80,23 @@ const Detailed = () => {
         </button> <br />
       </div>
 
-      <div>
+      <div class='main-text'>
         <button onClick={() => downloadCSV(one, 'one')}>
           Download Treatment1 Group Data
         </button> <br />
       </div>
 
-      <button onClick={() => downloadCSV(two, 'two')}>
-        Download Treatment2 Group Data
-      </button> <br />
+      <div class='main-text'>
+        <button onClick={() => downloadCSV(two, 'two')}>
+          Download Treatment2 Group Data
+        </button> <br />
+      </div>
 
-      <button onClick={() => downloadCSV(three, 'three')}>
-        Download Treatment3 Group Data
-      </button> <br />
+      <div class='main-text'>
+        <button onClick={() => downloadCSV(three, 'three')}>
+          Download Treatment3 Group Data
+        </button> <br />
+      </div>
     </>
   )
 }

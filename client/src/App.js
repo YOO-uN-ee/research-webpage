@@ -220,7 +220,7 @@ function App() {
 
       </Route>
 
-      <Route path='/admin' element={<DownloadData />} />
+      <Route path='/2SGB9I' element={<DownloadData />} />
       <Route path='/*' element={<PageNotFound />} />
     </Routes>
     </>
