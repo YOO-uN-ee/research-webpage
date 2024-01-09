@@ -1,31 +1,35 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { mkConfig, generateCsv, download } from "export-to-csv";
+import { json2csv } from 'json-2-csv';
 
 const Detailed = () => {
   const [info, setInfo] = useState([]);
   const csvConfig = mkConfig({ useKeysAsHeaders: true });
 
   const control_data = []
+  const treatment1_data = []
+  const treatment2_data = []
+  const treatment3_data = []
 
   const getAllInfo = async()=> {
     try {
       const { control_data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
       setInfo(control_data.userdata);
 
-      info?.map((i) => (
-        control_data.push({
-          ip:i.ip,
-          experiment_type: i.experiment_type,
-          pre_fun: i.pre_fun,
-          pre_exciting: i.pre_exciting,
-          pre_delightful: i.pre_delightful,
-          pre_thrilling: i.pre_thrilling,
-          pre_enjoyable: i.pre_enjoyable,
-          // items_bought: i.items_bought,
-          total_price: i.total_price
-        })
-      ));
+      // info?.map((i) => (
+      //   control_data.push({
+      //     ip:i.ip,
+      //     experiment_type: i.experiment_type,
+      //     pre_fun: i.pre_fun,
+      //     pre_exciting: i.pre_exciting,
+      //     pre_delightful: i.pre_delightful,
+      //     pre_thrilling: i.pre_thrilling,
+      //     pre_enjoyable: i.pre_enjoyable,
+      //     // items_bought: i.items_bought,
+      //     total_price: i.total_price
+      //   })
+      // ));
       // "items_bought":JSON.parse(localStorage.getItem('item_names')), "total_price":localStorage.getItem('total_price'),
       // "fruit_visit":localStorage.getItem('fruit_visits') || 0, "fruit_time":localStorage.getItem('fruit_time')/1000 || 0, 
       // "vegetable_visit":localStorage.getItem('vegetable_visits') || 0, "vegetable_time":localStorage.getItem('vegetable_time')/1000 || 0, 
@@ -36,6 +40,26 @@ const Detailed = () => {
       // "post_thrilling":localStorage.getItem('post-thrilling'), "post_enjoyable":localStorage.getItem('post-enjoyable'),
       // "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar')||0,
 
+      // const { treatment3_data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
+      // setInfo(treatment3_data.userdata);
+
+      // info?.map((i) => (
+      //   control_data.push({
+      //     ip:i.ip,
+      //     experiment_type: i.experiment_type,
+      //     pre_fun: i.pre_fun,
+      //     pre_exciting: i.pre_exciting,
+      //     pre_delightful: i.pre_delightful,
+      //     pre_thrilling: i.pre_thrilling,
+      //     pre_enjoyable: i.pre_enjoyable,
+      //     post_fun: i.post_fun,
+      //     post_exciting: i.post_exciting,
+      //     post_delightful: i.post_delightful,
+      //     post_thrilling: i.post_thrilling,
+      //     post_enjoyable: i.post_enjoyable,
+      //   })
+      // ));
+
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +69,8 @@ const Detailed = () => {
     getAllInfo();
   }, []);
 
-  const csv = generateCsv(csvConfig)(control_data);
+  // const csv = generateCsv(csvConfig)(control_data);
+  const csv = json2csv(info);
 
   return (
     <>
