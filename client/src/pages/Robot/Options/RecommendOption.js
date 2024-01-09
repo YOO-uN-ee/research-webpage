@@ -123,7 +123,7 @@ const RecommendOption = () => {
               />
               </Popup>
             
-              <div class='flex justify-between'>
+              <div class='flex justify-between recommend-info-section'>
                 <div class='items-left'>
                   <div class='mini-text'>{p.name} <br />{p.price}원</div>
                 </div>

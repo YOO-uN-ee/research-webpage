@@ -372,6 +372,10 @@
     margin-right:auto;
 }
 
+.recommend-info-section {
+    width: 15vw;
+}
+
 .mini-text {
     font-size: 18px;
     text-align: left;
