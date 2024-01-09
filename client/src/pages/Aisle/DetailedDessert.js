@@ -32,6 +32,13 @@ const Detailed = () => {
     localStorage.setItem('item2_bool', item2_bool)
   }
 
+  const redirect = () => {
+    if(extension !== 'D1UQDV' && !localStorage.getItem('robot_interacted')) {
+      localStorage.setItem('robot_interacted', true);
+      window.location.replace('../../help/1'); 
+    }
+  }
+
   const getAllProducts = async()=> {
     try {
       const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/item/productcategory/dessert");
@@ -50,18 +57,12 @@ const Detailed = () => {
 
     localStorage.setItem('help_location', 'dessert');
 
-    // let int;
-    if(extension !== 'D1UQDV' && !localStorage.getItem('robot_interacted')){
-      const int = setTimeout(() => {
-        localStorage.setItem('robot_interacted', true);
-        console.log(localStorage.getItem('robot_interacted'))
-        window.location.replace('../../help/1');
-      }, 10000);
+    const int = setTimeout(() => {
+      redirect();
+    }, 10000);
 
-      clearTimeout(int);
-    }
+    return () => clearTimeout(int);
 
-    // clearTimeout(int);
   }, []);
 
   return (

@@ -1,30 +1,29 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
+import { mkConfig, generateCsv, download } from "export-to-csv";
 
 const Detailed = () => {
+  const [info, setInfo] = useState([]);
+  const csvConfig = mkConfig({ useKeysAsHeaders: true });
 
-  const [product, setProduct] = useState([]);
-
-
-  const getAllProducts = async()=> {
+  const getAllInfo = async()=> {
     try {
       const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
-      setProduct(data.userdata);
+      setInfo(data.userdata);
     } catch (error) {
       console.log(error);
     }
   }
 
   useEffect(() => {
-
-    getAllProducts();
-    
+    getAllInfo();
   }, []);
+
+  const csv = generateCsv(csvConfig)(info);
 
   return (
     <>
-      sample
-      {product.ip}
+      <div onClick={() => download(csvConfig)(csv)}>download</div>
     </>
   )
 }
