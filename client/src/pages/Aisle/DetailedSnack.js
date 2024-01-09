@@ -119,9 +119,11 @@ const Detailed = () => {
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price}]);
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
+                  console.log(item1_bool)
                 }
                 else if(p.slug === slug_mapping[item2]){
                   setItem2Bool(1)
+                  console.log(item2_bool)
                 }
               }}
             />

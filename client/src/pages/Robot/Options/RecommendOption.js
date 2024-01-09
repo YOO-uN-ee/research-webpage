@@ -12,7 +12,7 @@ const RecommendOption = () => {
   const help_location = localStorage.getItem('help_location')
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
-  
+
   const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
   
@@ -54,7 +54,8 @@ const RecommendOption = () => {
         <div class='area-check'>
         <div class='main-text'>
           선택하신 옵션 중에서는 이 제품을 추천드립니다. 자세한 내용은 이미지를 클릭해 주세요.
-          <div class=''>
+          <div class='grid grid-cols-1'>
+            <div>
             <Popup trigger={<img 
               src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`} 
               alt={`${main.name}`}
@@ -87,7 +88,9 @@ const RecommendOption = () => {
                     }
                   }}
                 />
-              </div><br/>
+              </div>
+              </div>
+            <br/>
             <div class='main-text'>이 제품의 가격은 {main.price}원입니다. <br/><br/></div>
           </div>
         </div>
@@ -95,7 +98,7 @@ const RecommendOption = () => {
         <div>
           <div class='main-text'>비슷한 품질의 몇 가지 다른 상품들도 추천해 드리겠습니다. 아래의 추천순으로 좌측부터 우측으로 나열하였으니 참고해 주세요.</div>
         
-        <div class='flex horizontal-center columns-2 gap-20'>
+        <div class='flex horizontal-center columns-2'>
         {product?.map((p) => (
           <>
             <div>

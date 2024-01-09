@@ -62,9 +62,11 @@ const Aisle = () => {
                         setMyCart(my_cart.filter(i => i.name !== item.name))
                         if(item.slug === slug_mapping[item1]){
                           setItem1Bool(-1)
+                          console.log(item1_bool)
                         }
                         else if(item.slug === slug_mapping[item2]){
                           setItem2Bool(-1)
+                          console.log(item2_bool)
                         }
                       }}/>
                     </div>

@@ -8,10 +8,8 @@ const Detailed = () => {
 
   const getAllInfo = async()=> {
     try {
-      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/item/productcategory/fruit");
+      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
       setInfo(data.products);
-
-      console.log(typeof info)
     } catch (error) {
       console.log(error);
     }
@@ -21,11 +19,14 @@ const Detailed = () => {
     getAllInfo();
   }, []);
 
-  const csv = generateCsv(csvConfig)(info);
+  // const csv = generateCsv(csvConfig)(info);
 
   return (
     <>
-      <div onClick={() => download(csvConfig)(csv)}>download</div>
+      {/* <div onClick={() => download(csvConfig)(csv)}>download</div> */}
+      {info?.map((i) => (
+        <div>{i.ip}</div>
+      ))}
     </>
   )
 }
