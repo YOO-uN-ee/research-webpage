@@ -10,9 +10,6 @@ const Intro1 = () => {
   const currentPath = window.location.pathname;
   const extension = currentPath.split('/')[1]
   const userType = mapping[extension]
-  var startTime = new Date();
-
-  localStorage.setItem('web_enter', startTime)
 
   const storeIP = async() => {
     const res = await axios.get("https://api.ipify.org/?format=json");
@@ -30,6 +27,8 @@ const Intro1 = () => {
 
   useEffect(() => {
     localStorage.clear();
+
+    localStorage.setItem('web_enter', new Date().toString())
     
     storeIP();
   }, []);

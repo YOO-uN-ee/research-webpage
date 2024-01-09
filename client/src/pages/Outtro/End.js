@@ -4,15 +4,16 @@ import axios from 'axios'
 import Layout from "../Introduction/IntroLayout";
 
 const Final= () => {
+  var startTime = Date.parse(localStorage.getItem('web_enter'))
   var endTime = new Date()
-  var timeDiff = endTime - localStorage.getItem('web_enter')
+  var timeDiff = (endTime - startTime)/1000
 
   const storeData = async() => {
     const res = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
       "ip":localStorage.getItem('ip'), "experiment_type":localStorage.getItem('experiment_type'),
       "pre_fun":localStorage.getItem('pre-fun'), "pre_exciting":localStorage.getItem('pre-exciting'), "pre_delightful":localStorage.getItem('pre-delightful'), 
       "pre_thrilling":localStorage.getItem('pre-thrilling'), "pre_enjoyable":localStorage.getItem('pre-enjoyable'),
-      "items_bought":JSON.parse(localStorage.getItem('item_names')), "total_price":localStorage.getItem('total_price'), "total_time":timeDiff/1000,
+      "items_bought":JSON.parse(localStorage.getItem('item_names')), "total_price":localStorage.getItem('total_price'), "total_time":timeDiff,
       "fruit_visit":localStorage.getItem('fruit_visits') || 0, "fruit_time":localStorage.getItem('fruit_time')/1000 || 0, 
       "vegetable_visit":localStorage.getItem('vegetable_visits') || 0, "vegetable_time":localStorage.getItem('vegetable_time')/1000 || 0, 
       "condiment_visit":localStorage.getItem('condiment_visits') || 0, "condiment_time":localStorage.getItem('condiment_time')/1000 || 0, 
