@@ -357,6 +357,12 @@
     max-height: 85vh;
 }
 
+.recommend-image-surrounding {
+    max-width: 35vw;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .recommend-image {
     width: 15vw;
     margin-left:auto;
