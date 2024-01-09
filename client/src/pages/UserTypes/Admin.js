@@ -5,61 +5,17 @@ import { json2csv } from 'json-2-csv';
 
 const Detailed = () => {
   const [info, setInfo] = useState([]);
-  const csvConfig = mkConfig({ useKeysAsHeaders: true });
+  // const csvConfig = mkConfig({ useKeysAsHeaders: true });
 
-  const control_data = []
-  const treatment1_data = []
-  const treatment2_data = []
-  const treatment3_data = []
+  // const control_data = []
+  // const treatment1_data = []
+  // const treatment2_data = []
+  // const treatment3_data = []
 
   const getAllInfo = async()=> {
     try {
       const { res } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control"); //
       setInfo(res.userdata);
-
-      // info?.map((i) => (
-      //   control_data.push({
-      //     ip:i.ip,
-      //     experiment_type: i.experiment_type,
-      //     pre_fun: i.pre_fun,
-      //     pre_exciting: i.pre_exciting,
-      //     pre_delightful: i.pre_delightful,
-      //     pre_thrilling: i.pre_thrilling,
-      //     pre_enjoyable: i.pre_enjoyable,
-      //     // items_bought: i.items_bought,
-      //     total_price: i.total_price
-      //   })
-      // ));
-      // "items_bought":JSON.parse(localStorage.getItem('item_names')), "total_price":localStorage.getItem('total_price'),
-      // "fruit_visit":localStorage.getItem('fruit_visits') || 0, "fruit_time":localStorage.getItem('fruit_time')/1000 || 0, 
-      // "vegetable_visit":localStorage.getItem('vegetable_visits') || 0, "vegetable_time":localStorage.getItem('vegetable_time')/1000 || 0, 
-      // "condiment_visit":localStorage.getItem('condiment_visits') || 0, "condiment_time":localStorage.getItem('condiment_time')/1000 || 0, 
-      // "dessert_visit":localStorage.getItem('dessert_visits') || 0, "dessert_time":localStorage.getItem('dessert_time')/1000 || 0, 
-      // "snack_visit":localStorage.getItem('snack_visits') || 0, "snack_time":localStorage.getItem('snack_time')/1000 || 0,
-      // "post_fun":localStorage.getItem('post-fun'), "post_exciting":localStorage.getItem('post-exciting'), "post_delightful":localStorage.getItem('post-delightful'), 
-      // "post_thrilling":localStorage.getItem('post-thrilling'), "post_enjoyable":localStorage.getItem('post-enjoyable'),
-      // "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar')||0,
-
-      // const { treatment3_data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
-      // setInfo(treatment3_data.userdata);
-
-      // info?.map((i) => (
-      //   control_data.push({
-      //     ip:i.ip,
-      //     experiment_type: i.experiment_type,
-      //     pre_fun: i.pre_fun,
-      //     pre_exciting: i.pre_exciting,
-      //     pre_delightful: i.pre_delightful,
-      //     pre_thrilling: i.pre_thrilling,
-      //     pre_enjoyable: i.pre_enjoyable,
-      //     post_fun: i.post_fun,
-      //     post_exciting: i.post_exciting,
-      //     post_delightful: i.post_delightful,
-      //     post_thrilling: i.post_thrilling,
-      //     post_enjoyable: i.post_enjoyable,
-      //   })
-      // ));
-
     } catch (error) {
       console.log(error);
     }
@@ -70,14 +26,14 @@ const Detailed = () => {
   }, []);
 
   // const csv = generateCsv(csvConfig)(control_data);
-  const csv = json2csv(info);
+  // const csv = json2csv(info);
 
   return (
     <>
-      <div onClick={() => download(csvConfig)(csv)}>download</div>
-      {/* {info?.map((i) => (
+      {/* <div onClick={() => download(csvConfig)(csv)}>download</div> */}
+      {info?.map((i) => (
         <div>{i.ip}</div>
-      ))} */}
+      ))}
     </>
   )
 }
