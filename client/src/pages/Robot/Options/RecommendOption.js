@@ -40,6 +40,7 @@ const RecommendOption = () => {
   }, []);
 
   return (
+    <>
     <Layout>
     <div class='flex flex-row robot-body'>
       <div class='w-1/2 vertical-center-relative'>
@@ -100,7 +101,7 @@ const RecommendOption = () => {
         <div>
           <div class='main-text'>비슷한 품질의 몇 가지 다른 상품들도 추천해 드리겠습니다. 아래의 추천순으로 좌측부터 우측으로 나열하였으니 참고해 주세요.</div>
         
-        <div class='flex columns-2'>
+        <div class='flex columns-2 gap-4'>
         {product?.map((p) => (
           <>
             <div>
@@ -185,68 +186,8 @@ const RecommendOption = () => {
       }}><img src='/media/images/forward.svg' class='right-button' alt='forward'/></Link>
     </div>
     </Layout>
-
-    // <>
-    //   <div class='container mx-auto'>
-    //     <div class='flex flex-row justify-between'>
-
-    //       <div class='w-1/2'>
-    //       {product?.map((p) => (
-    //         <>
-    //         <div>
-    //           <Popup trigger={<img
-    //           src={`/api/item/productphoto/${p._id}`}
-    //           className="card-img-top" 
-    //           onClick={() => {
-    //             setIsOpen(true);
-    //           }}
-    //         />} modal>
-    //           <img
-    //           src={`/api/item/productphoto/${p._id}`}
-    //           className="modal-image" 
-    //           onClick={() => {
-    //             setIsOpen(true);
-    //           }}
-    //         />
-    //         </Popup>
-            
-    //         <div class='flex justify-between'>
-    //         <div>
-    //           <div>{p.name}</div>
-    //           <div>{p.price}원</div>
-    //         </div>
-    //         <img 
-    //           src='/media/images/cart.svg' 
-    //           alt="cart-icon" 
-    //           class='cart-image'
-    //           onClick={() => {
-    //             my_cart.push(p);
-    //             if(p.slug == slug_mapping[item1]){
-    //               localStorage.setItem('item1_bool', 1)
-    //             }
-    //             else if(p.slug == slug_mapping[item2]){
-    //               localStorage.setItem('item2_bool', 1)
-    //             }
-    //           }}
-    //         />
-    //         </div>
-    //         </div>
-    //         </>
-    //       ))}
-    //         선택하신 옵션 중에서는 이 제품을 추천드립니다. 자세한 내용은 이미지를 클릭해 주세요.
-    //         이 제품의 가격은 원입니다.
-    //         비슷한 품질의 몇 가지 다른 상품들도 추천해 드리겠습니다. 아래의 추천순으로 좌측부터 우측으로 나열하였으니 참고해 주세요.
-
-    //         지금 바로 구매를 원하신다면, 제품 이미지 하단의 카트 아이콘을 클릭하셔서 장바구니에 추가하실 수 있습니다.
-    //       </div>
-    //     </div>
-    //   </div>
-
-    //   <div className='footer'>
-    //     <Link to='../' className="btn btn-primary">Previous</Link>
-    //     <Link to='../more' className="btn btn-primary">Next</Link>
-    //   </div>
-    // </>
+    <div class='h-28'></div>
+    </>
   )
 }
 
