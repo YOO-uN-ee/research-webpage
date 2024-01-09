@@ -15,15 +15,6 @@ const Detailed = () => {
       var { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
       setControl(data.userdata);
 
-      // data = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment1");
-      // setOne(data.userdata);
-
-      // const { datatwo } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment2");
-      // setTwo(datatwo.userdata);
-
-      // const { datathree } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment3");
-      // setThree(datathree.userdata);
-
     } catch (error) {
       console.log(error);
     }
@@ -34,14 +25,25 @@ const Detailed = () => {
       var { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment1");
       setOne(data.userdata);
 
-      // data = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment1");
-      // setOne(data.userdata);
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-      // const { datatwo } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment2");
-      // setTwo(datatwo.userdata);
+  const getTreatmentTwo = async()=> {
+    try {
+      var { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment2");
+      setTwo(data.userdata);
 
-      // const { datathree } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment3");
-      // setThree(datathree.userdata);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const getTreatmentThree = async()=> {
+    try {
+      var { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment3");
+      setThree(data.userdata);
 
     } catch (error) {
       console.log(error);
@@ -51,7 +53,8 @@ const Detailed = () => {
   useEffect(() => {
     getControl();
     getTreatmentOne();
-
+    getTreatmentTwo();
+    getTreatmentThree();
   }, []);
 
   const downloadCSV = (input_data, filename) => {
@@ -68,25 +71,28 @@ const Detailed = () => {
 
   return (
     <>
+      <div>
+        <br /><br /><br />
+      </div>
       <div class='main-text'>
         <button onClick={() => downloadCSV(control, 'control')}>
           Download Control Group Data
-        </button>
+        </button> <br />
       </div>
 
       <div>
         <button onClick={() => downloadCSV(one, 'one')}>
           Download Treatment1 Group Data
-        </button>
+        </button> <br />
       </div>
 
       <button onClick={() => downloadCSV(two, 'two')}>
         Download Treatment2 Group Data
-      </button>
+      </button> <br />
 
       <button onClick={() => downloadCSV(three, 'three')}>
         Download Treatment3 Group Data
-      </button>
+      </button> <br />
     </>
   )
 }
