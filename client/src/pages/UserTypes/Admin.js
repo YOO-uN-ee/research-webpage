@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { json2csv } from 'json-2-csv';
 import { mkConfig, generateCsv, download } from "export-to-csv";
+import csvDownload from 'json-to-csv-export'
 
 const Detailed = () => {
 
@@ -23,7 +24,7 @@ const Detailed = () => {
   }, []);
 
   const control_data = json2csv(product)
-  // const csvConfig = mkConfig({ useKeysAsHeaders: true });
+  const csvConfig = mkConfig({ useKeysAsHeaders: true });
 
   return (
     <>
@@ -31,7 +32,9 @@ const Detailed = () => {
         <div>{p.ip}</div>
       ))}
       {control_data}
-      <button onClick={()=> download(control_data)}>download</button>
+      <button onClick={() => csvDownload(product)}>
+        Download
+      </button>
     </>
   )
 }
