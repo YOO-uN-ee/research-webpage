@@ -54,25 +54,26 @@ const RecommendOption = () => {
         <div class='area-check'>
         <div class='main-text'>
           선택하신 옵션 중에서는 이 제품을 추천드립니다. 자세한 내용은 이미지를 클릭해 주세요.
-          <div class='grid grid-cols-1'>
+          <div class='flex cols-3'>
+            <div></div>
             <div>
-            <Popup trigger={<img 
-              src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`} 
-              alt={`${main.name}`}
-              className='recommend-image' 
-              onClick={() => {
-                setIsOpen(true);
-              }} 
-            />} modal>
-              <img 
-              src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`}
-              alt={`${main.name}`}
-              className='modal-image' 
-              onClick={() => {
-                setIsOpen(true);
-              }} />
-            </Popup>
-            <div class='flex justify-between'>
+              <Popup trigger={<img 
+                src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`} 
+                alt={`${main.name}`}
+                className='recommend-image' 
+                onClick={() => {
+                  setIsOpen(true);
+                }} 
+              />} modal>
+                <img 
+                src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`}
+                alt={`${main.name}`}
+                className='modal-image' 
+                onClick={() => {
+                  setIsOpen(true);
+                }} />
+              </Popup>
+              <div class='flex justify-between'>
                 <div class='mini-text'>{main.name}</div>
                 <img 
                   src={'/media/images/cart.svg'} 
@@ -89,16 +90,17 @@ const RecommendOption = () => {
                   }}
                 />
               </div>
-              </div>
-            <br/>
-            <div class='main-text'>이 제품의 가격은 {main.price}원입니다. <br/><br/></div>
+            </div>
+            <div></div>
           </div>
+          <br/>
+          <div class='main-text'>이 제품의 가격은 {main.price}원입니다. <br/><br/></div>
         </div>
 
         <div>
           <div class='main-text'>비슷한 품질의 몇 가지 다른 상품들도 추천해 드리겠습니다. 아래의 추천순으로 좌측부터 우측으로 나열하였으니 참고해 주세요.</div>
         
-        <div class='flex horizontal-center columns-2'>
+        <div class='flex horizontal-center columns-2 gap-5'>
         {product?.map((p) => (
           <>
             <div>

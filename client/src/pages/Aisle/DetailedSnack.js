@@ -148,7 +148,6 @@ const Detailed = () => {
                   <div>{item.name}<br />{item.price}원</div>
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
-                  setMyCart(my_cart.filter(i => i.name !== item.name))
                   if(item.slug === slug_mapping[item1]){
                     setItem1Bool(-1)
                     console.log(item1_bool)
@@ -157,6 +156,7 @@ const Detailed = () => {
                     setItem2Bool(-1)
                     console.log(item2_bool)
                   }
+                  setMyCart(my_cart.filter(i => i.name !== item.name))
                 }}/>
               </div>
             ))}
