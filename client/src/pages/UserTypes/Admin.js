@@ -22,7 +22,7 @@ const Detailed = () => {
           pre_delightful: i.pre_delightful,
           pre_thrilling: i.pre_thrilling,
           pre_enjoyable: i.pre_enjoyable,
-          items_bought: i.items_bought,
+          // items_bought: i.items_bought,
           total_price: i.total_price
         })
       ));
