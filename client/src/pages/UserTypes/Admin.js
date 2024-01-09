@@ -8,8 +8,10 @@ const Detailed = () => {
 
   const getAllInfo = async()=> {
     try {
-      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
-      setInfo(data.userdata);
+      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/item/productcategory/fruit");
+      setInfo(data.products);
+
+      console.log(typeof info)
     } catch (error) {
       console.log(error);
     }

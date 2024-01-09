@@ -13,6 +13,9 @@ const RecommendOption = () => {
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
   
+  const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
+  const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
+  
   const [product, setProduct] = useState([]);
   const [main, setMain] = useState({});
   const [isOpen, setIsOpen] = useState(false);
@@ -69,8 +72,7 @@ const RecommendOption = () => {
               }} />
             </Popup>
             <div class='flex justify-between'>
-                <div />
-                <div />
+                <div class='mini-text'>{main.name}</div>
                 <img 
                   src={'/media/images/cart.svg'} 
                   alt="카트 아이콘" 
@@ -85,7 +87,6 @@ const RecommendOption = () => {
                     }
                   }}
                 />
-                <div />
               </div><br/>
             <div class='main-text'>이 제품의 가격은 {main.price}원입니다. <br/><br/></div>
           </div>
@@ -144,39 +145,40 @@ const RecommendOption = () => {
       </div>
     </div>
 
-    <div className='footer'>
-      <div />
-      <div>
-        <Popup 
-          trigger={<img src='/media/images/cart.svg' alt='카트' class='cart-button'/>}
-          position="top right"
-          className='item-in-cart'>
-            <div>
-              {my_cart.map(item => (
-                <div class='flex justify-between items-center select'>
-                  <div class='flex items-center'>
-                    <img
-                      src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} alt={`${item.name}`} class='mini-image' />
-                    <div>{item.name}<br />{item.price}원</div>
-                  </div>
-                  <img src={'/media/images/delete.svg'} alt='지우기' class='delete-icon' onClick={() => {
-                    setMyCart(my_cart.filter(i => i.name !== item.name))
-                    if(item.slug === slug_mapping[item1]){
-                      localStorage.setItem('item1_bool', 0)
-                    }
-                    else if(item.slug === slug_mapping[item2]){
-                      localStorage.setItem('item2_bool', 0)
-                    }
-                  }}/>
+    <div class='cart-button-parent'>
+      <Popup 
+        trigger={<img src='/media/images/cart.svg' class='cart-button' alt='cart'/>}
+        position="top right"
+        className='item-in-cart'>
+          <div>
+            {my_cart.map(item => (
+              <div class='flex justify-between items-center select'>
+                <div class='flex items-center'>
+                  <img
+                    src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${item._id}`} class='mini-image' alt={`${item.name}`}/>
+                  <div>{item.name}<br />{item.price}원</div>
                 </div>
-              ))}
-            </div>
-        </Popup>
-        <Link to='../more' onClick={() => {
+                <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
+                  setMyCart(my_cart.filter(i => i.name !== item.name))
+                  if(item.slug === slug_mapping[item1]){
+                    setItem1Bool(-1)
+                  }
+                  else if(item.slug === slug_mapping[item2]){
+                    setItem2Bool(-1)
+                  }
+                }}/>
+              </div>
+            ))}
+          </div>
+      </Popup>
+    </div>
+
+    <div class='footer'>
+      <div></div>
+      <Link to='../more' onClick={() => {
             localStorage.setItem('my_cart', JSON.stringify(my_cart))
-        }}><img src='/media/images/forward.svg' alt='다음' class='icon-button align-right' /></Link>
-      </div>
-   </div>
+      }}><img src='/media/images/forward.svg' class='right-button' alt='forward'/></Link>
+    </div>
     </Layout>
 
     // <>
