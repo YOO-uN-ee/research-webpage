@@ -14,8 +14,8 @@ const Detailed = () => {
 
   const getAllInfo = async()=> {
     try {
-      const { control_data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
-      setInfo(control_data.userdata);
+      const { res } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control"); //
+      setInfo(res.userdata);
 
       // info?.map((i) => (
       //   control_data.push({
