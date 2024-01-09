@@ -119,11 +119,9 @@ const Detailed = () => {
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price}]);
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
-                  console.log(item1_bool)
                 }
                 else if(p.slug === slug_mapping[item2]){
                   setItem2Bool(1)
-                  console.log(item2_bool)
                 }
               }}
             />
@@ -148,6 +146,9 @@ const Detailed = () => {
                   <div>{item.name}<br />{item.price}원</div>
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
+                  console.log(item.slug)
+                  console.log(slug_mapping[item1])
+
                   if(item.slug === slug_mapping[item1]){
                     setItem1Bool(-1)
                     console.log(item1_bool)
@@ -165,7 +166,7 @@ const Detailed = () => {
       </div>
 
       <div class='footer'>
-        <Link to='../condiment'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
+        <Link to='../snack'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
 
         {item1_bool > 0 && item2_bool > 0 &&
         <Link to='../checkout'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link>}

@@ -55,7 +55,7 @@ const RecommendOption = () => {
         <div class='main-text'>
           선택하신 옵션 중에서는 이 제품을 추천드립니다. 자세한 내용은 이미지를 클릭해 주세요.
           <div class='flex cols-3'>
-            <div></div>
+            <div> </div>
             <div>
               <Popup trigger={<img 
                 src={`https://research-backend-3mwd.onrender.com/api/item/productphoto/${main._id}`} 
@@ -91,7 +91,7 @@ const RecommendOption = () => {
                 />
               </div>
             </div>
-            <div></div>
+            <div> </div>
           </div>
           <br/>
           <div class='main-text'>이 제품의 가격은 {main.price}원입니다. <br/><br/></div>

@@ -161,7 +161,7 @@ const Detailed = () => {
       </div>
 
       <div class='footer'>
-        <Link to='../vegetable'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
+        <Link to='../condiment'><img src='/media/images/back.svg' class='left-button' alt='back' onClick={()=>(exitScreen())}/></Link>
         <Link to='../dessert'><img src='/media/images/forward.svg' class='right-button' alt='forward'onClick={()=>(exitScreen())}/></Link>
       </div>
     </Layout>

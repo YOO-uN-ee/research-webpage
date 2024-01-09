@@ -42,7 +42,7 @@ const Aisle = () => {
           <img src={'/media/images/Maps/condiment_map.jpg'} alt="마트 양념/통조림섹션 위치" className='aisle-map-image'  
             onClick={() => {
               localStorage.setItem('my_cart', JSON.stringify(my_cart))
-              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('../checkout')}
+              if(item1_bool > 0 && item2_bool > 0) {window.location.replace('./checkout')}
           }}/>
           <div class='cart-button-parent'>
             <Popup 

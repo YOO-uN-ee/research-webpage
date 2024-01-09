@@ -6,6 +6,8 @@ const Detailed = () => {
   const [info, setInfo] = useState([]);
   const csvConfig = mkConfig({ useKeysAsHeaders: true });
 
+  const control_data = []
+
   const getAllInfo = async()=> {
     try {
       const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
@@ -19,14 +21,18 @@ const Detailed = () => {
     getAllInfo();
   }, []);
 
-  // const csv = generateCsv(csvConfig)(info);
+  info?.map((i) => (
+    control_data.push(i)
+  ))
+
+  const csv = generateCsv(csvConfig)(control_data);
 
   return (
     <>
-      {/* <div onClick={() => download(csvConfig)(csv)}>download</div> */}
-      {info?.map((i) => (
+      <div onClick={() => download(csvConfig)(csv)}>download</div>
+      {/* {info?.map((i) => (
         <div>{i.ip}</div>
-      ))}
+      ))} */}
     </>
   )
 }
