@@ -22,10 +22,10 @@ const Recommend = () => {
 
         <div class='main-text'>
           <br/>
-          <div>
+          <div class="robot-option-text">
              A: <Link to='option' onClick={() => {localStorage.setItem('rec_option', 'A')}}>{option_recommendation[option][0]}</Link>
           </div>
-          <div>
+          <div class="robot-option-text">
              B: <Link to='option' onClick={() => {localStorage.setItem('rec_option', 'B')}}>{option_recommendation[option][1]}</Link>
           </div>
         </div>

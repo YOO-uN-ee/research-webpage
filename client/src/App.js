@@ -29,6 +29,7 @@ import Robot2 from './pages/Robot/Robot2'
 import Robot3 from './pages/Robot/Robot3'
 import Robot4 from './pages/Robot/Robot4'
 import Robot5 from './pages/Robot/Robot5'
+import RobotExit from './pages/Robot/RobotExit'
 
 import Dance from './pages/Robot/Options/Dance'
 import HandShake from './pages/Robot/Options/HandShake'
@@ -128,6 +129,7 @@ function App() {
           <Route path='3' element={<Robot3 />}/>
           <Route path='4' element={<Robot4 />}/>
           <Route path='5' element={<Robot5 />}/>
+          <Route path='end' element={<RobotExit />}/>
 
           <Route path='dance' element={<Dance />}/>
           <Route path='handshake' element={<HandShake />}/>
@@ -181,6 +183,7 @@ function App() {
           <Route path='3' element={<Robot3 />}/>
           <Route path='4' element={<Robot4 />}/>
           <Route path='5' element={<Robot5 />}/>
+          <Route path='end' element={<RobotExit />}/>
 
           <Route path='dance' element={<Dance />}/>
           <Route path='handshake' element={<HandShake />}/>
@@ -208,6 +211,7 @@ function App() {
           <Route path='3' element={<Robot3 />}/>
           <Route path='4' element={<Robot4 />}/>
           <Route path='5' element={<Robot5 />}/>
+          <Route path='end' element={<RobotExit />}/>
 
           <Route path='dance' element={<Dance />}/>
           <Route path='handshake' element={<HandShake />}/>

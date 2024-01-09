@@ -11,7 +11,7 @@ export const surveyJSON = {
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
-                    "maxRateDescription": "매우",
+                    "maxRateDescription": "매우 그러함",
                     "isRequired": true,
                     "displayMode": "buttons"
                 },
@@ -22,7 +22,7 @@ export const surveyJSON = {
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
-                    "maxRateDescription": "매우",
+                    "maxRateDescription": "매우 그러함",
                     "isRequired": true,
                     "displayMode": "buttons"
                 },
@@ -33,7 +33,7 @@ export const surveyJSON = {
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
-                    "maxRateDescription": "매우",
+                    "maxRateDescription": "매우 그러함",
                     "isRequired": true,
                     "displayMode": "buttons"
                 },
@@ -44,7 +44,7 @@ export const surveyJSON = {
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
-                    "maxRateDescription": "매우",
+                    "maxRateDescription": "매우 그러함",
                     "isRequired": true,
                     "displayMode": "buttons"
                 },
@@ -55,7 +55,7 @@ export const surveyJSON = {
                     "rateMin": 1,
                     "rateMax": 7,
                     "minRateDescription": "전혀 아님",
-                    "maxRateDescription": "매우",
+                    "maxRateDescription": "매우 그러함",
                     "isRequired": true,
                     "displayMode": "buttons"
                 }

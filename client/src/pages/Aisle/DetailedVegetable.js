@@ -33,8 +33,8 @@ const Detailed = () => {
   }
 
   const redirect = () => {
-    if(extension !== 'D1UQDV' && !localStorage.getItem('robot_interacted')) {
-      localStorage.setItem('robot_interacted', true);
+    if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
+      localStorage.setItem('robot_interacted', 1);
       window.location.replace('../../help/1'); 
     }
   }

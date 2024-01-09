@@ -37,6 +37,10 @@ const userSchema = new mongoose.Schema({
         type:Number,
         default:0,
     },
+    total_time: {
+        type:Number,
+        default:0,
+    },
     fruit_visit: {
         type:Number,
         default:0,

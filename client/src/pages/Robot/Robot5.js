@@ -11,10 +11,16 @@ const Robot5 = () => {
 
   const extension = localStorage.getItem('extension')
   var TreatmentSet = JSON.parse(localStorage.getItem('treatment_questions'));
+  const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
+
+  const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
+  const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
   localStorage.setItem('robot_visit', 0);
-  localStorage.setItem('rec1_used', 0)
-  localStorage.setItem('rec2_used', 0)
+  localStorage.setItem('rec1_used', -1);
+  localStorage.setItem('rec2_used', -1);
+  localStorage.setItem('arrive_used', -1);
+  localStorage.setItem('recom_used', -1);
 
   if (!TreatmentSet){
     if (extension === 'FFSRWM' || extension === 'ZOX019'){
@@ -43,14 +49,14 @@ const Robot5 = () => {
   return (
     <Layout>
       <div class='flex flex-row'>
-        <div class='w-1/2 vertical-center'>
+        <div class='w-1/2'>
           <div class='area-check'>
             <div class='main-text'>만나서 반가워요, {localStorage.getItem("user_name")} 고객님! <br /><br/></div>
             <video id="pepper-greet" autoPlay="true" controls="controls" className='video' src='/media/videos/Pepper_greeting.mp4' />
             <div class='main-text'><br />제가 어떻게 도와드릴 수 있을까요?</div>
           </div>
         </div>
-        <div class='w-1/2 vertical-center'>
+        <div class='w-1/2 vertical-center-relative'>
           <div class='area-check main-text'>
             <Option />
           </div>

@@ -41,8 +41,8 @@ const RecommendOption = () => {
 
   return (
     <Layout>
-    <div class='flex flex-row detailed-body'>
-      <div class='w-1/2 vertical-center'>
+    <div class='flex flex-row robot-body'>
+      <div class='w-1/2 vertical-center-relative'>
         <div class='area-check'>
           <div className='robot-parent'>
             <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='location' className='background-image'/>
@@ -50,7 +50,7 @@ const RecommendOption = () => {
           </div>
         </div>
       </div>
-      <div class='w-1/2 vertical-center'>
+      <div class='w-1/2 vertical-center-relative'>
         <div class='area-check'>
         <div class='main-text'>
           선택하신 옵션 중에서는 이 제품을 추천드립니다. 자세한 내용은 이미지를 클릭해 주세요.

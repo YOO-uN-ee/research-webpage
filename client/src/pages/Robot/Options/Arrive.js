@@ -9,12 +9,13 @@ const Arrive = () => {
 
   var past_count = localStorage.getItem('robot_visit')
   localStorage.setItem('robot_visit', past_count + 1)
+  localStorage.setItem('arrive_used', 1)
 
 
   return (
     <Layout>
     <div class='flex flex-row'>
-      <div class='w-1/2 vertical-center'>
+      <div class='w-1/2 vertical-center-relative'>
         <div class='area-check'>
           <div className='robot-parent'>
             <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='location' className='background-image'/>
@@ -27,7 +28,7 @@ const Arrive = () => {
           </div>
         </div>
       </div>
-      <div class='w-1/2 vertical-center'>
+      <div class='w-1/2 vertical-center-relative'>
         <div class='area-check main-text'>
           <Option />
         </div>

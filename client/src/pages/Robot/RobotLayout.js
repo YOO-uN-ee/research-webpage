@@ -1,13 +1,18 @@
 import React from 'react'
+import Header from './RobotHeader';
 
 const Layout = (props) => {
     return (
         // <div class='layout'>
-            <div class='intro-layout'>
+            <>
+            <Header />
+            <div class='robot-layout'>
+                
                 <main>
                     {props.children}
                 </main>
             </div>
+            </>
         // </div>
     )
 }

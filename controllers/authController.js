@@ -4,7 +4,7 @@ export const registerController = async (req, res) => {
     try {
         const { ip, experiment_type, 
                 pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
-                items_bought, total_price,
+                items_bought, total_price, total_time,
                 fruit_visit, fruit_time, 
                 vegetable_visit, vegetable_time, 
                 condiment_visit, condiment_time, 
@@ -16,7 +16,7 @@ export const registerController = async (req, res) => {
         const user = await new userModel({
             ip, experiment_type, 
             pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
-            items_bought, total_price,
+            items_bought, total_price, total_time,
             fruit_visit, fruit_time, 
             vegetable_visit, vegetable_time, 
             condiment_visit, condiment_time, 
