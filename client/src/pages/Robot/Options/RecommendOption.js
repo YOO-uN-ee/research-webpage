@@ -101,7 +101,7 @@ const RecommendOption = () => {
         <div>
           <div class='main-text'>비슷한 품질의 몇 가지 다른 상품들도 추천해 드리겠습니다. 아래의 추천순으로 좌측부터 우측으로 나열하였으니 참고해 주세요.</div>
         
-        <div class='recommend-image-surrounding'>
+        <div class='recommend-image-surrounding horizontal-center'>
         {product?.map((p) => (
           <>
             <div>

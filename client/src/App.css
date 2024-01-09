@@ -359,6 +359,7 @@
 
 .recommend-image-surrounding {
     max-width: 35vw;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
