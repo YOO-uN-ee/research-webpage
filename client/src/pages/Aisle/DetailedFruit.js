@@ -101,7 +101,7 @@ const Detailed = () => {
               alt="카트 아이콘" 
               className='cart-icon'
               onClick={() => {
-                setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price}]);
+                setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
                 }

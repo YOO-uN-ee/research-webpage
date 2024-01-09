@@ -54,7 +54,7 @@ const RecommendOption = () => {
         <div class='area-check'>
         <div class='main-text'>
           선택하신 옵션 중에서는 이 제품을 추천드립니다. 자세한 내용은 이미지를 클릭해 주세요.
-          <div class='flex cols-3'>
+          <div class='flex flex-row justify-between'>
             <div> </div>
             <div>
               <Popup trigger={<img 
@@ -100,7 +100,7 @@ const RecommendOption = () => {
         <div>
           <div class='main-text'>비슷한 품질의 몇 가지 다른 상품들도 추천해 드리겠습니다. 아래의 추천순으로 좌측부터 우측으로 나열하였으니 참고해 주세요.</div>
         
-        <div class='flex horizontal-center columns-2 gap-5'>
+        <div class='flex flex-row justify-between'>
         {product?.map((p) => (
           <>
             <div>
@@ -131,7 +131,7 @@ const RecommendOption = () => {
                   alt="카트 아이콘" 
                   className='cart-icon'
                   onClick={() => {
-                    setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price}]);
+                    setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug: p.slug}]);
                     if(p.slug === slug_mapping[item1]){
                       localStorage.setItem('item1_bool', 1)
                     }
