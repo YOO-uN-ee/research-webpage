@@ -12,11 +12,11 @@ const Detailed = () => {
 
   const getAllProducts = async()=> {
     try {
-      const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
+      var { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/control");
       setControl(data.userdata);
 
-      const { dataone } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment1");
-      setOne(dataone.userdata);
+      data = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment1");
+      setOne(data.userdata);
 
       const { datatwo } = await axios.get("https://research-backend-3mwd.onrender.com/api/auth/getdata/treatment2");
       setTwo(datatwo.userdata);
