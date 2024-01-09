@@ -28,7 +28,7 @@ const Detailed = () => {
     document.write(control_data);
 
     var hiddenElement = document.createElement('a');
-    hiddenElement.href = 'data:text/csv;charset=euc-kr,' + encodeURI(control_data);
+    hiddenElement.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURI(control_data);
     hiddenElement.target = '_blank';
 
     hiddenElement.download = 'Dummy.csv';
