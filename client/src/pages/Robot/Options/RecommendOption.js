@@ -101,7 +101,6 @@ const RecommendOption = () => {
         <div>
           <div class='main-text'>비슷한 품질의 몇 가지 다른 상품들도 추천해 드리겠습니다. 아래의 추천순으로 좌측부터 우측으로 나열하였으니 참고해 주세요.</div>
         
-        <div class='flex items-center'>
         <div class='recommend-image-surrounding'>
         {product?.map((p) => (
           <>
@@ -145,7 +144,7 @@ const RecommendOption = () => {
               </div>
             </div>
           </> 
-        ))}</div></div>
+        ))}</div>
         <div class='main-text'><br /> 지금 바로 구매를 원하신다면, 제품 이미지 하단의 카트 아이콘을 클릭하셔서 장바구니에 추가하실 수 있습니다.</div>
         </div>
         </div>
