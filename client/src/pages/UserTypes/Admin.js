@@ -23,16 +23,25 @@ const Detailed = () => {
 
   }, []);
 
-  const control_data = json2csv(product)
-  const csvConfig = mkConfig({ useKeysAsHeaders: true });
+  const downloadCSV = () => {
+    const control_data = json2csv(product)
+    document.write(control_data);
+
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(control_data);
+    hiddenElement.target = '_blank';
+
+    hiddenElement.download = 'Dummy.csv';
+    hiddenElement.click();
+  }
 
   return (
     <>
       {product?.map((p) => (
         <div>{p.ip}</div>
       ))}
-      {control_data}
-      <button onClick={() => csvDownload(product)}>
+      {/* {control_data} */}
+      <button onClick={() => downloadCSV()}>
         Download
       </button>
     </>
