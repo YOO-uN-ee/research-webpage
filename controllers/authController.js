@@ -43,20 +43,22 @@ export const registerController = async (req, res) => {
 
 export const updateController = async (req, res) => {
     try {
-        const { name, category, ip } = req.body;
-        const user = await userModel.findById(user._id);
+        const { ip, experiment_type, pre_fun } = req.body;
+        const user = await userModel.findById(req.params.uid);
 
         const updatedUser = await userModel.findByIdAndUpdate(
-            req.user.__id,
+            req.params.uid,
             {
-                name: name || user.name,
+                ip: ip || user.ip,
+                experiment_type: experiment_type || user.experiment_type,
+                pre_fun: pre_fun || user.pre_fun
             },
             {new: true}
         );
 
         res.status(200).send({
             success:true,
-            message: "Name updated",
+            message: "Updates",
             updatedUser,
         })
     } catch (error) {

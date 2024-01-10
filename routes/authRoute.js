@@ -4,7 +4,7 @@ import { registerController, updateController, getController, getData } from '..
 const router = express.Router();
 
 router.post('/add', registerController)
-router.put('/havename', updateController)
+router.put('/update/:uid', updateController)
 router.get('/getname', getController)
 router.get('/getdata/:group', getData)
 

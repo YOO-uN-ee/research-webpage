@@ -25,6 +25,10 @@ const Intro1 = () => {
     localStorage.setItem('extension', extension)
   };
 
+  const checkUpdating = async() => {
+    const res = await axios.put("https://research-backend-3mwd.onrender.com/api/auth/update/659b32e6ab1c94ff10259c6c", {"ip":"0.0.0.0", "experiment_type":"testing", "pre_fun": 10})
+  }
+
   useEffect(() => {
     localStorage.clear();
 
