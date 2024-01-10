@@ -3,6 +3,7 @@ import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import * as SurveyTheme from "survey-core/themes";
 import { surveyJSON } from "../Survey";
+import "survey-core/i18n/korean"
 
 const Intro6 = () => {
   localStorage.setItem('my_cart', JSON.stringify([]));
@@ -10,6 +11,7 @@ const Intro6 = () => {
 
   const survey = new Model(surveyJSON);
   survey.applyTheme(SurveyTheme.PlainLightPanelless);
+  survey.local = "ko";
 
   survey.onComplete.add((sender, options) => {
     localStorage.setItem('pre-fun', sender.data.fun);
@@ -34,8 +36,11 @@ const Intro6 = () => {
       <div class='flex'>
       <div class='w-1/2 vertical-center'>
         <div class='main-text area-check'>
-          실험을 시작하기 전에 마지막으로, 지금 어떤 기분인지 공유해 주세요.<br></br><br></br>
-          지금 느끼는 감정 상태가 우측에 나열된 형용사들과 얼마나 관련이 있는지 1(전혀 아님)부터 7(매우 그러함)까지의 척도로 표시해 주시면 됩니다.
+          실험 시작 전, 귀하의 감정 상태를 선택해주세요. <br/>
+          현재의 감정 상태를 1(전혀 아님)부터 7(매우 그러함)까지의 척도로 표시해 주시면 됩니다.<br/><br/>
+
+          완료 후 "완료"버튼을 눌러주세요. 
+
         </div>
       </div>
 

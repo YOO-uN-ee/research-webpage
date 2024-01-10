@@ -19,7 +19,6 @@ const Options = () => {
     const rec1_used = localStorage.getItem('rec1_used')
     const rec2_used = localStorage.getItem('rec2_used')
     const recom_used = localStorage.getItem('recom_used')
-    console.log(recom_used)
     const arrive_used = localStorage.getItem('arrive_used')
     var TreatmentSet = JSON.parse(localStorage.getItem('treatment_questions'));
   
@@ -29,6 +28,12 @@ const Options = () => {
       localStorage.setItem('my_cart', JSON.stringify(my_cart))
       localStorage.setItem('item1_bool', item1_bool)
       localStorage.setItem('item2_bool', item2_bool)
+
+      const spent_time = (Date.parse(localStorage.getItem('enter_time')) - new Date())/1000
+
+      var treatment_time = JSON.parse(localStorage.getItem('treatment_time'))
+      treatment_time.push(spent_time)
+      localStorage.setItem('treatment_time', JSON.stringify(treatment_time))
     }
 
   return (

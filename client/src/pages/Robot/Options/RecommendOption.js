@@ -182,7 +182,7 @@ const RecommendOption = () => {
     <div class='footer'>
       <div></div>
       <Link to='../more' onClick={() => {
-            localStorage.setItem('my_cart', JSON.stringify(my_cart))
+        localStorage.setItem('my_cart', JSON.stringify(my_cart))
       }}><img src='/media/images/forward.svg' class='right-button' alt='forward'/></Link>
     </div>
     </Layout>

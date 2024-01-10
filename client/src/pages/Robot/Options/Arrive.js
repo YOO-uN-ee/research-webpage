@@ -6,6 +6,15 @@ import Layout from "./OptionLayout";
 
 const Arrive = () => {
   const help_location = localStorage.getItem('help_location')
+  localStorage.setItem('to_aisle', help_location)
+
+  var treatment_sequence = JSON.parse(localStorage.getItem('treatment_sequence'))
+  treatment_sequence.push('arrive')
+  localStorage.setItem('treatment_sequence', treatment_sequence)
+
+  var startTime = new Date()
+  localStorage.setItem('enter_time', new Date().toString())
+  console.log(startTime)
 
   var past_count = localStorage.getItem('robot_visit')
   localStorage.setItem('robot_visit', past_count + 1)

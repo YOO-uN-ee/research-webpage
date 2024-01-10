@@ -3,9 +3,9 @@ import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import "survey-core/defaultV2.min.css";
 import * as SurveyTheme from "survey-core/themes";
+import "survey-core/i18n/korean"
 
 export const demographicsJSON = {
-    "locale": "ko",
     "pages": [
      {
       "name": "page1",
@@ -65,10 +65,10 @@ export const demographicsJSON = {
         "name": "frequency",
         "title": "장보기 빈도수",
         "choices": [
-          '1주에 1번 이상',
-          '1주에 1번',
-          '2주에 1번',
-          '한달에 1번, 혹은 1달에 1번 이하'
+          '한달에 4번 이상',
+          '한달에 4번',
+          '한달에  2-3번',
+          '한달에 1번 이하'
          ],
         "isRequired": true,
        },
@@ -79,8 +79,8 @@ export const demographicsJSON = {
         "description":"대부분 이미 알고 계신 아이템이었다면 7을, 잘 모르는 아이템들이었다면 1을 기준으로 해서 1-7 사이를 선택해주세요.",
         "rateMin": 1,
         "rateMax": 7,
-        "minRateDescription":'전혀',
-        "maxRateDescription":'매우',
+        "minRateDescription":'전혀 모른다',
+        "maxRateDescription":'매우 잘 알고 있다',
         "isRequired": true,
        }
       ]
@@ -96,6 +96,7 @@ export const demographicsJSON = {
 const Demographics = () => {
   const survey = new Model(demographicsJSON);
   survey.applyTheme(SurveyTheme.PlainLightPanelless);
+  survey.local = "ko";
 
   survey.onComplete.add((sender, options) => {
     localStorage.setItem('gender', sender.data.gender);

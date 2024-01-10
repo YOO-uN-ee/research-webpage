@@ -26,13 +26,16 @@ const Intro4 = () => {
         <img src={'/media/images/Intro/intro4.jpg'} alt="지갑" className='img' />
         <div class='main-text'>
           <br />
-          본격적으로 장을 보기에 앞서, 미리 적어온 구매목록을 확인해봅시다. <br /><br />
-          오늘 당신은 {localStorage.getItem('item1')}, {localStorage.getItem('item2')}를 구매하려고 합니다. <br />
-          물론 실제 장을 보는 것처럼, 구매목록 의외의 물품도 기분과 필요에 따라서 편하게 구매하시면 됩니다만, 구매목록에 적어놓은 품목은 잊지 말고 구매하도록 합시다. <br /><br />
+          본격적으로 장을 보기에 앞서, 미리 적어온 구매목록을 확인해봅시다. <br />
+          오늘 당신은 {localStorage.getItem('item1')}, {localStorage.getItem('item2')}를 구매하려고 합니다. <br /><br />
 
-          <div class='accent-green'>*장보기 목록에 있는 아이템들을 구매하셔야만 정상적인 답변으로 처리되어 실험 참가 보상을 받을 수 있으니, 이 점을 반드시 유의해주시기 바랍니다.*<br /><br /></div>
+          구매목록에 적어놓은 품목은 "반드시" 구매하셔야 합니다.<br />
+          구매 목록 의외의 물품도 추가로 구매하실 수 있습니다. <br />
+          실제로 장을 본다고 가정하고 신중하게 구매해주세요.<br />
+
+          <div class='accent-green'>장보기 목록에 있는 아이템들을 구매하셔야만 정상적인 답변으로 처리되어 실험 참가 보상을 받을 수 있으니, 이 점을 반드시 유의해주시기 바랍니다.<br /><br /></div>
           
-          <div class='accent-black'>장보기 목록: <br />{localStorage.getItem('item1')} 1, {localStorage.getItem('item2')} 1</div>
+          <div>장보기 목록: <br />{localStorage.getItem('item1')} 1, {localStorage.getItem('item2')} 1</div>
           <br />
         </div>
 
