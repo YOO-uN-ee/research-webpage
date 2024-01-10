@@ -109,7 +109,7 @@ const userSchema = new mongoose.Schema({
         type:Number,
     }
 },
-{ timestamps: true }
+{ timestamps: false }
 )
 
 export default mongoose.model('users', userSchema);
