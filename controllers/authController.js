@@ -43,15 +43,17 @@ export const registerController = async (req, res) => {
 
 export const updateController = async (req, res) => {
     try {
-        const { ip, experiment_type, pre_fun } = req.body;
+        const { pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable } = req.body;
         const user = await userModel.findById(req.params.uid);
 
         const updatedUser = await userModel.findByIdAndUpdate(
             req.params.uid,
             {
-                ip: ip || user.ip,
-                experiment_type: experiment_type || user.experiment_type,
-                pre_fun: pre_fun || user.pre_fun
+                pre_fun: pre_fun || user.pre_fun,
+                pre_exciting: pre_exciting || user.pre_exciting,
+                pre_delightful: pre_delightful || user.pre_delightful,
+                pre_thrilling: pre_thrilling || user.pre_thrilling,
+                pre_enjoyable: pre_enjoyable || user.pre_enjoyable,
             },
             {new: true}
         );

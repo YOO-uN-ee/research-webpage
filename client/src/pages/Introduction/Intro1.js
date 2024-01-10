@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom'
 import axios from "axios";
 
@@ -11,22 +11,21 @@ const Intro1 = () => {
   const extension = currentPath.split('/')[1]
   const userType = mapping[extension]
 
+  const [ip, setIP] = useState("")
+
   const storeIP = async() => {
     const res = await axios.get("https://api.ipify.org/?format=json");
-    // setIP(res.data.ip);
-    localStorage.setItem('ip', res.data.ip)
-    localStorage.setItem('experiment_type', userType)
+    setIP(res.data.ip)
 
-    // if (!localStorage.getItem("user_id")) {
-    //   const res2 = await axios.post("/api/auth/add", {"ip":res.data.ip, "category":userType});
-    //   setUser(res2.data)
-    //   localStorage.setItem('user_id', res2.data.user._id)
-    // }
     localStorage.setItem('extension', extension)
   };
 
-  const checkUpdating = async() => {
-    const res = await axios.put("https://research-backend-3mwd.onrender.com/api/auth/update/659b32e6ab1c94ff10259c6c", {"ip":"0.0.0.0", "experiment_type":"testing", "pre_fun": 10})
+  const initiateExperiment = async() => {
+    const res = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
+      "ip":ip, 
+      "experiment_type":userType})
+
+    console.log(res.user._id)
   }
 
   useEffect(() => {
@@ -35,7 +34,7 @@ const Intro1 = () => {
     localStorage.setItem('web_enter', new Date().toString())
     
     storeIP();
-    checkUpdating();
+    initiateExperiment();
   }, []);
 
   return (

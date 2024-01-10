@@ -10,116 +10,100 @@ const userSchema = new mongoose.Schema({
         required:true,
     },
     pre_fun: {
-        type:Number,
-        required:true,
+        type:Number
     },
     pre_exciting: {
-        type:Number,
-        required:true,
+        type:Number
     },
     pre_delightful: {
-        type:Number,
-        required:true,
+        type:Number
     },
     pre_thrilling: {
-        type:Number,
-        required:true,
+        type:Number
     },
     pre_enjoyable: {
-        type:Number,
-        required:true,
+        type:Number
     },
     items_bought: {
-        type:[String],
-        default:[],
+        type:[String]
     },
     total_price: {
-        type:Number,
-        default:0,
+        type:Number
     },
     total_time: {
         type:Number,
-        default:0,
     },
     fruit_visit: {
         type:Number,
-        default:0,
     },
     fruit_time: {
         type:Number,
-        default:0,
     },
     vegetable_visit: {
         type:Number,
-        default:0,
     },
     vegetable_time: {
         type:Number,
-        default:0,
     },
     condiment_visit: {
         type:Number,
-        default:0,
     },
     condiment_time: {
         type:Number,
-        default:0,
     },
     dessert_visit: {
         type:Number,
-        default:0,
     },
     dessert_time: {
         type:Number,
-        default:0,
     },
     snack_visit: {
         type:Number,
-        default:0,
     },
     snack_time: {
         type:Number,
-        default:0,
+    },
+    treatment_visited: {
+        type:Number,
+    },
+    treatment_aisle: {
+        type:String,
+    },
+    treatment_option: {
+        type:[String],
+    },
+    sub_action: {
+        type:[String]
     },
     post_fun: {
         type:Number,
-        required:true,
     },
     post_exciting: {
         type:Number,
-        required:true,
     },
     post_delightful: {
         type:Number,
-        required:true,
     },
     post_thrilling: {
         type:Number,
-        required:true,
     },
     post_enjoyable: {
         type:Number,
-        required:true,
     },
     gender: {
         type:String,
-        required:true
     },
     age: {
         type:Number,
-        required:true
     },
     location: {
         type:String,
-        required:true
     },
     frequency: {
         type:String,
-        required:true
     },
     familiar: {
         type:Number,
-        default:0
     }
 },
 { timestamps: true }
