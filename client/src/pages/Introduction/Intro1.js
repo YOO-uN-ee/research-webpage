@@ -21,12 +21,13 @@ const Intro1 = () => {
       "experiment_type":userType})
 
     localStorage.setItem('extension', extension)
+    localStorage.setItem('user_id', res2.data.user._id)
     // localStorage.setItem('user_id', res2.user.id.toString())
 
-    console.log(res2.data.user._id)
-    console.log(typeof res2.data.user._id)
-    console.log(res2.data.user._id.toString())
-    console.log(typeof res2.data.user._id.toString())
+    // console.log(res2.data.user._id)
+    // console.log(typeof res2.data.user._id)
+    // console.log(res2.data.user._id.toString())
+    // console.log(typeof res2.data.user._id.toString())
   };
 
   useEffect(() => {
