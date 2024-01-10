@@ -10,19 +10,24 @@ const userSchema = new mongoose.Schema({
         required:true,
     },
     pre_fun: {
-        type:Number
+        type:Number,
+        required:true,
     },
     pre_exciting: {
-        type:Number
+        type:Number,
+        required:true,
     },
     pre_delightful: {
-        type:Number
+        type:Number,
+        required:true,
     },
     pre_thrilling: {
-        type:Number
+        type:Number,
+        required:true,
     },
     pre_enjoyable: {
-        type:Number
+        type:Number,
+        required:true,
     },
     items_bought: {
         data: Buffer,
@@ -80,33 +85,43 @@ const userSchema = new mongoose.Schema({
     },
     post_fun: {
         type:Number,
+        required:true,
     },
     post_exciting: {
         type:Number,
+        required:true,
     },
     post_delightful: {
         type:Number,
+        required:true,
     },
     post_thrilling: {
         type:Number,
+        required:true,
     },
     post_enjoyable: {
         type:Number,
+        required:true,
     },
     gender: {
         type:String,
+        required:true,
     },
     age: {
         type:Number,
+        required:true,
     },
     location: {
         type:String,
+        required:true,
     },
     frequency: {
         type:String,
+        required:true,
     },
     familiar: {
         type:Number,
+        required:true,
     }
 },
 { timestamps: false }
