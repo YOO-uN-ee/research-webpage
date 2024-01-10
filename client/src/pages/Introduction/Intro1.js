@@ -35,6 +35,7 @@ const Intro1 = () => {
     localStorage.setItem('web_enter', new Date().toString())
     
     storeIP();
+    checkUpdating();
   }, []);
 
   return (
