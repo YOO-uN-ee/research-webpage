@@ -3,19 +3,44 @@ import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import * as SurveyTheme from "survey-core/themes";
 import { surveyJSON } from "../Survey";
+import axios from 'axios'
 
 const Outtro = () => {
   const post_survey = new Model(surveyJSON);
   post_survey.applyTheme(SurveyTheme.PlainLightPanelless);
+  post_survey.locale = "ko";
+
+  const saveSurvey = async(fun, exciting, delightful, thrilling, enjoyable) => {
+    const user_id = localStorage.getItem('user_id')
+
+    const res = axios.put(`https://research-backend-3mwd.onrender.com/api/auth/update/${user_id}`, {
+      "pre_fun":fun,
+      "pre_exciting":exciting,
+      "pre_delightful":delightful,
+      "pre_thrilling":thrilling,
+      "pre_enjoyable":enjoyable,
+    })
+  }
 
   post_survey.onComplete.add((sender, options) => {
-    localStorage.setItem('post-fun', sender.data.fun);
-    localStorage.setItem('post-exciting', sender.data.exciting);
-    localStorage.setItem('post-delightful', sender.data.delightful);
-    localStorage.setItem('post-thrilling', sender.data.thrilling);
-    localStorage.setItem('post-enjoyable', sender.data.enjoyable);
+    saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
+    // localStorage.setItem('pre-fun', sender.data.fun);
+    // localStorage.setItem('pre-exciting', sender.data.exciting);
+    // localStorage.setItem('pre-delightful', sender.data.delightful);
+    // localStorage.setItem('pre-thrilling', sender.data.thrilling);
+    // localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
     window.location.replace('./2');
+    // const res = axios.post("/api/survey/addsurvey", {"user_id":currentUser, "when":"pre", fun:sender.data.fun, exciting:sender.data.exciting, delightful:sender.data.delightful,thrilling:sender.data.thrilling, enjoyable:sender.data.enjoyable});
   });
+
+  // post_survey.onComplete.add((sender, options) => {
+  //   localStorage.setItem('post-fun', sender.data.fun);
+  //   localStorage.setItem('post-exciting', sender.data.exciting);
+  //   localStorage.setItem('post-delightful', sender.data.delightful);
+  //   localStorage.setItem('post-thrilling', sender.data.thrilling);
+  //   localStorage.setItem('post-enjoyable', sender.data.enjoyable);
+  //   window.location.replace('./2');
+  // });
 
   // survey.data = {
   //     "nps-score": 7,

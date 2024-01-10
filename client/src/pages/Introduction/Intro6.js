@@ -11,11 +11,16 @@ const Intro6 = () => {
   localStorage.setItem('my_cart', JSON.stringify([]));
   localStorage.setItem('robot_interacted', -1)
 
+  console.log(user_id)
+
   const survey = new Model(surveyJSON);
   survey.applyTheme(SurveyTheme.PlainLightPanelless);
-  survey.local = "ko";
+  survey.locale = "ko";
 
   const saveSurvey = async(fun, exciting, delightful, thrilling, enjoyable) => {
+    console.log(fun)
+    console.log(exciting)
+
     const res = axios.put(`https://research-backend-3mwd.onrender.com/api/auth/update/${user_id}`, {
       "pre_fun":fun,
       "pre_exciting":exciting,
@@ -23,6 +28,8 @@ const Intro6 = () => {
       "pre_thrilling":thrilling,
       "pre_enjoyable":enjoyable,
     })
+
+    console.log(res.updatedUser)
   }
 
   survey.onComplete.add((sender, options) => {
