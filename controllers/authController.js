@@ -13,7 +13,7 @@ export const registerController = async (req, res) => {
             success:true,
             message:"All saved",
             user,
-            user_id:user._id.toString(),
+            user_id:user._id,
         })
     } catch (error) {
         console.log(error);

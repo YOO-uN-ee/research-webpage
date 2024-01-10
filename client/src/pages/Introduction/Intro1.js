@@ -22,6 +22,9 @@ const Intro1 = () => {
 
     localStorage.setItem('extension', extension)
     localStorage.setItem('user_id', res2.user_id)
+
+    console.log(res2.user_id)
+    console.log(typeof res2.user_id)
   };
 
   useEffect(() => {
