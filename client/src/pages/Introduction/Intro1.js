@@ -21,7 +21,7 @@ const Intro1 = () => {
       "experiment_type":userType})
 
     localStorage.setItem('extension', extension)
-    localStorage.setItem('user_id', res2.user._id)
+    localStorage.setItem('user_id', res2.user_id)
   };
 
   useEffect(() => {
