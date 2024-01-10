@@ -4,8 +4,10 @@ import { Survey } from "survey-react-ui";
 import * as SurveyTheme from "survey-core/themes";
 import { surveyJSON } from "../Survey";
 import "survey-core/i18n/korean"
+import axios from 'axios'
 
 const Intro6 = () => {
+  const user_id = localStorage.getItem('user_id')
   localStorage.setItem('my_cart', JSON.stringify([]));
   localStorage.setItem('robot_interacted', -1)
 
@@ -14,11 +16,18 @@ const Intro6 = () => {
   survey.local = "ko";
 
   survey.onComplete.add((sender, options) => {
-    localStorage.setItem('pre-fun', sender.data.fun);
-    localStorage.setItem('pre-exciting', sender.data.exciting);
-    localStorage.setItem('pre-delightful', sender.data.delightful);
-    localStorage.setItem('pre-thrilling', sender.data.thrilling);
-    localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
+    const res = axios.put("", {
+      "pre_fun":sender.data.fun,
+      "pre_exciting":sender.data.exciting,
+      "pre_delightful":sender.data.delightful,
+      "pre_thrilling":sender.data.thrilling,
+      "pre_enjoyable":sender.data.enjoyable,
+    })
+    // localStorage.setItem('pre-fun', sender.data.fun);
+    // localStorage.setItem('pre-exciting', sender.data.exciting);
+    // localStorage.setItem('pre-delightful', sender.data.delightful);
+    // localStorage.setItem('pre-thrilling', sender.data.thrilling);
+    // localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
     window.location.replace('../aisle/fruit');
     // const res = axios.post("/api/survey/addsurvey", {"user_id":currentUser, "when":"pre", fun:sender.data.fun, exciting:sender.data.exciting, delightful:sender.data.delightful,thrilling:sender.data.thrilling, enjoyable:sender.data.enjoyable});
   });

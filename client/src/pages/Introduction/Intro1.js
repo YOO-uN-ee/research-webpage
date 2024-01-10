@@ -15,18 +15,14 @@ const Intro1 = () => {
 
   const storeIP = async() => {
     const res = await axios.get("https://api.ipify.org/?format=json");
-    setIP(res.data.ip)
-
-    localStorage.setItem('extension', extension)
-  };
-
-  const initiateExperiment = async() => {
-    const res = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
-      "ip":ip, 
+    
+    const res2 = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
+      "ip":res.data.ip, 
       "experiment_type":userType})
 
-    console.log(res.user._id)
-  }
+    localStorage.setItem('extension', extension)
+    localStorage.setItem('user_id', res2.user._id)
+  };
 
   useEffect(() => {
     localStorage.clear();
@@ -34,7 +30,6 @@ const Intro1 = () => {
     localStorage.setItem('web_enter', new Date().toString())
     
     storeIP();
-    initiateExperiment();
   }, []);
 
   return (

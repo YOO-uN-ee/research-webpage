@@ -25,7 +25,8 @@ const userSchema = new mongoose.Schema({
         type:Number
     },
     items_bought: {
-        type:[String]
+        data: Buffer,
+        contentType: String,
     },
     total_price: {
         type:Number
@@ -70,10 +71,12 @@ const userSchema = new mongoose.Schema({
         type:String,
     },
     treatment_option: {
-        type:[String],
+        data: Buffer,
+        contentType: String,
     },
     sub_action: {
-        type:[String]
+        data: Buffer,
+        contentType: String,
     },
     post_fun: {
         type:Number,
