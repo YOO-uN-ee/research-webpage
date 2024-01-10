@@ -32,13 +32,23 @@ const Detailed = () => {
     localStorage.setItem('item2_bool', item2_bool)
   }
 
+  const updateRobotLocation = async() => {
+    const user_id = localStorage.getItem('user_id')
+    const res = await axios.put(`https://research-backend-3mwd.onrender.com/api/item/${user_id}`, {
+      "treatment_visited": 1,
+      "treatment_aisle": localStorage.getItem('help_location')
+    })
+  }
+
   const redirect = () => {
     if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
       localStorage.setItem('robot_interacted', 1);
+      updateRobotLocation();
+      
       window.location.replace('../../help/1'); 
     }
   }
-
+  
   const getAllProducts = async()=> {
     try {
       const { data } = await axios.get("https://research-backend-3mwd.onrender.com/api/item/productcategory/vegetable");

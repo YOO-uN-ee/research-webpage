@@ -16,7 +16,7 @@ const Intro6 = () => {
   survey.local = "ko";
 
   survey.onComplete.add((sender, options) => {
-    const res = axios.put("", {
+    const res = axios.put(`https://research-backend-3mwd.onrender.com/api/auth/update/${user_id}`, {
       "pre_fun":sender.data.fun,
       "pre_exciting":sender.data.exciting,
       "pre_delightful":sender.data.delightful,
@@ -31,14 +31,6 @@ const Intro6 = () => {
     window.location.replace('../aisle/fruit');
     // const res = axios.post("/api/survey/addsurvey", {"user_id":currentUser, "when":"pre", fun:sender.data.fun, exciting:sender.data.exciting, delightful:sender.data.delightful,thrilling:sender.data.thrilling, enjoyable:sender.data.enjoyable});
   });
-
-  // survey.data = {
-  //     "nps-score": 7,
-  //     "promoter-features": [
-  //         "performance",
-  //         "ui"
-  //     ]
-  // };
 
   return (
     // <div class='layout'>
