@@ -24,11 +24,12 @@ const Outtro = () => {
 
   post_survey.onComplete.add((sender, options) => {
     // saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
-    localStorage.setItem('pre-fun', sender.data.fun);
-    localStorage.setItem('pre-exciting', sender.data.exciting);
-    localStorage.setItem('pre-delightful', sender.data.delightful);
-    localStorage.setItem('pre-thrilling', sender.data.thrilling);
-    localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
+    localStorage.setItem('post-fun', sender.data.fun);
+    localStorage.setItem('post-exciting', sender.data.exciting);
+    localStorage.setItem('post-delightful', sender.data.delightful);
+    localStorage.setItem('post-thrilling', sender.data.thrilling);
+    localStorage.setItem('post-enjoyable', sender.data.enjoyable);
+
     window.location.replace('./2');
     // const res = axios.post("/api/survey/addsurvey", {"user_id":currentUser, "when":"pre", fun:sender.data.fun, exciting:sender.data.exciting, delightful:sender.data.delightful,thrilling:sender.data.thrilling, enjoyable:sender.data.enjoyable});
   });
