@@ -96,7 +96,7 @@ export const demographicsJSON = {
 const Demographics = () => {
   const survey = new Model(demographicsJSON);
   survey.applyTheme(SurveyTheme.PlainLightPanelless);
-  survey.local = "ko";
+  survey.locale = "ko";
 
   survey.onComplete.add((sender, options) => {
     localStorage.setItem('gender', sender.data.gender);
