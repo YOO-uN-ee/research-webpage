@@ -15,14 +15,18 @@ const Intro6 = () => {
   survey.applyTheme(SurveyTheme.PlainLightPanelless);
   survey.local = "ko";
 
-  survey.onComplete.add((sender, options) => {
+  const saveSurvey = async(fun, exciting, delightful, thrilling, enjoyable) => {
     const res = axios.put(`https://research-backend-3mwd.onrender.com/api/auth/update/${user_id}`, {
-      "pre_fun":sender.data.fun,
-      "pre_exciting":sender.data.exciting,
-      "pre_delightful":sender.data.delightful,
-      "pre_thrilling":sender.data.thrilling,
-      "pre_enjoyable":sender.data.enjoyable,
+      "pre_fun":fun,
+      "pre_exciting":exciting,
+      "pre_delightful":delightful,
+      "pre_thrilling":thrilling,
+      "pre_enjoyable":enjoyable,
     })
+  }
+
+  survey.onComplete.add((sender, options) => {
+    saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
     // localStorage.setItem('pre-fun', sender.data.fun);
     // localStorage.setItem('pre-exciting', sender.data.exciting);
     // localStorage.setItem('pre-delightful', sender.data.delightful);
