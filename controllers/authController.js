@@ -12,8 +12,7 @@ export const registerController = async (req, res) => {
         res.status(200).send({
             success:true,
             message:"All saved",
-            user,
-            user_id:user._id.toString(),
+            user
         })
     } catch (error) {
         console.log(error);
