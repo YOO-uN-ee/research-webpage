@@ -14,8 +14,6 @@ const Aisle = () => {
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
 
-  console.log(localStorage.getItem('message'))
-
   const exitScreen = ()=>{
     localStorage.setItem('my_cart', JSON.stringify(my_cart))
     localStorage.setItem('item1_bool', item1_bool)
