@@ -16,7 +16,7 @@ const Robot = () => {
   return (
     <Layout>
       <div class='horizontal-center general-body'>
-        <video id="pepper-intro" autoPlay="true" controls="controls" className='intro-img' src={'/media/videos/pepper1.mp4'} />
+        <video id="pepper-intro" autoPlay={true} controls="controls" className='intro-img' src={'/media/videos/pepper1.mp4'} />
 
         <div class='main-text'>
           <br />

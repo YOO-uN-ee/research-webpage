@@ -32,19 +32,22 @@ const Detailed = () => {
     localStorage.setItem('item2_bool', item2_bool)
   }
 
-  const updateRobotLocation = async() => {
-    const user_id = localStorage.getItem('user_id')
-    const res = await axios.put(`https://research-backend-3mwd.onrender.com/api/item/${user_id}`, {
-      "treatment_visited": 1,
-      "treatment_aisle": localStorage.getItem('help_location')
-    })
-  }
+  // const updateRobotLocation = async() => {
+  //   const user_id = localStorage.getItem('user_id')
+  //   const res = await axios.put(`https://research-backend-3mwd.onrender.com/api/item/${user_id}`, {
+  //     "treatment_visited": 1,
+  //     "treatment_aisle": localStorage.getItem('help_location')
+  //   })
+  // }
 
   const redirect = () => {
     if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
       localStorage.setItem('robot_interacted', 1);
-      updateRobotLocation();
-      
+      localStorage.setItem('treatment_visited', 1);
+      localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
+      localStorage.setItem('treatment_option', JSON.stringify([]))
+      localStorage.setItem('sub_action', JSON.stringify([]))
+
       window.location.replace('../../help/1'); 
     }
   }

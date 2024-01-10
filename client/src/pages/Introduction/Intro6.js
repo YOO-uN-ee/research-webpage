@@ -10,33 +10,31 @@ const Intro6 = () => {
   localStorage.setItem('my_cart', JSON.stringify([]));
   localStorage.setItem('robot_interacted', -1)
 
-  console.log(localStorage.getItem('user_id'))
-
   const survey = new Model(surveyJSON);
   survey.applyTheme(SurveyTheme.PlainLightPanelless);
   survey.locale = "ko";
 
-  const saveSurvey = async(fun, exciting, delightful, thrilling, enjoyable) => {
-    const user_id = localStorage.getItem('user_id')
+  // const saveSurvey = async(fun, exciting, delightful, thrilling, enjoyable) => {
+  //   const user_id = localStorage.getItem('user_id')
 
-    const res = axios.put(`https://research-backend-3mwd.onrender.com/api/auth/update/${user_id}`, {
-      "pre_fun":fun,
-      "pre_exciting":exciting,
-      "pre_delightful":delightful,
-      "pre_thrilling":thrilling,
-      "pre_enjoyable":enjoyable,
-    })
+  //   const res = axios.put(`https://research-backend-3mwd.onrender.com/api/auth/update/${user_id}`, {
+  //     "pre_fun":fun,
+  //     "pre_exciting":exciting,
+  //     "pre_delightful":delightful,
+  //     "pre_thrilling":thrilling,
+  //     "pre_enjoyable":enjoyable,
+  //   })
 
-    localStorage.setItem("message", console.log(res.message))
-  }
+  //   localStorage.setItem("message", console.log(res.message))
+  // }
 
   survey.onComplete.add((sender, options) => {
-    saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
-    // localStorage.setItem('pre-fun', sender.data.fun);
-    // localStorage.setItem('pre-exciting', sender.data.exciting);
-    // localStorage.setItem('pre-delightful', sender.data.delightful);
-    // localStorage.setItem('pre-thrilling', sender.data.thrilling);
-    // localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
+    // saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
+    localStorage.setItem('pre-fun', sender.data.fun);
+    localStorage.setItem('pre-exciting', sender.data.exciting);
+    localStorage.setItem('pre-delightful', sender.data.delightful);
+    localStorage.setItem('pre-thrilling', sender.data.thrilling);
+    localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
     window.location.replace('../aisle/fruit');
     // const res = axios.post("/api/survey/addsurvey", {"user_id":currentUser, "when":"pre", fun:sender.data.fun, exciting:sender.data.exciting, delightful:sender.data.delightful,thrilling:sender.data.thrilling, enjoyable:sender.data.enjoyable});
   });

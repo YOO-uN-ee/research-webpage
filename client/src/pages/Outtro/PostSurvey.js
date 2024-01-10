@@ -14,11 +14,11 @@ const Outtro = () => {
     const user_id = localStorage.getItem('user_id')
 
     const res = axios.put(`https://research-backend-3mwd.onrender.com/api/auth/update/${user_id}`, {
-      "pre_fun":fun,
-      "pre_exciting":exciting,
-      "pre_delightful":delightful,
-      "pre_thrilling":thrilling,
-      "pre_enjoyable":enjoyable,
+      "post_fun":fun,
+      "post_exciting":exciting,
+      "post_delightful":delightful,
+      "post_thrilling":thrilling,
+      "post_enjoyable":enjoyable,
     })
   }
 

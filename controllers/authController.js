@@ -2,11 +2,30 @@ import userModel from "../models/userModel.js";
 
 export const registerController = async (req, res) => {
     try {
-        const { ip, experiment_type } = req.body
+        const { ip, experiment_type,
+                pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
+                items_bought, total_price, total_time,
+                fruit_visit, fruit_time, 
+                vegetable_visit, vegetable_time, 
+                condiment_visit, condiment_time, 
+                dessert_visit, dessert_time, 
+                snack_visit, snack_time,
+                post_fun, post_exciting, post_delightful, post_thrilling, post_enjoyable,
+                gender, age, location, frequency, familiar,
+                treatment_visited, treatment_aisle, treatment_option, sub_action } = req.body
 
         const user = await new userModel({
-            ip, 
-            experiment_type, 
+            ip, experiment_type,
+            pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
+            items_bought, total_price, total_time,
+            fruit_visit, fruit_time, 
+            vegetable_visit, vegetable_time, 
+            condiment_visit, condiment_time, 
+            dessert_visit, dessert_time, 
+            snack_visit, snack_time,
+            post_fun, post_exciting, post_delightful, post_thrilling, post_enjoyable,
+            gender, age, location, frequency, familiar,
+            treatment_visited, treatment_aisle, treatment_option, sub_action
         }).save();
 
         res.status(200).send({

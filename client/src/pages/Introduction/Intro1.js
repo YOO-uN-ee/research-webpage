@@ -11,17 +11,19 @@ const Intro1 = () => {
   const extension = currentPath.split('/')[1]
   const userType = mapping[extension]
 
-  const [ip, setIP] = useState("")
+  // const [ip, setIP] = useState("")
 
   const storeIP = async() => {
     const res = await axios.get("https://api.ipify.org/?format=json");
     
-    const res2 = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
-      "ip":res.data.ip, 
-      "experiment_type":userType})
+    // const res2 = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
+    //   "ip":res.data.ip, 
+    //   "experiment_type":userType})
 
     localStorage.setItem('extension', extension)
-    localStorage.setItem('user_id', res2.data.user._id)
+    localStorage.setItem('ip', res.data.ip)
+    localStorage.setItem('experiment_type', userType)
+    // localStorage.setItem('user_id', res2.data.user._id)
     // localStorage.setItem('user_id', res2.user.id.toString())
 
     // console.log(res2.data.user._id)

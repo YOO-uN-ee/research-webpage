@@ -81,13 +81,19 @@ const RecommendOption = () => {
                   alt="카트 아이콘" 
                   className='cart-icon'
                   onClick={() => {
-                    setMyCart(oldArray => [...oldArray, {name:main.name, _id:main._id, price:main.price}]);
+                    setMyCart(oldArray => [...oldArray, {name:main.name, _id:main._id, price:main.price, slug:main.slug}]);
                     if(main.slug === slug_mapping[item1]){
                       localStorage.setItem('item1_bool', 1)
                     }
                     else if(main.slug === slug_mapping[item2]){
                       localStorage.setItem('item2_bool', 1)
                     }
+
+                    const sub_action = JSON.parse(localStorage.getItem('sub_action'))
+                    sub_action.push(`add ${main.name}`)
+                    console.log(sub_action)
+
+                    localStorage.setItem('sub_action', JSON.stringify(sub_action))
                   }}
                 />
               </div>
@@ -139,6 +145,12 @@ const RecommendOption = () => {
                     else if(p.slug === slug_mapping[item2]){
                       localStorage.setItem('item2_bool', 1)
                     }
+
+                    const sub_action = JSON.parse(localStorage.getItem('sub_action'))
+                    sub_action.push(`add ${main.name}`)
+                    console.log(sub_action)
+
+                    localStorage.setItem('sub_action', JSON.stringify(sub_action))
                   }}
                 />
               </div>

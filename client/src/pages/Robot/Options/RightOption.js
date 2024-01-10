@@ -24,7 +24,7 @@ const Options = () => {
   
     const help_location = localStorage.getItem('help_location')
 
-    const exitScreen = ()=>{
+    const exitScreen = (option)=>{
       localStorage.setItem('my_cart', JSON.stringify(my_cart))
       localStorage.setItem('item1_bool', item1_bool)
       localStorage.setItem('item2_bool', item2_bool)
@@ -34,6 +34,10 @@ const Options = () => {
       var treatment_time = JSON.parse(localStorage.getItem('treatment_time'))
       treatment_time.push(spent_time)
       localStorage.setItem('treatment_time', JSON.stringify(treatment_time))
+
+      var treatment_option = JSON.parse(localStorage.getItem('treatment_option'))
+      treatment_option.push(option)
+      localStorage.setItem('treatment_option', JSON.stringify(treatment_option))
     }
 
   return (
@@ -45,7 +49,7 @@ const Options = () => {
                   const idx = TreatmentSet.indexOf(item)
                   TreatmentSet.splice(idx, 1)
                   localStorage.setItem('treatment_questions', JSON.stringify(TreatmentSet))
-                  exitScreen()
+                  exitScreen(item[1])
                 }}>
                   <div class='robot-option-text'>{`➤ ${item[0]}`}<br/><br/></div>
                 </Link>
@@ -57,7 +61,8 @@ const Options = () => {
                 <Link to='../recommend' onClick={() => {
                   localStorage.setItem('rec_item', item1)
                   localStorage.setItem('rec1_used', 1)
-                  exitScreen()
+
+                  exitScreen('recommend')
                 }}>
                   <div class='robot-option-text'>{`➤  ${localStorage.getItem('item1')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
                 </Link>
@@ -69,7 +74,7 @@ const Options = () => {
                 <Link to='../recommend' onClick={() => {
                   localStorage.setItem('rec_item', item2)
                   localStorage.setItem('rec2_used', 1)
-                  exitScreen()
+                  exitScreen('recommend')
                 }}>
                   <div class='robot-option-text'>{`➤ ${localStorage.getItem('item2')} 관련 품목을 추천해 줄래?`}<br/><br/></div>
                 </Link>
@@ -86,11 +91,11 @@ const Options = () => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'fruit'); exitScreen()}}>과일</Dropdown.Item>
-                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'vegetable'); exitScreen()}}>야채</Dropdown.Item>
-                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'condiment'); exitScreen()}}>통조림/조미료</Dropdown.Item>
-                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'dessert'); exitScreen()}}>디저트</Dropdown.Item>
-                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'snack'); exitScreen()}}>과자/라면</Dropdown.Item>
+                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'fruit'); exitScreen('aisle')}}>과일</Dropdown.Item>
+                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'vegetable'); exitScreen('aisle')}}>야채</Dropdown.Item>
+                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'condiment'); exitScreen('aisle')}}>통조림/조미료</Dropdown.Item>
+                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'dessert'); exitScreen('aisle')}}>디저트</Dropdown.Item>
+                    <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'snack'); exitScreen('aisle')}}>과자/라면</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
                 <div>&nbsp;섹션으로 이동하고 싶어.</div>
@@ -112,7 +117,7 @@ const Options = () => {
                         localStorage.setItem('rec_item', item)
                         setItemList(item_list.filter(i => i !== item))
                         localStorage.setItem('recom_used', 1)
-                        exitScreen()
+                        exitScreen('recommend')
                         }}>
                         {item}
                       </Dropdown.Item>
