@@ -258,7 +258,8 @@
 }
 
 .cart-icon {
-    height: 30px;
+    height: 20px;
+    filter: invert(40%) sepia(58%) saturate(603%) hue-rotate(27deg) brightness(94%) contrast(93%);
 }
 .cart-icon:hover{
     filter: invert(54%) sepia(92%) saturate(796%) hue-rotate(29deg) brightness(99%) contrast(87%);
