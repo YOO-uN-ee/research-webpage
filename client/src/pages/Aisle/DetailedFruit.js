@@ -132,9 +132,13 @@ const Detailed = () => {
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
                   const idx = my_cart.findIndex((i) => i.name !== item.name)
+                  console.log(idx)
+
                   my_cart.splice(idx, 1)
-                  setMyCart(my_cart)
+                  console.log(my_cart)
                   
+                  setMyCart(my_cart)
+
                   if(item.slug === slug_mapping[item1]){
                     setItem1Bool(-1)
                   }
