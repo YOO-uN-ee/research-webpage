@@ -92,7 +92,7 @@ const RecommendOption = () => {
                     }
 
                     const sub_action = JSON.parse(localStorage.getItem('sub_action'))
-                    sub_action.push(`add ${main.name}`)
+                    sub_action.push(`added ${main.name}`)
                     console.log(sub_action)
 
                     localStorage.setItem('sub_action', JSON.stringify(sub_action))
@@ -149,7 +149,7 @@ const RecommendOption = () => {
                     }
 
                     const sub_action = JSON.parse(localStorage.getItem('sub_action'))
-                    sub_action.push(`add ${main.name}`)
+                    sub_action.push(`added ${main.name}`)
                     console.log(sub_action)
 
                     localStorage.setItem('sub_action', JSON.stringify(sub_action))

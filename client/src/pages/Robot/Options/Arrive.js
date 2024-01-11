@@ -6,7 +6,9 @@ import Layout from "./OptionLayout";
 
 const Arrive = () => {
   const help_location = localStorage.getItem('help_location')
-  localStorage.setItem('to_aisle', help_location)
+  const sub_action = localStorage.getItem('sub_action')
+  sub_action.push(`to aisle ${help_location}`)
+  localStorage.setItem('sub_action', sub_action)
 
   var treatment_sequence = JSON.parse(localStorage.getItem('treatment_sequence'))
   treatment_sequence.push('arrive')
