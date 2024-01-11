@@ -132,12 +132,15 @@ const Detailed = () => {
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
                   const idx = my_cart.findIndex((i) => i.name === item.name)
-                  console.log(idx)
+                  // console.log(idx)
 
-                  my_cart.splice(idx, 1)
-                  console.log(my_cart)
+                  // my_cart.splice(idx, 1)
+                  // console.log(my_cart)
+                  // .indexOf('bison')
                   
-                  setMyCart(my_cart)
+                  // setMyCart(my_cart)
+                  
+                  setMyCart(my_cart.filter((item, index) => index === idx))
 
                   const slug_idx1 = my_cart.findIndex((i) => i.slug === slug_mapping[item1])
                   const slug_idx2 = my_cart.findIndex((i) => i.slug === slug_mapping[item2])
