@@ -67,7 +67,7 @@ export const demographicsJSON = {
         "choices": [
           '한달에 4번 이상',
           '한달에 4번',
-          '한달에  2-3번',
+          '한달에 2-3번',
           '한달에 1번 이하'
          ],
         "isRequired": true,
@@ -82,7 +82,40 @@ export const demographicsJSON = {
         "minRateDescription":'전혀 모른다',
         "maxRateDescription":'매우 잘 알고 있다',
         "isRequired": true,
-       }
+       },
+       {
+        "type": "radiogroup",
+        "name": "robot_seen",
+        "title": "장을 보시는 중에 로봇 도우미를 보셨나요?",
+        "choices": [
+          {
+           "value": "true",
+           "text": "네"
+          },
+          {
+           "value": "false",
+           "text": "아니오"
+          }
+         ],
+        "isRequired": true,
+       },
+       {
+        "type": "radiogroup",
+        "name": "asked_name",
+        "title": "그 로봇이 귀하의 이름을 물어봤나요?",
+        "visibleIf": "{robot-seen} = true",
+        "choices": [
+          {
+           "value": "true",
+           "text": "네"
+          },
+          {
+           "value": "false",
+           "text": "아니오"
+          }
+         ],
+        "isRequired": true,
+       },
       ]
      }
     ],
@@ -104,6 +137,8 @@ const Demographics = () => {
     localStorage.setItem('location', sender.data.location);
     localStorage.setItem('frequency', sender.data.frequency);
     localStorage.setItem('familiar', sender.data.familiar);
+    localStorage.setItem('robot_seen', sender.data.robot_seen);
+    localStorage.setItem('asked_name', sender.data.asked_name || 'false');
     window.location.replace('./end');
   });
 

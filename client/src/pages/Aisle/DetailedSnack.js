@@ -59,7 +59,7 @@ const Detailed = () => {
 
     const int = setTimeout(() => {
       redirect();
-    }, 10000);
+    }, 4000);
 
     return () => clearTimeout(int);
 

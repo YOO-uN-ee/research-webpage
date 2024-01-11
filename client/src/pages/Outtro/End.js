@@ -18,10 +18,12 @@ const Final= () => {
       "pre_thrilling":localStorage.getItem('pre-thrilling'), "pre_enjoyable":localStorage.getItem('pre-enjoyable'),
       "post_fun":localStorage.getItem('post-fun'), "post_exciting":localStorage.getItem('post-exciting'), "post_delightful":localStorage.getItem('post-delightful'), 
       "post_thrilling":localStorage.getItem('post-thrilling'), "post_enjoyable":localStorage.getItem('post-enjoyable'),
-      "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar')||0,
-      "treatment_visited":localStorage.getItem('treatment_visited'), "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time'))
+      "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'),
+      "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')), "robot_seen":localStorage.getItem('robot_seen'), "asked_name":localStorage.getItem('asked_name')
     });
+    console.log('data saved')
     }
+    
     else{
       const res = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
         "ip":localStorage.getItem('ip'), "experiment_type":localStorage.getItem('experiment_type'),
@@ -36,8 +38,11 @@ const Final= () => {
         "post_fun":localStorage.getItem('post-fun'), "post_exciting":localStorage.getItem('post-exciting'), "post_delightful":localStorage.getItem('post-delightful'), 
         "post_thrilling":localStorage.getItem('post-thrilling'), "post_enjoyable":localStorage.getItem('post-enjoyable'),
         "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar')||0,
-        "treatment_visited":localStorage.getItem('treatment_visited'), "treatment_aisle":localStorage.getItem('treatment_aisle'), "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')),"sub_action":JSON.parse(localStorage.getItem('sub_action'))
+        "treatment_visited":localStorage.getItem('treatment_visited'), "treatment_aisle":localStorage.getItem('treatment_aisle'), "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')),"sub_action":JSON.parse(localStorage.getItem('sub_action')),
+        "robot_seen":localStorage.getItem('robot_seen'), "asked_name":localStorage.getItem('asked_name')
       });
+    
+    console.log('data saved')
     }
   };
 

@@ -122,6 +122,14 @@ const userSchema = new mongoose.Schema({
     familiar: {
         type:Number,
         required:true,
+    },
+    robot_seen: {
+        type:String,
+        required:true,
+    },
+    asked_name: {
+        type: String,
+        required:true,
     }
 },
 { timestamps: false }
