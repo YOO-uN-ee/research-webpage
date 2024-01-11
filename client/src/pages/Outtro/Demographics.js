@@ -103,7 +103,7 @@ export const demographicsJSON = {
         "type": "radiogroup",
         "name": "asked_name",
         "title": "그 로봇이 귀하의 이름을 물어봤나요?",
-        "visibleIf": "{robot-seen} = true",
+        "visibleIf": "{robot_seen} = true",
         "choices": [
           {
            "value": "true",
