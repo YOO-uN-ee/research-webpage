@@ -30,8 +30,7 @@ const userSchema = new mongoose.Schema({
         required:true,
     },
     items_bought: {
-        data: Buffer,
-        contentType: String,
+        type: [String]
     },
     total_price: {
         type:Number
@@ -76,16 +75,13 @@ const userSchema = new mongoose.Schema({
         type:String,
     },
     treatment_option: {
-        data: Buffer,
-        contentType: String,
+        type: [String]
     },
     treatment_time: {
-        data: Buffer,
-        contentType: Number,
+        type: [Number]
     },
     sub_action: {
-        data: Buffer,
-        contentType: String,
+        type: [String]
     },
     post_fun: {
         type:Number,
