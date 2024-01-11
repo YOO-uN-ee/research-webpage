@@ -119,7 +119,7 @@ const Detailed = () => {
 
       <div class='cart-button-parent'>
       <Popup 
-        trigger={<img src='/media/images/cart.svg' class='cart-button' alt='cart'/>}
+        trigger={<><img src='/media/images/cart.svg' class='cart-button' alt='cart'/><div class='cart-button-count-container'><div class='cart-button-surrounding' /><div class='cart-button-text'>{my_cart.length}</div></div> </>}
         position="top right"
         className='item-in-cart'>
           <div>
@@ -131,15 +131,7 @@ const Detailed = () => {
                   <div>{item.name}<br />{item.price}원</div>
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
-                  const idx = my_cart.findIndex((i) => i.name === item.name)
-                  // console.log(idx)
-
-                  // my_cart.splice(idx, 1)
-                  // console.log(my_cart)
-                  // .indexOf('bison')
-                  
-                  // setMyCart(my_cart)
-                  
+                  const idx = my_cart.findIndex((i) => i.name === item.name)                  
                   setMyCart(my_cart.filter((item, index) => index !== idx))
 
                   const slug_idx1 = my_cart.findIndex((i) => i.slug === slug_mapping[item1])
