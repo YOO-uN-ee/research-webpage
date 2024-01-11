@@ -172,11 +172,24 @@
     position: relative;
     right: 15px;
     bottom: 75px;
-
 }
 .cart-button-surrounding {
     position: absolute;
     border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-color: white;
+    border-top: 2px solid transparent;
+    border-left: 2px solid #6a760c;
+    border-right: 2px solid #6a760c;
+    border-bottom: 2px solid #6a760c;
+    transform: rotate(135deg);
+}
+.cart-button-surrounding-robot {
+    position: absolute;
+    border-radius: 50%;
+    right: 46px;
     width: 30px;
     height: 30px;
     display: inline-block;
