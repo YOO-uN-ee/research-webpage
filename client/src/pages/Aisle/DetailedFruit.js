@@ -119,7 +119,7 @@ const Detailed = () => {
 
       <div class='cart-button-parent'>
       <Popup 
-        trigger={<><img src='/media/images/cart.svg' class='cart-button' alt='cart'/><div class='cart-button-count-container'><div class='cart-button-surrounding' /><div class='cart-button-text'>{my_cart.length}</div></div> </>}
+        trigger={<img src='/media/images/cart.svg' class='cart-button' alt='cart'/>}
         position="top right"
         className='item-in-cart'>
           <div>
@@ -148,6 +148,7 @@ const Detailed = () => {
             ))}
           </div>
       </Popup>
+      <div class='cart-button-count-container'><div class='cart-button-surrounding' /><div class='cart-button-text'>{my_cart.length}</div></div>
       </div>
 
       <div class='footer'>
