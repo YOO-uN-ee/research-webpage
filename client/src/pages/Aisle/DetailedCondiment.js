@@ -35,6 +35,11 @@ const Detailed = () => {
   const redirect = () => {
     if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
       localStorage.setItem('robot_interacted', 1);
+      localStorage.setItem('treatment_visited', 1);
+      localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
+      localStorage.setItem('treatment_option', JSON.stringify([]))
+      localStorage.setItem('sub_action', JSON.stringify([]))
+      
       window.location.replace('../../help/1'); 
     }
   }

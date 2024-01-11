@@ -38,7 +38,7 @@ const Final= () => {
         "post_fun":localStorage.getItem('post-fun'), "post_exciting":localStorage.getItem('post-exciting'), "post_delightful":localStorage.getItem('post-delightful'), 
         "post_thrilling":localStorage.getItem('post-thrilling'), "post_enjoyable":localStorage.getItem('post-enjoyable'),
         "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar')||0,
-        "treatment_visited":localStorage.getItem('treatment_visited'), "treatment_aisle":localStorage.getItem('treatment_aisle'), "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')),"sub_action":JSON.parse(localStorage.getItem('sub_action')),
+        "treatment_visited":localStorage.getItem('treatment_visited') || 0, "treatment_aisle":localStorage.getItem('treatment_aisle'), "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')),"sub_action":JSON.parse(localStorage.getItem('sub_action')),
         "robot_seen":localStorage.getItem('robot_seen'), "asked_name":localStorage.getItem('asked_name')
       });
     
