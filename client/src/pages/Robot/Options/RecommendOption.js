@@ -76,7 +76,7 @@ const RecommendOption = () => {
                   setIsOpen(true);
                 }} />
               </Popup>
-              <div class='flex justify-between'>
+              <div class='flex justify-between recommend-info-section'>
                 <div class='mini-text'>{main.name}</div>
                 <img 
                   src={'/media/images/cart.svg'} 
