@@ -2,6 +2,7 @@ import './App.css';
 
 import {Routes, Route} from 'react-router-dom'
 import PageNotFound from './pages/PageNotFound';
+import AutoRedirect from './pages/UserTypes/AutoRedirect';
 
 import Intro1 from './pages/Introduction/Intro1';
 import Intro2 from './pages/Introduction/Intro2';
@@ -57,6 +58,7 @@ function App() {
     <>
     <Routes>
       {/* Control Group */}
+      <Route path='/' element={<AutoRedirect />} />
       <Route path='/D1UQDV'>
         <Route path='welcome'>
           <Route path='' element={<Intro1 />} />
