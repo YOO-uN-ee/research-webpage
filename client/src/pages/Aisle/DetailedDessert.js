@@ -39,7 +39,7 @@ const Detailed = () => {
       localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
       localStorage.setItem('treatment_option', JSON.stringify([]))
       localStorage.setItem('sub_action', JSON.stringify([]))
-      
+
       window.location.replace('../../help/1'); 
     }
   }
@@ -151,7 +151,10 @@ const Detailed = () => {
                   <div>{item.name}<br />{item.price}원</div>
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
-                  setMyCart(my_cart.filter(i => i.name !== item.name))
+                  const idx = my_cart.findIndex((i) => i.name !== item.name)
+                  my_cart.splice(idx, 1)
+                  setMyCart(my_cart)
+                  
                   if(item.slug === slug_mapping[item1]){
                     setItem1Bool(-1)
                   }
