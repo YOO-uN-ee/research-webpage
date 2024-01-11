@@ -17,6 +17,9 @@ const Intro1 = () => {
     localStorage.setItem('experiment_type', userType)
     localStorage.setItem('extension', extension)
     localStorage.setItem('help_location', 'fruit')
+    localStorage.setItem('item1', '');
+    localStorage.setItem('item2', '');
+    localStorage.setItem('my_cart', JSON.stringify([]));
   };
 
   useEffect(() => {

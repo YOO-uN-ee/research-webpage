@@ -56,7 +56,7 @@ const Options = () => {
               </div>
             ))}
             
-            {extension !== 'FFSRWM' && rec1_used < 0 &&
+            {extension === 'L53NNR' && rec1_used < 0 &&
               <div>
                 <Link to='../recommend' onClick={() => {
                   localStorage.setItem('rec_item', item1)
@@ -69,7 +69,7 @@ const Options = () => {
               </div>
             }
 
-            {extension !== 'FFSRWM' && rec2_used < 0 &&
+            {extension === 'L53NNR' && rec2_used < 0 &&
               <div>
                 <Link to='../recommend' onClick={() => {
                   localStorage.setItem('rec_item', item2)
