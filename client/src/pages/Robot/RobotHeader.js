@@ -13,6 +13,8 @@ const Header = () => {
     return (
         <div class='detailed-header robot-header flex flex-row justify-between'>
             <div>
+                {localStorage.getItem('experiment_type') !== 'treatment3' &&
+                <>
                 <div class='shopping-header'>
                     장보기 목록: <br />
                 </div>
@@ -22,6 +24,7 @@ const Header = () => {
                 <div>
                 <br/>이미지를 클릭하시면 보다 자세한 정보를 확인하실 수 있습니다. <br/>제품 구매시 "해당 상품 이미지" 우측 하단에 위치한 쇼핑카트 아이콘을 클릭하세요.<br/> 카트에 담긴 제품들은 화면 아래에 있는 큰 쇼핑카트 아이콘을 클릭하면 확인하실 수 있습니다. <br/><br/>
                 </div>
+                </>}
             </div>
 
             <div class='columns-2'>
