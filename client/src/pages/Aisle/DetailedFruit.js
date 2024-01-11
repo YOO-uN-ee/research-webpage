@@ -140,7 +140,7 @@ const Detailed = () => {
                   
                   // setMyCart(my_cart)
                   
-                  setMyCart(my_cart.filter((item, index) => index === idx))
+                  setMyCart(my_cart.filter((item, index) => index !== idx))
 
                   const slug_idx1 = my_cart.findIndex((i) => i.slug === slug_mapping[item1])
                   const slug_idx2 = my_cart.findIndex((i) => i.slug === slug_mapping[item2])
