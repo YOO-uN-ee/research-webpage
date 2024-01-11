@@ -7,6 +7,10 @@ const Where = () => {
   var past_count = localStorage.getItem('robot_visit')
   localStorage.setItem('robot_visit', past_count + 1)
 
+  var startTime = new Date()
+  localStorage.setItem('enter_time', new Date().toString())
+  console.log(startTime)
+
   return (
     <Layout>
     <div class='flex flex-row'>

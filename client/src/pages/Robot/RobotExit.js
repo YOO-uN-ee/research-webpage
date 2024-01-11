@@ -16,6 +16,14 @@ const Robot = () => {
     const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
     const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
+    const spent_time = (new Date() - Date.parse(localStorage.getItem('enter_time')))/1000
+    var treatment_time = JSON.parse(localStorage.getItem('treatment_time'))
+    treatment_time.push(spent_time)
+    treatment_time.shift()
+    localStorage.setItem('treatment_time', JSON.stringify(treatment_time))
+
+    console.log(localStorage.getItem('treatment_time'))
+
   return (
     <Layout>
       <div class='horizontal-center general-body'>

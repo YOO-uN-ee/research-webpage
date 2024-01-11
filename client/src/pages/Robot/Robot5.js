@@ -29,9 +29,9 @@ const Robot5 = () => {
   if (!TreatmentSet){
     if (extension === 'FFSRWM' || extension === 'ZOX019'){
       TreatmentSet = [
-        ['너는 어디에서 왔니?', '../where'],
-        ['춤을 출 수 있다며. 한번 보여줄래?', '../dance'],
-        ['만나서 반가워! 우리 악수하자.', '../handshake'],
+        ['너는 어디에서 왔니?', '../where', 'where'],
+        ['춤을 출 수 있다며. 한번 보여줄래?', '../dance', 'dance'],
+        ['만나서 반가워! 우리 악수하자.', '../handshake', 'handshake'],
       ]
 
       localStorage.setItem('treatment_questions', JSON.stringify(TreatmentSet));
@@ -39,7 +39,7 @@ const Robot5 = () => {
 
     else {
       TreatmentSet = [
-        ['너는 어디에서 왔니?', '../where'],
+        ['너는 어디에서 왔니?', '../where', 'where'],
       ]
 
       setItemList(item_list.filter(i => i !== item1))

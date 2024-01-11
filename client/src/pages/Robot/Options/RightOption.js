@@ -29,10 +29,10 @@ const Options = () => {
       localStorage.setItem('item1_bool', item1_bool)
       localStorage.setItem('item2_bool', item2_bool)
 
-      const spent_time = (Date.parse(localStorage.getItem('enter_time')) - new Date())/1000
-
+      const spent_time = (new Date() - Date.parse(localStorage.getItem('enter_time')))/1000
       var treatment_time = JSON.parse(localStorage.getItem('treatment_time'))
       treatment_time.push(spent_time)
+      // console.log(JSON.stringify(treatment_time))
       localStorage.setItem('treatment_time', JSON.stringify(treatment_time))
 
       var treatment_option = JSON.parse(localStorage.getItem('treatment_option'))
@@ -49,7 +49,7 @@ const Options = () => {
                   const idx = TreatmentSet.indexOf(item)
                   TreatmentSet.splice(idx, 1)
                   localStorage.setItem('treatment_questions', JSON.stringify(TreatmentSet))
-                  exitScreen(item[1])
+                  exitScreen(item[2])
                 }}>
                   <div class='robot-option-text'>{`➤ ${item[0]}`}<br/><br/></div>
                 </Link>

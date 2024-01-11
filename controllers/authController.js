@@ -12,7 +12,7 @@ export const registerController = async (req, res) => {
                 snack_visit, snack_time,
                 post_fun, post_exciting, post_delightful, post_thrilling, post_enjoyable,
                 gender, age, location, frequency, familiar,
-                treatment_visited, treatment_aisle, treatment_option, sub_action } = req.body
+                treatment_visited, treatment_aisle, treatment_option, treatment_time, sub_action } = req.body
 
         const user = await new userModel({
             ip, experiment_type,
@@ -25,7 +25,7 @@ export const registerController = async (req, res) => {
             snack_visit, snack_time,
             post_fun, post_exciting, post_delightful, post_thrilling, post_enjoyable,
             gender, age, location, frequency, familiar,
-            treatment_visited, treatment_aisle, treatment_option, sub_action
+            treatment_visited, treatment_aisle, treatment_option, treatment_time, sub_action
         }).save();
 
         res.status(200).send({

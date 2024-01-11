@@ -10,6 +10,7 @@ const RecommendOption = () => {
   const slug = slug_mapping[localStorage.getItem('rec_item')]
   const option = localStorage.getItem('rec_option')
   const help_location = localStorage.getItem('help_location')
+
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
 
@@ -20,6 +21,7 @@ const RecommendOption = () => {
   const [main, setMain] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
+  console.log('robot_visit')
 
   const getAllOptions = async()=> {
     try {

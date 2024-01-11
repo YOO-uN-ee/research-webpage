@@ -79,6 +79,10 @@ const userSchema = new mongoose.Schema({
         data: Buffer,
         contentType: String,
     },
+    treatment_time: {
+        data: Buffer,
+        contentType: Number,
+    },
     sub_action: {
         data: Buffer,
         contentType: String,

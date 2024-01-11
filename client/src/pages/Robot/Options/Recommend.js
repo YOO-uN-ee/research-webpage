@@ -12,6 +12,12 @@ const Recommend = () => {
   var past_count = localStorage.getItem('robot_visit')
   localStorage.setItem('robot_visit', past_count + 1)
 
+  console.log('robot_visit')
+
+  var startTime = new Date()
+  localStorage.setItem('enter_time', new Date().toString())
+  console.log(startTime)
+
   return (
     <Layout>
       <div class='horizontal-center'>
