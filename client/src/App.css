@@ -258,7 +258,7 @@
 }
 
 .cart-icon {
-    height: 20px;
+    height: 25px;
     filter: invert(40%) sepia(58%) saturate(603%) hue-rotate(27deg) brightness(94%) contrast(93%);
 }
 .cart-icon:hover{
