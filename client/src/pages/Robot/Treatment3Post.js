@@ -65,10 +65,10 @@ export const demographicsJSON = {
         "name": "frequency",
         "title": "장보기 빈도수",
         "choices": [
-          '1주에 1번 이상',
-          '1주에 1번',
-          '2주에 1번',
-          '한달에 1번, 혹은 1달에 1번 이하'
+          '한달에 4번 이상',
+          '한달에 4번',
+          '한달에  2-3번',
+          '한달에 1번 이하'
          ],
         "isRequired": true,
        }
