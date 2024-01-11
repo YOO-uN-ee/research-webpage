@@ -131,7 +131,7 @@ const Detailed = () => {
                   <div>{item.name}<br />{item.price}원</div>
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
-                  const idx = my_cart.findIndex((i) => i.name !== item.name)
+                  const idx = my_cart.findIndex((i) => i.name === item.name)
                   console.log(idx)
 
                   my_cart.splice(idx, 1)
@@ -139,10 +139,13 @@ const Detailed = () => {
                   
                   setMyCart(my_cart)
 
-                  if(item.slug === slug_mapping[item1]){
+                  const slug_idx1 = my_cart.findIndex((i) => i.slug === slug_mapping[item1])
+                  const slug_idx2 = my_cart.findIndex((i) => i.slug === slug_mapping[item2])
+
+                  if(slug_idx1 === -1){
                     setItem1Bool(-1)
                   }
-                  else if(item.slug === slug_mapping[item2]){
+                  else if(slug_idx2 === -1){
                     setItem2Bool(-1)
                   }
                 }}/>
