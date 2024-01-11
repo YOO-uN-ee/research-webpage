@@ -22,9 +22,9 @@ const Robot5 = () => {
   localStorage.setItem('arrive_used', -1);
   localStorage.setItem('recom_used', -1);
 
-  localStorage.setItem('treatment_sequence', JSON.stringify([]))
+  localStorage.setItem('treatment_option', JSON.stringify([]))
   localStorage.setItem('treatment_time', JSON.stringify([]))
-  localStorage.setItem('add_item', JSON.stringify([]))
+  localStorage.setItem('sub_action', JSON.stringify([]))
 
   if (!TreatmentSet){
     if (extension === 'FFSRWM' || extension === 'ZOX019'){
