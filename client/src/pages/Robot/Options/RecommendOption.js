@@ -196,6 +196,7 @@ const RecommendOption = () => {
             ))}
           </div>
       </Popup>
+      <div class='cart-button-count-container'><div class='cart-button-surrounding' /><div class='cart-button-text'>{my_cart.length}</div></div>
     </div>
 
     <div class='footer'>

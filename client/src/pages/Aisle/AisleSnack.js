@@ -76,6 +76,7 @@ const Aisle = () => {
                   ))}
                 </div>
             </Popup>
+            <div class='cart-button-count-container'><div class='cart-button-surrounding' /><div class='cart-button-text'>{my_cart.length}</div></div>
           </div>
 
           {item1_bool > 0 && item2_bool > 0 &&

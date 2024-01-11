@@ -62,6 +62,7 @@ const Robot = () => {
             ))}
           </div>
       </Popup>
+      <div class='cart-button-count-container'><div class='cart-button-surrounding' /><div class='cart-button-text'>{my_cart.length}</div></div>
     </div>
 
     <div class='right-button-parent'><Link to='../2'><img src='/media/images/forward.svg' class='right-button' alt='next'/></Link></div> 
