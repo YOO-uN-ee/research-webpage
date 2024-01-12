@@ -61,15 +61,22 @@ const Aisle = () => {
                       <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
                         const idx = my_cart.findIndex((i) => i.name === item.name)                  
                         setMyCart(my_cart.filter((item, index) => index !== idx))
+
+                        console.log(my_cart)
       
                         const slug_idx1 = my_cart.findIndex((i) => i.slug === slug_mapping[item1])
                         const slug_idx2 = my_cart.findIndex((i) => i.slug === slug_mapping[item2])
+
+                        console.log(slug_idx1)
+                        console.log(slug_idx1)
       
                         if(slug_idx1 === -1){
                           setItem1Bool(-1)
+                          console.log(item1_bool)
                         }
                         else if(slug_idx2 === -1){
                           setItem2Bool(-1)
+                          console.log(item2_bool)
                         }
                       }}/>
                     </div>
