@@ -180,10 +180,10 @@ const RecommendOption = () => {
                 </div>
                 <img src={'/media/images/delete.svg'} class='delete-icon' alt='지우기' onClick={() => {
                   const idx = my_cart.findIndex((i) => i.name === item.name)                  
-                  setMyCart(my_cart.filter((item, index) => index !== idx))
+                  const tmp_cart = my_cart.filter((item, index) => index !== idx)
 
-                  const slug_idx1 = my_cart.findIndex((i) => i.slug === slug_mapping[item1])
-                  const slug_idx2 = my_cart.findIndex((i) => i.slug === slug_mapping[item2])
+                  const slug_idx1 = tmp_cart.findIndex((i) => i.slug === slug_mapping[item1])
+                  const slug_idx2 = tmp_cart.findIndex((i) => i.slug === slug_mapping[item2])
 
                   if(slug_idx1 === -1){
                     setItem1Bool(-1)
@@ -191,6 +191,8 @@ const RecommendOption = () => {
                   else if(slug_idx2 === -1){
                     setItem2Bool(-1)
                   }
+
+                  setMyCart(tmp_cart)
                 }}/>
               </div>
             ))}
