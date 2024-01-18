@@ -132,7 +132,7 @@ const userSchema = new mongoose.Schema({
         required:true,
     }
 },
-{ timestamps: false }
+{ timestamps: true }
 )
 
 export default mongoose.model('users', userSchema);
