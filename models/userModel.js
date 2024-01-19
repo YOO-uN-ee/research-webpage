@@ -9,6 +9,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    purchase_list: {
+        type: [String]
+    },
     pre_fun: {
         type:Number,
         required:true,

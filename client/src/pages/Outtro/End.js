@@ -13,7 +13,7 @@ const Final= () => {
 
     if(experiment_type === 'treatment3'){
       const res = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
-      "ip":localStorage.getItem('ip'), "experiment_type":experiment_type,
+      "ip":localStorage.getItem('ip'), "experiment_type":experiment_type, "purchase_list": [localStorage.getItem('item1'), localStorage.getItem('item2')],
       "pre_fun":localStorage.getItem('pre-fun'), "pre_exciting":localStorage.getItem('pre-exciting'), "pre_delightful":localStorage.getItem('pre-delightful'), 
       "pre_thrilling":localStorage.getItem('pre-thrilling'), "pre_enjoyable":localStorage.getItem('pre-enjoyable'),
       "post_fun":localStorage.getItem('post-fun'), "post_exciting":localStorage.getItem('post-exciting'), "post_delightful":localStorage.getItem('post-delightful'), 
@@ -26,7 +26,7 @@ const Final= () => {
     
     else{
       const res = await axios.post("https://research-backend-3mwd.onrender.com/api/auth/add", {
-        "ip":localStorage.getItem('ip'), "experiment_type":localStorage.getItem('experiment_type'),
+        "ip":localStorage.getItem('ip'), "experiment_type":localStorage.getItem('experiment_type'), "purchase_list": [localStorage.getItem('item1'), localStorage.getItem('item2')],
         "pre_fun":localStorage.getItem('pre-fun'), "pre_exciting":localStorage.getItem('pre-exciting'), "pre_delightful":localStorage.getItem('pre-delightful'), 
         "pre_thrilling":localStorage.getItem('pre-thrilling'), "pre_enjoyable":localStorage.getItem('pre-enjoyable'),
         "items_bought":JSON.parse(localStorage.getItem('item_names')), "total_price":localStorage.getItem('total_price'), "total_time":timeDiff || 0,
