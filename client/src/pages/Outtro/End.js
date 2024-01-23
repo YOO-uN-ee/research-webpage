@@ -54,19 +54,20 @@ const Final= () => {
   
   return (
     <Layout>
-      <div>
-        <div class='main-text items-center'>
+      <div class='table-class'>
+        <div class='main-text'>
           <br />
-          <div>설문에 참여해주셔서 대단히 감사합니다. 아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br /></div>
-           <table class='table-auto'>
-            <tbody>
+          설문에 참여해주셔서 대단히 감사합니다. <br/>아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br />
+        </div>
+
+          
+           <table>
               <tr>
                 <td class='td-color'>comp</td>
                 <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp' target="_blank">https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
               </tr>
-            </tbody>
           </table>
-        </div>
+        
       </div>
     </Layout>
   )
