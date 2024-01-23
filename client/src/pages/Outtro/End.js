@@ -57,22 +57,12 @@ const Final= () => {
       <div>
         <div class='main-text'>
           <br />
-          참여해주셔서 감사드립니다!<br /><br />
+          설문에 참여해주셔서 대단히 감사합니다. 아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br />
            <table class='table-auto'>
             <tbody>
               <tr>
                 <td class='td-color'>comp</td>
                 <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp' target="_blank">https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
-              </tr>
-
-              <tr>
-                <td class='td-color'>scrout</td>
-                <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout' target="_blank">https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
-              </tr>
-
-              <tr>
-                <td class='td-color'>quotafull</td>
-                <td><a href='https://d8aspring.post-survey.com/ans/back/?status=quotafull' target="_blank">https://d8aspring.post-survey.com/ans/back/?status=quotafull</a></td>
               </tr>
             </tbody>
           </table>
