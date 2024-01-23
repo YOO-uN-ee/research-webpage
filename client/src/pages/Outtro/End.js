@@ -55,9 +55,9 @@ const Final= () => {
   return (
     <Layout>
       <div>
-        <div class='main-text'>
+        <div class='main-text items-center'>
           <br />
-          설문에 참여해주셔서 대단히 감사합니다. 아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br />
+          <div>설문에 참여해주셔서 대단히 감사합니다. 아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br /></div>
            <table class='table-auto'>
             <tbody>
               <tr>
