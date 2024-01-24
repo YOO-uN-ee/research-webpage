@@ -38,7 +38,7 @@ const Robot = () => {
             id="inputName"
             placeholder="홍길동"
           />
-          <br/>
+          <br/><br/>
           이름이나 닉네임을 작성하여도 무방하고, 이름을 작성하지 않아도 다음으로 넘어갈 수 있습니다.
          </div>
       </div>
