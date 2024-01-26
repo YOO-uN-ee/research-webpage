@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
+    uid: {
+        type:String,
+        default:'UNKNOWN'
+    },
     ip: {
         type:String,
         default: '0.0.0.0'

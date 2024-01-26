@@ -1,6 +1,15 @@
 import React, { useEffect } from 'react'
 
 const AutoRedirect = () => {
+  useEffect(() => {
+    localStorage.clear();
+    
+    var a = window.location.href; 
+    var b = a.substring(a.indexOf("?UID=")+1);
+
+    localStorage.setItem('uid', b)
+  }, []);
+
     const number_mapping = {
         0: 'D1UQDV',
         1: 'FFSRWM',

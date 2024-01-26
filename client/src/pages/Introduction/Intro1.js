@@ -20,8 +20,6 @@ const Intro1 = () => {
   };
 
   useEffect(() => {
-    localStorage.clear();
-
     localStorage.setItem('web_enter', new Date().toString())
     
     storeIP();
