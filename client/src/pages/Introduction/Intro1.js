@@ -18,6 +18,7 @@ const Intro1 = () => {
     localStorage.setItem('ip', res.data.ip)
     localStorage.setItem('experiment_type', userType)
   };
+  console.log(localStorage.getItem('uid'))
 
   useEffect(() => {
     localStorage.setItem('web_enter', new Date().toString())

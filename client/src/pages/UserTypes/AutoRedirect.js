@@ -5,7 +5,7 @@ const AutoRedirect = () => {
     localStorage.clear();
     
     var a = window.location.href; 
-    var b = a.substring(a.indexOf("?UID=")+1);
+    var b = a.substring(a.indexOf("?UID=")+5);
 
     localStorage.setItem('uid', b)
   }, []);
