@@ -17,23 +17,23 @@ const userSchema = new mongoose.Schema({
     },
     pre_fun: {
         type:Number,
-        required:true,
+        default:0,
     },
     pre_exciting: {
         type:Number,
-        required:true,
+        default:0,
     },
     pre_delightful: {
         type:Number,
-        required:true,
+        default:0,
     },
     pre_thrilling: {
         type:Number,
-        required:true,
+        default:0,
     },
     pre_enjoyable: {
         type:Number,
-        required:true,
+        default:0,
     },
     items_bought: {
         type: [String]
@@ -91,23 +91,23 @@ const userSchema = new mongoose.Schema({
     },
     post_fun: {
         type:Number,
-        required:true,
+        default:0,
     },
     post_exciting: {
         type:Number,
-        required:true,
+        default:0,
     },
     post_delightful: {
         type:Number,
-        required:true,
+        default:0,
     },
     post_thrilling: {
         type:Number,
-        required:true,
+        default:0,
     },
     post_enjoyable: {
         type:Number,
-        required:true,
+        default:0,
     },
     gender: {
         type:String,
