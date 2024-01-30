@@ -10,8 +10,7 @@ const userSchema = new mongoose.Schema({
         default: '0.0.0.0'
     },
     experiment_type: {
-        type:String,
-        required:true,
+        type:String
     },
     purchase_list: {
         type: [String]
