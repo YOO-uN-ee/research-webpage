@@ -40,7 +40,7 @@ export const registerController = async (req, res) => {
         res.status(500).send({
             success:false,
             message: error,
-            req.body,
+            user,
             error
         })
     }
