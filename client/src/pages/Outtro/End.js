@@ -7,7 +7,7 @@ const Final= () => {
   var startTime = Date.parse(localStorage.getItem('web_enter'))
   var endTime = new Date()
   var timeDiff = (endTime - startTime)/1000
-  const extension = currentPath.split('/')[1]
+  const extension = window.location.pathname.split('/')[1]
 
   const storeData = async() => {
     const experiment_type = localStorage.getItem('experiment_type')
