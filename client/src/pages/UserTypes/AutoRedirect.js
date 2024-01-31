@@ -6,9 +6,7 @@ const AutoRedirect = () => {
         1: 'FFSRWM',
         2: 'L53NNR',
     }
-    useEffect(() => {
-      localStorage.clear();
-    
+    useEffect(() => {    
       var a = window.location.href; 
       var b = a.substring(a.indexOf("?UID=")+5);
   
