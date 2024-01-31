@@ -12,10 +12,7 @@ const Intro1 = () => {
   const userType = mapping[extension]
 
   const storeIP = async() => {
-    const res = await axios.get("https://api.ipify.org/?format=json");
-
     localStorage.setItem('extension', extension)
-    localStorage.setItem('ip', res.data.ip)
     localStorage.setItem('experiment_type', userType)
   };
   console.log(localStorage.getItem('uid'))
