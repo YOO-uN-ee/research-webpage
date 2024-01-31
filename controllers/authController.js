@@ -3,7 +3,7 @@ import userModel from "../models/userModel.js";
 export const registerController = async (req, res) => {
     try {
         const { uid,
-                ip, experiment_type, purchase_list,
+                experiment_type, purchase_list,
                 pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
                 items_bought, total_price, total_time,
                 fruit_visit, fruit_time, 
@@ -15,26 +15,9 @@ export const registerController = async (req, res) => {
                 gender, age, location, frequency, familiar, robot_seen, asked_name,
                 treatment_visited, treatment_aisle, treatment_option, treatment_time, sub_action } = req.body
 
-        const available = {
-            "uid": uid,
-            "ip": ip,
-            "experiment_type": experiment_type,
-            "purchase_list": purchase_list,
-            "pre_fun": pre_fun, "pre_exciting": pre_exciting, "pre_delightful": pre_delightful, "pre_thrilling": pre_thrilling, "pre_enjoyable": pre_enjoyable,
-            "items_bought": items_bought, "total_price": total_price, "total_time": total_time,
-            "fruit_visit": fruit_visit, "fruit_time": fruit_time, 
-            "vegetable_visit": vegetable_visit, "vegetable_time": vegetable_time, 
-            "condiment_visit": condiment_visit, "condiment_time": condiment_time, 
-            "dessert_visit": dessert_visit, "dessert_time": dessert_time, 
-            "snack_visit": snack_visit, "snack_time": snack_time,
-            "post_fun": post_fun, "post_exciting": post_exciting, "post_delightful": post_delightful, "post_thrilling": post_thrilling, "post_enjoyable": post_enjoyable,
-            "gender": gender, "age": age, "location": location, "frequency": frequency, "familiar": familiar, "": robot_seen, "asked_name": asked_name,
-            "treatment_visited": treatment_visited, "treatment_aisle": treatment_aisle, "treatment_option": treatment_option, "treatment_time": treatment_time, "sub_action": sub_action
-        }
-
         const user = await new userModel({
             uid,
-            ip, experiment_type, purchase_list,
+            experiment_type, purchase_list,
             pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
             items_bought, total_price, total_time,
             fruit_visit, fruit_time, 

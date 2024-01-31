@@ -5,10 +5,6 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:'UNKNOWN'
     },
-    ip: {
-        type:String,
-        default: '0.0.0.0'
-    },
     experiment_type: {
         type:String
     },
