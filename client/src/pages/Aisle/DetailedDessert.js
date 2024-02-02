@@ -39,6 +39,7 @@ const Detailed = () => {
       localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
       localStorage.setItem('treatment_option', JSON.stringify([]))
       localStorage.setItem('sub_action', JSON.stringify([]))
+      exitScreen()
 
       window.location.replace('../../help/1'); 
     }
