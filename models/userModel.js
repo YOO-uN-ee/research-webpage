@@ -3,7 +3,11 @@ import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema({
     uid: {
         type:String,
-        default:'UNKNOWN'
+        default: "UNKNOWN"
+    },
+    ip: {
+        type:String,
+        required: true,
     },
     experiment_type: {
         type:String
