@@ -11,7 +11,11 @@ const Intro1 = () => {
 
   var a = window.location.href; 
   var b = a.substring(a.indexOf("?UID=")+5);
-  localStorage.setItem('uid', b)
+  if (!localStorage.getItem('uid')){
+    localStorage.setItem('uid', b)
+    console.log(localStorage.getItem('uid'))
+  }
+  
 
   const extension = currentPath.split('/')[1]
   const userType = mapping[extension]
@@ -20,7 +24,6 @@ const Intro1 = () => {
     localStorage.setItem('extension', extension)
     localStorage.setItem('experiment_type', userType)
   };
-  console.log(localStorage.getItem('uid'))
 
   useEffect(() => {
     localStorage.setItem('web_enter', new Date().toString())
