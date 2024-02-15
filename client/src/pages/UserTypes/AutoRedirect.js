@@ -14,8 +14,9 @@ const AutoRedirect = () => {
   
       localStorage.setItem('uid', b)
       
-      const random_assignment = number_mapping[Math.floor(Math.random() * 3)];
-      window.location.replace(`./${random_assignment}/welcome`);
+      // const random_assignment = number_mapping[Math.floor(Math.random() * 3)];
+      // window.location.replace(`./${random_assignment}/welcome`);
+      window.location.replace(`./L53NNR/welcome`);
       }, []);
     
     return (
