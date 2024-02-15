@@ -8,6 +8,11 @@ var mapping = {"D1UQDV": "control", "FFSRWM":"treatment1", "L53NNR":"treatment2"
 
 const Intro1 = () => {
   const currentPath = window.location.pathname;
+
+  var a = window.location.href; 
+  var b = a.substring(a.indexOf("?UID=")+5);
+  localStorage.setItem('uid', b)
+
   const extension = currentPath.split('/')[1]
   const userType = mapping[extension]
 
