@@ -32,6 +32,13 @@ import Robot4 from './pages/Robot/Robot4'
 import Robot5 from './pages/Robot/Robot5'
 import RobotExit from './pages/Robot/RobotExit'
 
+// import Robot1 from './pages/Robot/Robot1'
+// import Robot2 from './pages/Robot/Robot2'
+// import Robot3 from './pages/Robot/Robot3'
+// import Robot4 from './pages/Robot/Robot4'
+// import Robot5 from './pages/Robot/Robot5'
+// import RobotExit from './pages/Robot/RobotExit'
+
 import Dance from './pages/Robot/Options/Dance'
 import HandShake from './pages/Robot/Options/HandShake'
 import Where from './pages/Robot/Options/Where'
