@@ -131,8 +131,12 @@ const Options = () => {
             }
 
             {localStorage.getItem('robot_visit') > 2 &&
-              <div class='robot-option-text'><Link to={`../end`}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
+              // <div class='robot-option-text'><Link to={`../end`}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
+              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
             }
+
+            {/* {extension !== 'ZOX019' &&
+              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`}><img src='/media/images/forward.svg' class='icon-button' alt='next'/></Link></div>} */}
 
           </div>
 
