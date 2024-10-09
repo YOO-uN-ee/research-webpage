@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 
 const AutoRedirect = () => {
     const number_mapping = {
-        0: 'D1UQDV',
-        1: 'FFSRWM',
-        2: 'L53NNR',
-    }
+      0: 'BIKTPB',
+      1: 'FFSRWM',
+      2: 'AOTLLO',
+  }
+
     useEffect(() => {    
       localStorage.clear();
       
@@ -14,9 +15,9 @@ const AutoRedirect = () => {
   
       localStorage.setItem('uid', b)
       
-      // const random_assignment = number_mapping[Math.floor(Math.random() * 3)];
-      // window.location.replace(`./${random_assignment}/welcome`);
-      window.location.replace(`./L53NNR/welcome`);
+      const random_assignment = number_mapping[Math.floor(Math.random() * 3)];
+      window.location.replace(`./${random_assignment}/welcome`);
+      // window.location.replace(`./L53NNR/welcome`);
       }, []);
     
     return (
