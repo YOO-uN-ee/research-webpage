@@ -352,6 +352,11 @@
     align-items: center;
 }
 
+.audio-bar {
+    position: absolute;
+    display: block;
+}
+
 .background-image {
     position: absolute;
     height: 55vh;

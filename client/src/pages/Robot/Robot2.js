@@ -22,17 +22,28 @@ const Robot = () => {
         {/* Original Video
         <video id="pepper-intro" autoPlay={true} controls="controls" className='intro-img' src={'/media/videos/pepper1.mp4'} /> */}
         <div class='robot-parent'>
+          {extension === 'FFSRWM' && 
+            <audio id="pepper-audio" autoPlay={true} controls="controls" src={'/media/sounds/pepper_audio.mp3'} className='audio-bar' /> 
+          }
+
           <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
+
           {extension === 'FFSRWM' && 
             <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
           }
 
           {extension === 'BIKTPB' && 
-            <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
+            <div>
+              <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
+              <audio id="human-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice.mp3'} className='audio-bar' /> 
+            </div>
           }
 
           {extension === 'AOTLLO' && 
-            <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
+            <div>
+              <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
+              <audio id="human-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice2.mp3'} className='audio-bar' /> 
+            </div>
           }
         </div>
 
@@ -43,7 +54,6 @@ const Robot = () => {
           {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
           이 로봇은 고객을 돕기 위해 여기 있습니다.<br /><br />
           “안녕하세요. 저는 인공지능 로봇 페퍼에요” 
-          <audio id="pepper-audio" autoPlay={true} controls="controls" src={'/media/sounds/pepper_audio.mp3'} />
          </div> }
 
         {extension !== 'FFSRWM' &&
