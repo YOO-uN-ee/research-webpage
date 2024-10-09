@@ -5,6 +5,7 @@ import Option from './RightOption'
 import Layout from "./OptionLayout";
 
 const Arrive = () => {
+  const extension = localStorage.getItem('extension')
   const help_location = localStorage.getItem('help_location')
   const sub_action = JSON.parse(localStorage.getItem('sub_action'))
   sub_action.push(`to aisle ${help_location}`)
