@@ -25,26 +25,25 @@ const Robot = () => {
           {extension === 'FFSRWM' && 
             <audio id="pepper-audio" autoPlay={true} controls="controls" src={'/media/sounds/pepper_audio.mp3'} className='audio-bar' /> 
           }
+          {extension === 'BIKTPB' && 
+            <audio id="human-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice.mp3'} className='audio-bar' /> 
+          }
+          {extension === 'AOTLLO' && 
+            <audio id="human2-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice2.mp3'} className='audio-bar' /> 
+          }
 
           <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
 
           {extension === 'FFSRWM' && 
             <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
           }
-
           {extension === 'BIKTPB' && 
-            <div>
-              <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
-              <audio id="human-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice.mp3'} className='audio-bar' /> 
-            </div>
+            <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
           }
-
           {extension === 'AOTLLO' && 
-            <div>
-              <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
-              <audio id="human-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice2.mp3'} className='audio-bar' /> 
-            </div>
+            <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
           }
+              
         </div>
 
 
