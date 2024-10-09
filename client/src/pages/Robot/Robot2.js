@@ -43,20 +43,12 @@ const Robot = () => {
           {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
           이 로봇은 고객을 돕기 위해 여기 있습니다.<br /><br />
           “안녕하세요. 저는 인공지능 로봇 페퍼에요” 
+          <audio id="pepper-audio" autoPlay={true} controls="controls" src={'/media/sounds/pepper_audio.mp3'} />
          </div> }
 
-        {extension === 'BIKTPB' &&
+        {extension !== 'FFSRWM' &&
         <div class='main-text'>
           <br />
-          {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
-          직원은 고객을 돕기 위해 여기 있습니다.<br /><br />
-          “안녕하세요.” 
-         </div> }
-
-         {extension === 'AOTLLO' &&
-        <div class='main-text'>
-          <br />
-          {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
           직원은 고객을 돕기 위해 여기 있습니다.<br /><br />
           “안녕하세요.” 
          </div> }
