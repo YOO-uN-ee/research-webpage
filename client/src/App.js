@@ -46,7 +46,7 @@ import Recommend from './pages/Robot/Options/Recommend'
 import RecommendOption from './pages/Robot/Options/RecommendOption'
 import Arrive from './pages/Robot/Options/Arrive'
 import MoreHelp from './pages/Robot/Options/MoreHelp'
-import MoreHelp from './pages/Robot/Options/Weather'
+import Weather from './pages/Robot/Options/Weather'
 
 import Checkout from './pages/Aisle/Checkout';
 import PostSurvey from './pages/Outtro/PostSurvey';
