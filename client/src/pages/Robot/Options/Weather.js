@@ -1,23 +1,18 @@
 import React from "react";
 
-import { category_mapping } from '../../Items'
 import Option from './RightOption'
 import Layout from "./OptionLayout";
 
 const Arrive = () => {
   const extension = localStorage.getItem('extension')
   const help_location = localStorage.getItem('help_location')
-  const sub_action = JSON.parse(localStorage.getItem('sub_action'))
-  sub_action.push(`to aisle ${help_location}`)
-  localStorage.setItem('sub_action', JSON.stringify(sub_action))
+  
+  var past_count = localStorage.getItem('robot_visit')
+  localStorage.setItem('robot_visit', past_count + 1)
 
   var startTime = new Date()
   localStorage.setItem('enter_time', new Date().toString())
   console.log(startTime)
-
-  var past_count = localStorage.getItem('robot_visit')
-  localStorage.setItem('robot_visit', past_count + 1)
-  localStorage.setItem('arrive_used', 1)
 
   return (
     <Layout>
