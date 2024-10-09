@@ -7,6 +7,7 @@ import Layout from "./OptionLayout";
 const Arrive = () => {
   const help_location = localStorage.getItem('help_location')
   const sub_action = JSON.parse(localStorage.getItem('sub_action'))
+  const extension = window.location.pathname.split('/')[1]
   sub_action.push(`to aisle ${help_location}`)
   localStorage.setItem('sub_action', JSON.stringify(sub_action))
 
@@ -25,7 +26,15 @@ const Arrive = () => {
         <div class='area-check'>
           <div className='robot-parent'>
             <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='location' className='background-image'/>
-            <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
+            {extension === 'FFSRWM' && 
+              <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
+            }
+            {extension === 'BIKTPB' && 
+              <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
+            }
+            {extension === 'AOTLLO' && 
+              <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
+            }
           </div>
           <div class='main-text'>
             <br />

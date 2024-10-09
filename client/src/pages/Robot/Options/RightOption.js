@@ -81,7 +81,7 @@ const Options = () => {
               </div>
             }
 
-            {extension === 'FFSRWM' && arrive_used < 0 &&
+            {extension !== 'L53NNR' && arrive_used < 0 &&
             <>
               <div class='flex horizontal-center items-center robot-option-text'>
                 <div>➤&nbsp;</div> 
