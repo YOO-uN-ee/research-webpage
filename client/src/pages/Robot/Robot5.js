@@ -42,6 +42,8 @@ const Robot5 = () => {
       TreatmentSet = [
         ['안녕하세요! 오늘 날이 좋네요.', '../weather', 'weather'],
       ]
+
+      localStorage.setItem('treatment_questions', JSON.stringify(TreatmentSet));
     }
 
     else {
