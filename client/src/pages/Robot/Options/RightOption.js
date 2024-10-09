@@ -47,7 +47,9 @@ const Options = () => {
               <div>
                 <Link to={item[1]} onClick={() => {
                   const idx = TreatmentSet.indexOf(item)
+                  console.log(JSON.stringify(idx))
                   TreatmentSet.splice(idx, 1)
+                  console.log(JSON.stringify(TreatmentSet))
                   localStorage.setItem('treatment_questions', JSON.stringify(TreatmentSet))
                   exitScreen(item[2])
                 }}>
