@@ -37,6 +37,12 @@ const Robot5 = () => {
       localStorage.setItem('treatment_questions', JSON.stringify(TreatmentSet));
     }
 
+    else if (extension === 'BIKTPB' || extension === 'AOTLLO'){
+      TreatmentSet = [
+        ['안녕하세요! 오늘 날이 좋네요.', '../weather', 'weather'],
+      ]
+    }
+
     else {
       TreatmentSet = [
         ['너는 어디에서 왔니?', '../where', 'where'],
@@ -55,9 +61,28 @@ const Robot5 = () => {
       <div class='flex flex-row'>
         <div class='w-1/2'>
           <div class='area-check'>
-            <div class='main-text'>만나서 반가워요, {localStorage.getItem("user_name")} 고객님! <br /><br/></div>
-            <video id="pepper-greet" autoPlay="true" controls="controls" className='video' src='/media/videos/Pepper_greeting.mp4' />
-            <div class='main-text'><br />제가 어떻게 도와드릴 수 있을까요?</div>
+            {extension === 'FFSRWM' && 
+              <div class='main-text'>만나서 반가워요, {localStorage.getItem("user_name")} 고객님! <br /><br/></div>
+            }
+            {/* <video id="pepper-greet" autoPlay="true" controls="controls" className='video' src='/media/videos/Pepper_greeting.mp4' />
+            <div class='main-text'><br />제가 어떻게 도와드릴 수 있을까요?</div> */}
+
+            <div class='robot-parent'>
+              <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
+              {extension === 'FFSRWM' && 
+                <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
+              }
+
+              {extension === 'BIKTPB' && 
+                <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
+              }
+
+              {extension === 'AOTLLO' && 
+                <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
+              }
+            </div>
+
+            <div class='main-text'><br />어떻게 도와드릴까요?</div>
           </div>
         </div>
         <div class='w-1/2 vertical-center-relative'>

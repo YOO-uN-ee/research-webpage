@@ -46,6 +46,7 @@ import Recommend from './pages/Robot/Options/Recommend'
 import RecommendOption from './pages/Robot/Options/RecommendOption'
 import Arrive from './pages/Robot/Options/Arrive'
 import MoreHelp from './pages/Robot/Options/MoreHelp'
+import MoreHelp from './pages/Robot/Options/Weather'
 
 import Checkout from './pages/Aisle/Checkout';
 import PostSurvey from './pages/Outtro/PostSurvey';
@@ -248,12 +249,13 @@ function App() {
           <Route path='5' element={<Robot5 />}/>
           <Route path='end' element={<RobotExit />}/>
 
-          <Route path='dance' element={<Dance />}/>
+          {/* <Route path='dance' element={<Dance />}/>
           <Route path='handshake' element={<HandShake />}/>
-          <Route path='where' element={<Where />}/>
+          <Route path='where' element={<Where />}/> */}
           <Route path='recommend' element={<Recommend />}/>
           <Route path='recommend/option' element={<RecommendOption />}/>
           <Route path='arrive' element={<Arrive />}/>
+          <Route path='weather' element={<Weather />}/>
           <Route path='more' element={<MoreHelp />}/>
         </Route>
 
@@ -302,12 +304,13 @@ function App() {
           <Route path='5' element={<Robot5 />}/>
           <Route path='end' element={<RobotExit />}/>
 
-          <Route path='dance' element={<Dance />}/>
+          {/* <Route path='dance' element={<Dance />}/>
           <Route path='handshake' element={<HandShake />}/>
-          <Route path='where' element={<Where />}/>
+          <Route path='where' element={<Where />}/> */}
           <Route path='recommend' element={<Recommend />}/>
           <Route path='recommend/option' element={<RecommendOption />}/>
           <Route path='arrive' element={<Arrive />}/>
+          <Route path='weather' element={<Weather />}/>
           <Route path='more' element={<MoreHelp />}/>
         </Route>
 

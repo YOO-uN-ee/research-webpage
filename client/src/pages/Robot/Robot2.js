@@ -7,6 +7,8 @@ import Layout from "./RobotLayout";
 
 const Robot = () => {
   const help_location = localStorage.getItem('help_location')
+  const extension = window.location.pathname.split('/')[1]
+
   const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
@@ -21,16 +23,44 @@ const Robot = () => {
         <video id="pepper-intro" autoPlay={true} controls="controls" className='intro-img' src={'/media/videos/pepper1.mp4'} /> */}
         <div class='robot-parent'>
           <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
-          <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
+          {extension === 'FFSRWM' && 
+            <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
+          }
+
+          {extension === 'BIKTPB' && 
+            <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
+          }
+
+          {extension === 'AOTLLO' && 
+            <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
+          }
         </div>
 
 
+        {extension === 'FFSRWM' && 
         <div class='main-text'>
           <br />
           {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
           이 로봇은 고객을 돕기 위해 여기 있습니다.<br /><br />
           “안녕하세요. 저는 인공지능 로봇 페퍼에요” 
-         </div>
+         </div> }
+
+        {extension === 'BIKTPB' &&
+        <div class='main-text'>
+          <br />
+          {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
+          직원은 고객을 돕기 위해 여기 있습니다.<br /><br />
+          “안녕하세요.” 
+         </div> }
+
+         {extension === 'AOTLLO' &&
+        <div class='main-text'>
+          <br />
+          {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
+          직원은 고객을 돕기 위해 여기 있습니다.<br /><br />
+          “안녕하세요.” 
+         </div> }
+
       </div>
 
       <div class='cart-button-parent'>

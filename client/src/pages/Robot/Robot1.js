@@ -8,6 +8,7 @@ import Layout from "./RobotLayout";
 
 const Robot = () => {
   const help_location = localStorage.getItem('help_location')
+  const extension = window.location.pathname.split('/')[1]
   const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
@@ -21,14 +22,32 @@ const Robot = () => {
       <div class='horizontal-center general-body'>
         <div class='robot-parent'>
           <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
-          <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
+          {extension === 'FFSRWM' && 
+            <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
+          }
+
+          {extension === 'BIKTPB' && 
+            <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
+          }
+
+          {extension === 'AOTLLO' && 
+            <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
+          }
         </div>
 
+        {extension === 'FFSRWM' && 
         <div class='main-text'>
           <br />
            당신이 쇼핑을 하고 있는 도중, 매장 보조용 로봇 직원이 당신에게 다가옵니다.<br /><br />
            이 로봇은 당신이 도움이 필요할지도 모른다고 생각하는 것 같습니다.
-         </div>
+         </div> }
+
+         {extension !== 'FFSRWM' && 
+        <div class='main-text'>
+          <br />
+          당신이 쇼핑을 하고 있는 도중, 매장 직원이 당신에게 다가옵니다.<br /><br />
+          직원은 당신이 도움이 필요할지도 모른다고 생각하는 것 같습니다.
+         </div> }
       </div>
 
       <div class='cart-button-parent'>
