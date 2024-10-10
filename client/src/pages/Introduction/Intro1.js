@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Layout from "./IntroLayout";
 
-var mapping = {"D1UQDV": "control", "FFSRWM":"treatment1", "L53NNR":"treatment2"};
+var mapping = {"D1UQDV": "control", "FFSRWM":"treatment1", "L53NNR":"treatment2", "BIKTPB":"human1", "AOTLLO":"human2"};
 
 const Intro1 = () => {
   const currentPath = window.location.pathname;
