@@ -35,7 +35,7 @@ const Intro6 = () => {
     localStorage.setItem('pre-delightful', sender.data.delightful);
     localStorage.setItem('pre-thrilling', sender.data.thrilling);
     localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
-    window.location.replace('../7');
+    window.location.replace('./7');
     // const res = axios.post("/api/survey/addsurvey", {"user_id":currentUser, "when":"pre", fun:sender.data.fun, exciting:sender.data.exciting, delightful:sender.data.delightful,thrilling:sender.data.thrilling, enjoyable:sender.data.enjoyable});
   });
 
