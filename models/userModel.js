@@ -31,6 +31,50 @@ const userSchema = new mongoose.Schema({
         type:Number,
         default:0,
     },
+    pre_enthusiastic: {
+        type:Number,
+        default:0,
+    },
+    pre_interested: {
+        type:Number,
+        default:0,
+    },
+    pre_excited: {
+        type:Number,
+        default:0,
+    },
+    pre_alert: {
+        type:Number,
+        default:0,
+    },
+    pre_inspired: {
+        type:Number,
+        default:0,
+    },
+    pre_active: {
+        type:Number,
+        default:0,
+    },
+    pre_distressed: {
+        type:Number,
+        default:0,
+    },
+    pre_upset: {
+        type:Number,
+        default:0,
+    },
+    pre_irritable: {
+        type:Number,
+        default:0,
+    },
+    pre_nervous: {
+        type:Number,
+        default:0,
+    },
+    pre_afraid: {
+        type:Number,
+        default:0,
+    },
     items_bought: {
         type: [String]
     },
@@ -102,6 +146,50 @@ const userSchema = new mongoose.Schema({
         default:0,
     },
     post_enjoyable: {
+        type:Number,
+        default:0,
+    },
+    post_enthusiastic: {
+        type:Number,
+        default:0,
+    },
+    post_interested: {
+        type:Number,
+        default:0,
+    },
+    post_excited: {
+        type:Number,
+        default:0,
+    },
+    post_alert: {
+        type:Number,
+        default:0,
+    },
+    post_inspired: {
+        type:Number,
+        default:0,
+    },
+    post_active: {
+        type:Number,
+        default:0,
+    },
+    post_distressed: {
+        type:Number,
+        default:0,
+    },
+    post_upset: {
+        type:Number,
+        default:0,
+    },
+    post_irritable: {
+        type:Number,
+        default:0,
+    },
+    post_nervous: {
+        type:Number,
+        default:0,
+    },
+    post_afraid: {
         type:Number,
         default:0,
     },

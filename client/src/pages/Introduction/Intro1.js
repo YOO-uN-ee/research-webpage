@@ -22,7 +22,6 @@ const Intro1 = () => {
     console.log(localStorage.getItem('uid'))
   }
   
-
   const extension = currentPath.split('/')[1]
   const userType = mapping[extension]
 

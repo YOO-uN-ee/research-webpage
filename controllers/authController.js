@@ -5,6 +5,7 @@ export const registerController = async (req, res) => {
         const { uid,
                 experiment_type, purchase_list,
                 pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
+                pre_enthusiastic, pre_interested, pre_excited, pre_alert, pre_inspired, pre_active, pre_distressed, pre_upset, pre_irritable, pre_nervous, pre_afraid, 
                 items_bought, total_price, total_time,
                 fruit_visit, fruit_time, 
                 vegetable_visit, vegetable_time, 
@@ -12,6 +13,7 @@ export const registerController = async (req, res) => {
                 dessert_visit, dessert_time, 
                 snack_visit, snack_time,
                 post_fun, post_exciting, post_delightful, post_thrilling, post_enjoyable,
+                post_enthusiastic, post_interested, post_excited, post_alert, post_inspired, post_active, post_distressed, post_upset, post_irritable, post_nervous, post_afraid, 
                 gender, age, location, frequency, familiar, robot_seen, asked_name,
                 treatment_visited, treatment_aisle, treatment_option, treatment_time, sub_action } = req.body
 
@@ -19,6 +21,7 @@ export const registerController = async (req, res) => {
             uid,
             experiment_type, purchase_list,
             pre_fun, pre_exciting, pre_delightful, pre_thrilling, pre_enjoyable,
+            pre_enthusiastic, pre_interested, pre_excited, pre_alert, pre_inspired, pre_active, pre_distressed, pre_upset, pre_irritable, pre_nervous, pre_afraid, 
             items_bought, total_price, total_time,
             fruit_visit, fruit_time, 
             vegetable_visit, vegetable_time, 
@@ -26,6 +29,7 @@ export const registerController = async (req, res) => {
             dessert_visit, dessert_time, 
             snack_visit, snack_time,
             post_fun, post_exciting, post_delightful, post_thrilling, post_enjoyable,
+            post_enthusiastic, post_interested, post_excited, post_alert, post_inspired, post_active, post_distressed, post_upset, post_irritable, post_nervous, post_afraid, 
             gender, age, location, frequency, familiar, robot_seen, asked_name,
             treatment_visited, treatment_aisle, treatment_option, treatment_time, sub_action
         }).save();

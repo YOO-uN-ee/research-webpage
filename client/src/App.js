@@ -10,6 +10,7 @@ import Intro3 from './pages/Introduction/Intro3';
 import Intro4 from './pages/Introduction/Intro4';
 import Intro5 from './pages/Introduction/Intro5';
 import Intro6 from './pages/Introduction/Intro6';
+import Intro7 from './pages/Introduction/Intro7';
 
 import AisleFruit from './pages/Aisle/AisleFruit';
 import DetailedFruit from './pages/Aisle/DetailedFruit';
@@ -50,6 +51,7 @@ import Weather from './pages/Robot/Options/Weather'
 
 import Checkout from './pages/Aisle/Checkout';
 import PostSurvey from './pages/Outtro/PostSurvey';
+import PostMoodSurvey from './pages/Outtro/PostMood';
 import Demographics from './pages/Outtro/Demographics';
 import End from './pages/Outtro/End';
 
@@ -75,6 +77,7 @@ function App() {
           <Route path='4' element={<Intro4 />} />
           <Route path='5' element={<Intro5 />} />
           <Route path='6' element={<Intro6 />} />
+          <Route path='7' element={<Intro7 />} />
         </Route>
 
         <Route path='aisle'>
@@ -98,7 +101,8 @@ function App() {
 
         <Route path='thankyou'>
           <Route path='survey' element={<PostSurvey />} />
-          <Route path='2' element={<Demographics />} />
+          <Route path='2' element={<PostMoodSurvey />} />
+          <Route path='3' element={<Demographics />} />
           <Route path='end' element={<End />} />
         </Route>
       </Route>
@@ -112,6 +116,7 @@ function App() {
           <Route path='4' element={<Intro4 />} />
           <Route path='5' element={<Intro5 />} />
           <Route path='6' element={<Intro6 />} />
+          <Route path='7' element={<Intro7 />} />
         </Route>
 
         <Route path='aisle'>
@@ -152,7 +157,8 @@ function App() {
 
         <Route path='thankyou'>
           <Route path='survey' element={<PostSurvey />} />
-          <Route path='2' element={<Demographics />} />
+          <Route path='2' element={<PostMoodSurvey />} />
+          <Route path='3' element={<Demographics />} />
           <Route path='end' element={<End />} />
         </Route>
       </Route>
@@ -166,6 +172,7 @@ function App() {
           <Route path='4' element={<Intro4 />} />
           <Route path='5' element={<Intro5 />} />
           <Route path='6' element={<Intro6 />} />
+          <Route path='7' element={<Intro7 />} />
         </Route>
 
         <Route path='aisle'>
@@ -206,7 +213,8 @@ function App() {
 
         <Route path='thankyou'>
           <Route path='survey' element={<PostSurvey />} />
-          <Route path='2' element={<Demographics />} />
+          <Route path='2' element={<PostMoodSurvey />} />
+          <Route path='3' element={<Demographics />} />
           <Route path='end' element={<End />} />
         </Route>
       </Route>
@@ -220,6 +228,7 @@ function App() {
           <Route path='4' element={<Intro4 />} />
           <Route path='5' element={<Intro5 />} />
           <Route path='6' element={<Intro6 />} />
+          <Route path='7' element={<Intro7 />} />
         </Route>
 
         <Route path='aisle'>
@@ -261,7 +270,8 @@ function App() {
 
         <Route path='thankyou'>
           <Route path='survey' element={<PostSurvey />} />
-          <Route path='2' element={<Demographics />} />
+          <Route path='2' element={<PostMoodSurvey />} />
+          <Route path='3' element={<Demographics />} />
           <Route path='end' element={<End />} />
         </Route>
       </Route>
@@ -275,6 +285,7 @@ function App() {
           <Route path='4' element={<Intro4 />} />
           <Route path='5' element={<Intro5 />} />
           <Route path='6' element={<Intro6 />} />
+          <Route path='7' element={<Intro7 />} />
         </Route>
 
         <Route path='aisle'>
@@ -316,7 +327,8 @@ function App() {
 
         <Route path='thankyou'>
           <Route path='survey' element={<PostSurvey />} />
-          <Route path='2' element={<Demographics />} />
+          <Route path='2' element={<PostMoodSurvey />} />
+          <Route path='3' element={<Demographics />} />
           <Route path='end' element={<End />} />
         </Route>
       </Route>

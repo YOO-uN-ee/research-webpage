@@ -2,15 +2,15 @@ import React from "react";
 import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
 import * as SurveyTheme from "survey-core/themes";
-import { surveyJSON } from "../Survey";
+import { surveymoodJSON } from "../SurveyMood";
 import "survey-core/i18n/korean"
 import axios from 'axios'
 
-const Intro6 = () => {
+const Intro7 = () => {
   localStorage.setItem('my_cart', JSON.stringify([]));
   localStorage.setItem('robot_interacted', -1)
 
-  const survey = new Model(surveyJSON);
+  const surveymood = new Model(surveymoodJSON);
   survey.applyTheme(SurveyTheme.PlainLightPanelless);
   survey.locale = "ko";
 
@@ -30,12 +30,19 @@ const Intro6 = () => {
 
   survey.onComplete.add((sender, options) => {
     // saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
-    localStorage.setItem('pre-fun', sender.data.fun);
-    localStorage.setItem('pre-exciting', sender.data.exciting);
-    localStorage.setItem('pre-delightful', sender.data.delightful);
-    localStorage.setItem('pre-thrilling', sender.data.thrilling);
-    localStorage.setItem('pre-enjoyable', sender.data.enjoyable);
-    window.location.replace('../7');
+    localStorage.setItem('pre-enthusiastic', sender.data.enthusiastic);
+    localStorage.setItem('pre-interested', sender.data.interested);
+    localStorage.setItem('pre-excited', sender.data.excited);
+    localStorage.setItem('pre-alert', sender.data.alert);
+    localStorage.setItem('pre-inspired', sender.data.inspired);
+    localStorage.setItem('pre-active', sender.data.active);
+    localStorage.setItem('pre-distressed', sender.data.distressed);
+    localStorage.setItem('pre-upset', sender.data.upset);
+    localStorage.setItem('pre-irritable', sender.data.irritable);
+    localStorage.setItem('pre-nervous', sender.data.nervous);
+    localStorage.setItem('pre-afraid', sender.data.afraid);
+
+    window.location.replace('../aisle/fruit');
     // const res = axios.post("/api/survey/addsurvey", {"user_id":currentUser, "when":"pre", fun:sender.data.fun, exciting:sender.data.exciting, delightful:sender.data.delightful,thrilling:sender.data.thrilling, enjoyable:sender.data.enjoyable});
   });
 
@@ -44,8 +51,8 @@ const Intro6 = () => {
       <div class='flex'>
       <div class='w-1/2 vertical-center'>
         <div class='main-text area-check'>
-          실험 시작 전, 귀하의 감정 상태를 선택해주세요. <br/>
-          현재의 감정 상태를 1(전혀 아님)부터 7(매우 그러함)까지의 척도로 표시해 주시면 됩니다.<br/><br/>
+          현재 귀하의 기분(mood)상태에 대해서도 선택해 주세요. <br/>
+          현재의 기분 상태를 1(전혀 아님)부터 7(매우 그러함)까지의 척도로 표시해 주시면 됩니다.<br/><br/>
 
           완료 후 "완료"버튼을 눌러주세요. 
 
@@ -53,7 +60,7 @@ const Intro6 = () => {
       </div>
 
       <div class='w-1/2 vertical-center'>
-        <Survey model={survey}/>
+        <Survey model={surveymood}/>
       </div>
       </div>
     // </div>
@@ -71,4 +78,4 @@ const Intro6 = () => {
   )
 }
 
-export default Intro6
+export default Intro7
