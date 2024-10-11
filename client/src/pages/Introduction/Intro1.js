@@ -7,6 +7,12 @@ import Layout from "./IntroLayout";
 var mapping = {"D1UQDV": "control", "FFSRWM":"treatment1", "L53NNR":"treatment2", "BIKTPB":"human1", "AOTLLO":"human2"};
 
 const Intro1 = () => {
+  localStorage.clear();      
+  // var a = window.location.href; 
+  // var b = a.substring(a.indexOf("?UID=")+5);
+
+  // localStorage.setItem('uid', b)
+
   const currentPath = window.location.pathname;
 
   var a = window.location.href; 
@@ -19,6 +25,8 @@ const Intro1 = () => {
 
   const extension = currentPath.split('/')[1]
   const userType = mapping[extension]
+
+  console.log(userType)
 
   const storeIP = async() => {
     localStorage.setItem('extension', extension)
