@@ -11,8 +11,8 @@ const Intro7 = () => {
   localStorage.setItem('robot_interacted', -1)
 
   const surveymood = new Model(surveymoodJSON);
-  survey.applyTheme(SurveyTheme.PlainLightPanelless);
-  survey.locale = "ko";
+  surveymood.applyTheme(SurveyTheme.PlainLightPanelless);
+  surveymood.locale = "ko";
 
   // const saveSurvey = async(fun, exciting, delightful, thrilling, enjoyable) => {
   //   const user_id = localStorage.getItem('user_id')
@@ -28,7 +28,7 @@ const Intro7 = () => {
   //   localStorage.setItem("message", console.log(res.message))
   // }
 
-  survey.onComplete.add((sender, options) => {
+  surveymood.onComplete.add((sender, options) => {
     // saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
     localStorage.setItem('pre-enthusiastic', sender.data.enthusiastic);
     localStorage.setItem('pre-interested', sender.data.interested);

@@ -7,8 +7,8 @@ import axios from 'axios'
 
 const Outtro = () => {
   const post_moodsurvey = new Model(surveymoodJSON);
-  post_survey.applyTheme(SurveyTheme.PlainLightPanelless);
-  post_survey.locale = "ko";
+  post_moodsurvey.applyTheme(SurveyTheme.PlainLightPanelless);
+  post_moodsurvey.locale = "ko";
 
   // const saveSurvey = async(fun, exciting, delightful, thrilling, enjoyable) => {
   //   const user_id = localStorage.getItem('user_id')
@@ -22,7 +22,7 @@ const Outtro = () => {
   //   })
   // }
 
-  post_survey.onComplete.add((sender, options) => {
+  post_moodsurvey.onComplete.add((sender, options) => {
     // saveSurvey(sender.data.fun, sender.data.exciting, sender.data.delightful, sender.data.thrilling, sender.data.enjoyable)
     localStorage.setItem('post-enthusiastic', sender.data.enthusiastic);
     localStorage.setItem('post-interested', sender.data.interested);
