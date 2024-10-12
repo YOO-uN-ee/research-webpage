@@ -19,7 +19,9 @@ const Robot = () => {
   return (
     <>
     <Layout>
-          {/* {extension === 'FFSRWM' && 
+      <div class='horizontal-center general-body'>
+        <div class='robot-parent'>
+          {extension === 'FFSRWM' && 
             <audio id="pepper-audio" autoPlay={true} controls="controls" src={'/media/sounds/pepper_audio.mp3'} className='audio-bar' /> 
           }
           {extension === 'BIKTPB' && 
@@ -27,10 +29,8 @@ const Robot = () => {
           }
           {extension === 'AOTLLO' && 
             <audio id="human2-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice2.mp3'} className='audio-bar' /> 
-          } */}
+          }
 
-      <div class='horizontal-center general-body'>
-        <div class='robot-parent'>
           <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
           {extension === 'FFSRWM' && 
             <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
