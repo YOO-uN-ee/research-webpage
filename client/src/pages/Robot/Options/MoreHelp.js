@@ -24,7 +24,7 @@ const MoreHelp = () => {
               <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
             }
           </div>
-          <div class='main-text'><br />더 도움이 필요하신가요?</div>
+          <div class='main-text'><br />더 도움이 필요하신가요?<br /></div>
         </div>
       </div>
       <div class='w-1/2 vertical-center-relative'>

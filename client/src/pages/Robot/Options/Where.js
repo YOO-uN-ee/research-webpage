@@ -17,7 +17,7 @@ const Where = () => {
       <div class='w-1/2 vertical-center-relative'>
         <div class='area-check'>
           <video id="pepper-where" autoPlay="true" controls="controls" className='video' src={'/media/videos/pepper_wherefrom.mp4'} />
-          <div class='main-text'><br />재밌었어요! 더 도움이 필요하신가요?</div>
+          <div class='main-text'><br />재밌었어요! 더 도움이 필요하신가요?<br /></div>
         </div>
       </div>
       <div class='w-1/2 vertical-center-relative'>

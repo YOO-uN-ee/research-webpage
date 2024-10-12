@@ -39,7 +39,7 @@ const Arrive = () => {
           <div class='main-text'>
             <br />
             {category_mapping[help_location]} 섹션에 도착했습니다!<br /><br />
-            {category_mapping[help_location]} 섹션에서 쇼핑을 다시 시작하시기 전에, 도움이 더 필요하신가요?
+            {category_mapping[help_location]} 섹션에서 쇼핑을 다시 시작하시기 전에, 도움이 더 필요하신가요?<br />
           </div>
         </div>
       </div>
