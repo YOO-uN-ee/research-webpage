@@ -36,8 +36,8 @@ const Arrive = () => {
 
           <div class='main-text'>
             <br />
-            네, 오늘 날씨가 정말 좋네요.<br /><br />
-            어떻게 도와드릴까요?<br />
+            네, 오늘 날씨가 정말 좋네요.<br />
+            어떻게 도와드릴까요?<br /><br />
           </div>
         </div>
       </div>

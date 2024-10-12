@@ -62,10 +62,10 @@ const Robot5 = () => {
   return (
     <Layout>
       <div class='flex flex-row'>
-        <div class='w-1/2'>
+        <div class='w-1/2 vertical-center-relative'>
           <div class='area-check'>
             {extension === 'FFSRWM' && 
-              <div class='main-text'>만나서 반가워요, {localStorage.getItem("user_name")} 고객님! <br /><br/></div>
+              <div class='main-text'>만나서 반가워요, {localStorage.getItem("user_name")} 고객님!<br/></div>
             }
             {/* <video id="pepper-greet" autoPlay="true" controls="controls" className='video' src='/media/videos/Pepper_greeting.mp4' />
             <div class='main-text'><br />제가 어떻게 도와드릴 수 있을까요?</div> */}
