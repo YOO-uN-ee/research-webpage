@@ -358,7 +358,7 @@
 }
 
 .background-image {
-    position: absolute;
+    position: relative;
     height: 55vh;
     display: block;
 }
