@@ -37,9 +37,6 @@ const Robot = () => {
         <div class='main-text'>
           <br />
           혹시 도움이 필요하시다면 제가 도와드릴게요!<br /><br /><br />
-          {extension === 'FFSRWM' &&
-            <br />
-          }
         </div>
       </div>
 
