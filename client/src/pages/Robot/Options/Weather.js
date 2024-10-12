@@ -4,7 +4,7 @@ import Option from './RightOption'
 import Layout from "./OptionLayout";
 
 const Arrive = () => {
-  const extension = localStorage.getItem('extension')
+  const extension = window.location.pathname.split('/')[1]
   const help_location = localStorage.getItem('help_location')
   
   var past_count = localStorage.getItem('robot_visit')

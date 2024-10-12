@@ -4,7 +4,7 @@ import Layout from "./OptionLayout";
 
 const MoreHelp = () => {
   const help_location = localStorage.getItem('help_location')
-  const extension = localStorage.getItem('extension')
+  const extension = window.location.pathname.split('/')[1]
 
   return (
     <Layout>

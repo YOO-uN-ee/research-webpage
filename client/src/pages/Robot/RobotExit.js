@@ -6,7 +6,7 @@ import Layout from "./RobotLayout";
 import { slug_mapping } from '../Items';
 
 const Robot = () => {
-    const extension = localStorage.getItem('extension')
+    const extension = window.location.pathname.split('/')[1]
     const help_location = localStorage.getItem('help_location')
 
     const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))

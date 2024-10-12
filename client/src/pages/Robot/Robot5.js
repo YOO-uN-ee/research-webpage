@@ -9,7 +9,7 @@ const Robot5 = () => {
   const item1 = localStorage.getItem('item1')
   const item2 = localStorage.getItem('item2')
 
-  const extension = localStorage.getItem('extension')
+  const extension = window.location.pathname.split('/')[1]
   const help_location = localStorage.getItem('help_location')
   var TreatmentSet = JSON.parse(localStorage.getItem('treatment_questions'));
   const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
