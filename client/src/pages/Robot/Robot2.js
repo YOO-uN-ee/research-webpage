@@ -52,7 +52,7 @@ const Robot = () => {
           “안녕하세요. 저는 인공지능 로봇 페퍼에요”<br/>
          </div> }
 
-         {extension !== 'FFSRWM' && 
+        {extension !== 'FFSRWM' && 
         <div class='main-text'>
           <br />
           직원은 고객을 돕기 위해 여기 있습니다.<br /><br />

@@ -36,7 +36,7 @@ const Robot = () => {
 
         <div class='main-text'>
           <br />
-          성함이 어떻게 되시죠, 고객님? <br />
+          성함이 어떻게 되시죠, 고객님?<br /><br />
           귀하의 이름을 타이핑해 주세요: 
           <input 
             type="text"
@@ -47,9 +47,9 @@ const Robot = () => {
             }}
             id="inputName"
             placeholder="홍길동"
-          /><br/><br/><br/>
-          {/* 이름이나 닉네임을 작성하여도 무방하고, 작성하지 않아도 다음으로 넘어갈 수 있습니다 */}
+          /><br/>
         </div>
+          {/* 이름이나 닉네임을 작성하여도 무방하고, 작성하지 않아도 다음으로 넘어갈 수 있습니다 */}
       </div>
 
       <div class='cart-button-parent'>
