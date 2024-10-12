@@ -7,6 +7,7 @@ import Layout from "./RobotLayout";
 
 const Robot = () => {
   const help_location = localStorage.getItem('help_location')
+  const extension = window.location.pathname.split('/')[1]
   const [name, setName] = useState("")
 
   const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
