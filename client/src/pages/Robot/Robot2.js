@@ -17,12 +17,9 @@ const Robot = () => {
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
   return (
+    <>
     <Layout>
-      <div class='horizontal-center general-body'>
-        {/* Original Video
-        <video id="pepper-intro" autoPlay={true} controls="controls" className='intro-img' src={'/media/videos/pepper1.mp4'} /> */}
-        <div class='robot-parent'>
-          {extension === 'FFSRWM' && 
+          {/* {extension === 'FFSRWM' && 
             <audio id="pepper-audio" autoPlay={true} controls="controls" src={'/media/sounds/pepper_audio.mp3'} className='audio-bar' /> 
           }
           {extension === 'BIKTPB' && 
@@ -30,38 +27,37 @@ const Robot = () => {
           }
           {extension === 'AOTLLO' && 
             <audio id="human2-audio" autoPlay={true} controls="controls" src={'/media/sounds/human_voice2.mp3'} className='audio-bar' /> 
-          }
+          } */}
 
+      <div class='horizontal-center general-body'>
+        <div class='robot-parent'>
           <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
-
           {extension === 'FFSRWM' && 
             <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
           }
+
           {extension === 'BIKTPB' && 
             <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
           }
+
           {extension === 'AOTLLO' && 
             <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
           }
-              
         </div>
-
 
         {extension === 'FFSRWM' && 
         <div class='main-text'>
           <br />
-          {/* 이 로봇은 비디오에서 보여진 것처럼 고객과 대화를 나누도록 훈련되었으며, 고객을 돕기 위해 여기 있습니다. */}
           이 로봇은 고객을 돕기 위해 여기 있습니다.<br /><br />
           “안녕하세요. 저는 인공지능 로봇 페퍼에요” 
          </div> }
 
-        {extension !== 'FFSRWM' &&
+         {extension !== 'FFSRWM' && 
         <div class='main-text'>
           <br />
           직원은 고객을 돕기 위해 여기 있습니다.<br /><br />
           “안녕하세요.” 
          </div> }
-
       </div>
 
       <div class='cart-button-parent'>
@@ -102,6 +98,7 @@ const Robot = () => {
 
     <div class='right-button-parent'><Link to='../3'><img src='/media/images/forward.svg' class='right-button' alt='next'/></Link></div> 
     </Layout>
+    </>
   )
 }
 
