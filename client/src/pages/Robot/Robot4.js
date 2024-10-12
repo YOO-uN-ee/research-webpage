@@ -21,6 +21,7 @@ const Robot = () => {
     <Layout>
       <div class='horizontal-center general-body'>
         <div class='robot-parent'>
+          <br />
           <img src={`/media/images/Aisle/${help_location}_aisle.jpg`} alt='마트 이미지' class='background-image' />
           {extension === 'FFSRWM' && 
             <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
