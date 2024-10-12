@@ -25,11 +25,9 @@ const Robot = () => {
           {extension === 'FFSRWM' && 
             <img src='/media/images/robot.png' alt='robot' className='robot-image'/>
           }
-
           {extension === 'BIKTPB' && 
             <img src='/media/images/sa1.png' alt='agent' className='robot-image'/>
           }
-
           {extension === 'AOTLLO' && 
             <img src='/media/images/sa2.png' alt='smiling-agent' className='robot-image'/>
           }
@@ -48,10 +46,9 @@ const Robot = () => {
             }}
             id="inputName"
             placeholder="홍길동"
-          />
-          <br/><br/>
+          /><br/><br/>
           이름이나 닉네임을 작성하여도 무방하고, 이름을 작성하지 않아도 다음으로 넘어갈 수 있습니다.
-         </div>
+        </div>
       </div>
 
       <div class='cart-button-parent'>
