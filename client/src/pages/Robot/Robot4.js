@@ -36,7 +36,7 @@ const Robot = () => {
 
         <div class='main-text'>
           <br />
-          성함이 어떻게 되시죠, 고객님?
+          성함이 어떻게 되시죠, 고객님? <br/>
           귀하의 이름을 타이핑해 주세요: 
           <input 
             type="text"
