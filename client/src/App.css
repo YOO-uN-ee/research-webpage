@@ -358,9 +358,12 @@
 }
 
 .background-image {
-    position: relative;
+    position: absolute;
     height: 55vh;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
 }
 
 .robot-image {
