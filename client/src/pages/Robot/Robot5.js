@@ -85,7 +85,7 @@ const Robot5 = () => {
               }
             </div>
 
-            <div class='main-text'><br />어떻게 도와드릴까요?</div>
+            <div class='main-text'><br />어떻게 도와드릴까요?<br/></div>
           </div>
         </div>
         <div class='w-1/2 vertical-center-relative'>
