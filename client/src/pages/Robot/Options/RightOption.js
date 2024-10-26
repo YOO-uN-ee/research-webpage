@@ -40,6 +40,17 @@ const Options = () => {
       localStorage.setItem('treatment_option', JSON.stringify(treatment_option))
     }
 
+    const completeScreen = ()=>{
+      localStorage.setItem('my_cart', JSON.stringify(my_cart))
+      localStorage.setItem('item1_bool', item1_bool)
+      localStorage.setItem('item2_bool', item2_bool)
+
+      const spent_time = (new Date() - Date.parse(localStorage.getItem('enter_time')))/1000
+      var treatment_time = JSON.parse(localStorage.getItem('treatment_time'))
+      treatment_time.push(spent_time)
+      localStorage.setItem('treatment_time', JSON.stringify(treatment_time))
+    }
+
   return (
     <>
           <div class=''>
@@ -142,7 +153,7 @@ const Options = () => {
 
             {localStorage.getItem('robot_visit') > 2 &&
               // <div class='robot-option-text'><Link to={`../end`}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
-              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`} onClick={() => exitScreen('complete')}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
+              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`} onClick={() => completeScreen()}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
             }
 
             {/* {extension !== 'ZOX019' &&
