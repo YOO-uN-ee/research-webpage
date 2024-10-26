@@ -48,6 +48,7 @@ const Options = () => {
       const spent_time = (new Date() - Date.parse(localStorage.getItem('enter_time')))/1000
       var treatment_time = JSON.parse(localStorage.getItem('treatment_time'))
       treatment_time.push(spent_time)
+      treatment_time.shift()
       localStorage.setItem('treatment_time', JSON.stringify(treatment_time))
     }
 
