@@ -100,7 +100,12 @@ const Options = () => {
                     <Dropdown.Item href='arrive' onClick={() => {localStorage.setItem('help_location', 'snack'); exitScreen('aisle')}}>과자/라면</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-                <div>&nbsp;섹션으로 이동하고 싶어.</div>
+                {extension === 'FFSRWM' &&
+                  <div>&nbsp;섹션으로 이동하고 싶어.</div>
+                }
+                {extension !== 'FFSRWM' &&
+                  <div>&nbsp;섹션으로 이동하고 싶어요.</div>
+                }
               </div> 
               <br/>
             </>
@@ -126,13 +131,18 @@ const Options = () => {
                     ))}
                   </Dropdown.Menu>
                 </Dropdown>
-                <div>&nbsp;관련 품목을 추천해 줄래?</div>
+                {extension === 'FFSRWM' &&
+                  <div>&nbsp;관련 품목을 추천해 줄래?</div>
+                }
+                {extension !== 'FFSRWM' &&
+                  <div>&nbsp;관련 품목을 추천해 줄래요?</div>
+                }
               </div>
             }
 
             {localStorage.getItem('robot_visit') > 2 &&
               // <div class='robot-option-text'><Link to={`../end`}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
-              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
+              <div class='robot-option-text'><Link to={`../../aisle/${help_location}`} onClick={() => exitScreen('complete')}><br/>➤ 이제 괜찮아요! 감사합니다. 이제 쇼핑하러 가볼게요.</Link></div>
             }
 
             {/* {extension !== 'ZOX019' &&
