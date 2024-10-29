@@ -12,6 +12,9 @@ const Final= () => {
   var timeDiff = (endTime - startTime)/1000
   const extension = window.location.pathname.split('/')[1]
 
+  var age_suffice = localStorage.getItem('age') >= 18 || localStorage.getItem('age') <= 70
+  var condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('robot_seen') && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
+
   console.log(extension)
 
   const storeData = async() => {
@@ -85,8 +88,16 @@ const Final= () => {
           
            <table>
               <tr>
-                <td class='td-color'>comp</td>
-                <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp'>https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
+                {age_suffice && condition_suffice &&
+                  <td class='td-color'>comp</td>}
+                {age_suffice && condition_suffice &&
+                  <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp'>https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
+                }
+                {(!age_suffice || !condition_suffice) &&
+                  <td class='td-color'>scrout</td>}
+                {(!age_suffice || !condition_suffice) &&
+                  <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'>https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
+                }
               </tr>
           </table>
         
