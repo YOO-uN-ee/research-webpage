@@ -95,9 +95,14 @@ const Final= () => {
                 {age_suffice && condition_suffice &&
                   <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp'>https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
                 }
-                {(!age_suffice || !condition_suffice) &&
+                {!age_suffice  &&
                   <td class='td-color'>scrout</td>}
-                {(!age_suffice || !condition_suffice) &&
+                {!condition_suffice  &&
+                  <td class='td-color'>scrout</td>}
+                {!age_suffice &&
+                  <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'>https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
+                }
+                {!condition_suffice &&
                   <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'>https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
                 }
               </tr>
