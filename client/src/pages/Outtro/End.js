@@ -16,7 +16,6 @@ const Final= () => {
   var condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('robot_seen') && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
 
   console.log(condition_suffice)
-
   console.log(extension)
 
   const storeData = async() => {
@@ -87,26 +86,23 @@ const Final= () => {
           설문에 참여해주셔서 대단히 감사합니다. <br/>아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br />
         </div>
 
-          
-           <table>
-              <tr>
-                {age_suffice && condition_suffice &&
-                  <td class='td-color'>comp</td>}
-                {age_suffice && condition_suffice &&
-                  <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp'>https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
-                }
-                {!age_suffice  &&
-                  <td class='td-color'>scrout</td>}
-                {!condition_suffice  &&
-                  <td class='td-color'>scrout</td>}
-                {!age_suffice &&
+          {age_suffice && condition_suffice && 
+            <table>
+                <tr>
+                    <td class='td-color'>comp</td>
+                    <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp'>https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
+                </tr>
+            </table>
+          }
+
+          {(!age_suffice || !condition_suffice) && 
+            <table>
+                <tr>
+                  <td class='td-color'>scrout</td>
                   <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'>https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
-                }
-                {!condition_suffice &&
-                  <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'>https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
-                }
-              </tr>
-          </table>
+                </tr>
+            </table>
+          }
         
       </div>
     </Layout>
