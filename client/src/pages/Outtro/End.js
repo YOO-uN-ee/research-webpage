@@ -16,8 +16,6 @@ const Final= () => {
   const condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('robot_seen') && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
   const the_condition = age_suffice && condition_suffice
 
-  console.log(age_suffice)
-  console.log(condition_suffice)
   console.log(the_condition)
   console.log(extension)
 
@@ -89,7 +87,7 @@ const Final= () => {
           설문에 참여해주셔서 대단히 감사합니다. <br/>아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br />
         </div>
 
-          {age_suffice && condition_suffice && 
+          {the_condition && 
             <table>
                 <tr>
                     <td class='td-color'>comp</td>
@@ -98,7 +96,7 @@ const Final= () => {
             </table>
           }
 
-          {(!age_suffice || !condition_suffice) && 
+          {!the_condition && 
             <table>
                 <tr>
                   <td class='td-color'>scrout</td>
