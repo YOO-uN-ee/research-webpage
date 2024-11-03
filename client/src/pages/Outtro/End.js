@@ -14,8 +14,11 @@ const Final= () => {
 
   const age_suffice = localStorage.getItem('age') >= 18 || localStorage.getItem('age') <= 70
   const condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('robot_seen') && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
+  const the_condition = age_suffice && condition_suffice
 
+  console.log(age_suffice)
   console.log(condition_suffice)
+  console.log(the_condition)
   console.log(extension)
 
   const storeData = async() => {
