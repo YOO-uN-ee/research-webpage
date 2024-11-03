@@ -64,6 +64,7 @@ const Detailed = () => {
     localStorage.setItem('help_location', 'snack');
 
     const int = setTimeout(() => {
+      exitScreen();
       redirect();
     }, 4000);
 

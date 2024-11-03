@@ -72,6 +72,7 @@ const Detailed = () => {
     localStorage.setItem('help_location', 'vegetable');
 
     const int = setTimeout(() => {
+      exitScreen();
       redirect();
     }, 4000);
 
