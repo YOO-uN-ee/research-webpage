@@ -48,6 +48,8 @@ const Detailed = () => {
       localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
       localStorage.setItem('treatment_option', JSON.stringify([]));
       localStorage.setItem('sub_action', JSON.stringify([]));
+      localStorage.setItem('my_cart', JSON.stringify(my_cart));
+
       exitScreen();
 
       console.log(localStorage.getItem('my_cart'));
@@ -74,9 +76,11 @@ const Detailed = () => {
 
     localStorage.setItem('help_location', 'vegetable');
 
-    const int = setTimeout(() => {
-      redirect();
-    }, 4000);
+    // const int = setTimeout(() => {
+    //   redirect();
+    // }, 4000);
+
+    const int = setTimeout(redirect(), 4000);
 
     return () => clearTimeout(int);
 
