@@ -56,8 +56,9 @@ const Detailed = () => {
 
       console.log(localStorage.getItem('my_cart'));
 
+      window.location.href = '../../help/1';
       // window.location.replace('../../help/1'); 
-      window.location = window.location.replace('../../help/1');
+      // window.location = window.location.replace('../../help/1');
     }
   }
   
