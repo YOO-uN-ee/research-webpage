@@ -34,6 +34,15 @@ const Detailed = () => {
 
   const redirect = () => {
     if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
+      const elapsedTime = JSON.parse(localStorage.getItem('condiment_time'))
+      var endTime = new Date()
+      var timeDiff = endTime - startTime
+
+      localStorage.setItem('my_cart', JSON.stringify(my_cart))
+      localStorage.setItem('condiment_time', elapsedTime + timeDiff)
+      localStorage.setItem('item1_bool', item1_bool)
+      localStorage.setItem('item2_bool', item2_bool)
+      
       localStorage.setItem('robot_interacted', 1);
       localStorage.setItem('treatment_visited', 1);
       localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
@@ -64,7 +73,6 @@ const Detailed = () => {
     localStorage.setItem('help_location', 'snack');
 
     const int = setTimeout(() => {
-      exitScreen();
       redirect();
     }, 4000);
 
