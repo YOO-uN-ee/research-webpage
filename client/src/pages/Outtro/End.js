@@ -87,16 +87,16 @@ const Final= () => {
           설문에 참여해주셔서 대단히 감사합니다. <br/>아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br />
         </div>
 
-          {the_condition && 
+          {the_condition === true && 
             <table>
                 <tr>
-                    <td class='td-color'>comps</td>
+                    <td class='td-color'>comp</td>
                     <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp'>https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
                 </tr>
             </table>
           }
 
-          {!the_condition && 
+          {the_condition === false && 
             <table>
                 <tr>
                   <td class='td-color'>scrouts</td>
