@@ -12,8 +12,8 @@ const Final= () => {
   var timeDiff = (endTime - startTime)/1000
   const extension = window.location.pathname.split('/')[1]
 
-  var age_suffice = localStorage.getItem('age') >= 18 || localStorage.getItem('age') <= 70
-  var condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('robot_seen') && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
+  const age_suffice = localStorage.getItem('age') >= 18 || localStorage.getItem('age') <= 70
+  const condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('robot_seen') && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
 
   console.log(condition_suffice)
   console.log(extension)
