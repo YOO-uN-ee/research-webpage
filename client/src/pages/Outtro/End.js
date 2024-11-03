@@ -90,7 +90,7 @@ const Final= () => {
           {the_condition && 
             <table>
                 <tr>
-                    <td class='td-color'>comp</td>
+                    <td class='td-color'>comps</td>
                     <td><a href='https://d8aspring.post-survey.com/ans/back/?status=comp'>https://d8aspring.post-survey.com/ans/back/?status=comp</a></td>
                 </tr>
             </table>
@@ -99,7 +99,7 @@ const Final= () => {
           {!the_condition && 
             <table>
                 <tr>
-                  <td class='td-color'>scrout</td>
+                  <td class='td-color'>scrouts</td>
                   <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'>https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
                 </tr>
             </table>
