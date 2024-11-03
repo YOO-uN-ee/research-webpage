@@ -16,6 +16,8 @@ const Robot = () => {
   const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
+  console.log(my_cart)
+
   return (
     <>
     <Layout>

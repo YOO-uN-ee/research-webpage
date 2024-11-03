@@ -76,11 +76,9 @@ const Detailed = () => {
 
     localStorage.setItem('help_location', 'vegetable');
 
-    // const int = setTimeout(() => {
-    //   redirect();
-    // }, 4000);
-
-    const int = setTimeout(redirect(), 4000);
+    const int = setTimeout(() => {
+      redirect();
+    }, 4000);
 
     return () => clearTimeout(int);
 
