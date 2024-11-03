@@ -26,10 +26,10 @@ const Detailed = () => {
     var endTime = new Date()
     var timeDiff = endTime - startTime
 
-    localStorage.setItem('my_cart', JSON.stringify(my_cart))
-    localStorage.setItem('vegetable_time', elapsedTime + timeDiff)
-    localStorage.setItem('item1_bool', item1_bool)
-    localStorage.setItem('item2_bool', item2_bool)
+    localStorage.setItem('my_cart', JSON.stringify(my_cart));
+    localStorage.setItem('vegetable_time', elapsedTime + timeDiff);
+    localStorage.setItem('item1_bool', item1_bool);
+    localStorage.setItem('item2_bool', item2_bool);
   }
 
   // const updateRobotLocation = async() => {
@@ -45,12 +45,12 @@ const Detailed = () => {
   
       localStorage.setItem('robot_interacted', 1);
       localStorage.setItem('treatment_visited', 1);
-      localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'))
-      localStorage.setItem('treatment_option', JSON.stringify([]))
-      localStorage.setItem('sub_action', JSON.stringify([]))
-      exitScreen()
+      localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
+      localStorage.setItem('treatment_option', JSON.stringify([]));
+      localStorage.setItem('sub_action', JSON.stringify([]));
+      exitScreen();
 
-      console.log(localStorage.getItem('my_cart'))
+      console.log(localStorage.getItem('my_cart'));
 
       window.location.replace('../../help/1'); 
     }
@@ -134,8 +134,7 @@ const Detailed = () => {
               className='cart-icon'
               onClick={() => {
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
-                localStorage.setItem('my_cart', JSON.stringify(my_cart))
-                
+
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
                 }
