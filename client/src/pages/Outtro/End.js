@@ -12,7 +12,7 @@ const Final= () => {
   var timeDiff = (endTime - startTime)/1000
   const extension = window.location.pathname.split('/')[1]
 
-  const age_suffice = localStorage.getItem('age') >= 18 || localStorage.getItem('age') <= 70
+  const age_suffice = parseInt(localStorage.getItem('age')) >= 18 || parseInt(localStorage.getItem('age')) <= 70
   if(extension === 'FFSRWM') {
     var condition_suffice = localStorage.getItem('asked_name') === 'true'
   }
