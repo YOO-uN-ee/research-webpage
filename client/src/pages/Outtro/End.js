@@ -12,7 +12,7 @@ const Final= () => {
   var timeDiff = (endTime - startTime)/1000
   const extension = window.location.pathname.split('/')[1]
 
-  const age_suffice = parseInt(localStorage.getItem('age')) >= 18 || parseInt(localStorage.getItem('age')) <= 70
+  const age_suffice = parseInt(localStorage.getItem('age')) >= 18 && parseInt(localStorage.getItem('age')) <= 70
   if(extension === 'FFSRWM') {
     var condition_suffice = localStorage.getItem('asked_name') === 'true'
   }
@@ -26,7 +26,7 @@ const Final= () => {
   }
   const the_condition = (age_suffice && condition_suffice).toString()
 
-  // console.log(age_suffice)
+  console.log(age_suffice)
   console.log(condition_suffice)
   // console.log(the_condition)
   // console.log(extension)
