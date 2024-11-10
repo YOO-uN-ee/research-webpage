@@ -136,15 +136,18 @@
 
 .homepage-button {
     background: white;
-    border: 1px solid #6a760c;
+    border: 2px solid #6a760c;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 5px;
+    font: 18px
 }
 
 .homepage-button:hover {
     background: #6a760c;
+    color: white;
+
 }
 
 .icon-button {
