@@ -18,6 +18,8 @@ const Final= () => {
   }
   else {
     console.log('here')
+    var condition_robot = !localStorage.getItem('robot_seen')
+    console.log(condition_robot)
     var condition_suffice = !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name')
   }
   const the_condition = (age_suffice && condition_suffice).toString()
