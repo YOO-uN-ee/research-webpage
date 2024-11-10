@@ -18,9 +18,9 @@ const Final= () => {
   }
   else {
     console.log('here')
-    var condition_robot = !localStorage.getItem('robot_seen')
-    console.log(condition_robot)
-    var condition_suffice = !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name')
+    var condition_seen = !localStorage.getItem('robot_seen')
+    var condition_name = !localStorage.getItem('asked_name')
+    var condition_suffice = condition_seen && condition_name
   }
   const the_condition = (age_suffice && condition_suffice).toString()
 
@@ -28,9 +28,7 @@ const Final= () => {
   console.log(condition_suffice)
   console.log(the_condition)
   console.log(extension)
-  console.log(!localStorage.getItem('robot_seen'))
-  console.log(!localStorage.getItem('asked_name'))
-
+  
   const storeData = async() => {
     const experiment_type = localStorage.getItem('experiment_type')
 
