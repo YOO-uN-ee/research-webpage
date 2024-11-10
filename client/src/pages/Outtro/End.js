@@ -13,7 +13,12 @@ const Final= () => {
   const extension = window.location.pathname.split('/')[1]
 
   const age_suffice = localStorage.getItem('age') >= 18 || localStorage.getItem('age') <= 70
-  const condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
+  if(extension === 'FFSRWM') {
+    var condition_suffice = localStorage.getItem('asked_name')
+  }
+  else {
+    var condition_suffice = !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name')
+  }
   const the_condition = (age_suffice && condition_suffice).toString()
 
   console.log(age_suffice)
