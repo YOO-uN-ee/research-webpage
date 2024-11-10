@@ -88,11 +88,11 @@ const Final= () => {
         </div>
 
           {the_condition === 'true' &&
-            <button onclick="window.location='https://d8aspring.post-survey.com/ans/back/?status=comp';">홈페이지로 돌아가기</button>
+            <a href='https://d8aspring.post-survey.com/ans/back/?status=comp'><button class='homepage-button'>홈페이지로 돌아가기</button></a>
           }
 
           {the_condition === 'false' &&
-            <button onclick="window.location='https://d8aspring.post-survey.com/ans/back/?status=scrout';">홈페이지로 돌아가기</button>
+            <a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'><button class='homepage-button'>홈페이지로 돌아가기</button></a>
           }
 
           {/* {the_condition === "true" && 

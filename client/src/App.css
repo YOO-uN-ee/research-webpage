@@ -134,6 +134,15 @@
     justify-content: space-between;
 }
 
+.homepage-button {
+    background: white;
+    border: 2px solid #6a760c;
+}
+
+.homepage-button:hover {
+    background: #6a760c;
+}
+
 .icon-button {
     height: 35px;
 }
