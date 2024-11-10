@@ -20,6 +20,8 @@ const Final= () => {
     console.log('here')
     var condition_seen = !localStorage.getItem('robot_seen')
     var condition_name = !localStorage.getItem('asked_name')
+    console.log(localStorage.getItem('robot_seen'))
+    console.log(localStorage.getItem('asked_name'))
     console.log(condition_seen)
     console.log(condition_name)
     var condition_suffice = condition_seen && condition_name
