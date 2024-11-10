@@ -13,7 +13,7 @@ const Final= () => {
   const extension = window.location.pathname.split('/')[1]
 
   const age_suffice = localStorage.getItem('age') >= 18 || localStorage.getItem('age') <= 70
-  const condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('robot_seen') && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
+  const condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
   const the_condition = (age_suffice && condition_suffice).toString()
 
   console.log(the_condition)
@@ -87,7 +87,15 @@ const Final= () => {
           설문에 참여해주셔서 대단히 감사합니다. <br/>아래의 링크를 클릭하면 패널나우 화면으로 돌아갑니다.<br /><br />
         </div>
 
-          {the_condition === "true" && 
+          {the_condition === 'true' &&
+            <button onclick="window.location='https://d8aspring.post-survey.com/ans/back/?status=comp';">홈페이지로 돌아가기</button>
+          }
+
+          {the_condition === 'false' &&
+            <button onclick="window.location='https://d8aspring.post-survey.com/ans/back/?status=scrout';">홈페이지로 돌아가기</button>
+          }
+
+          {/* {the_condition === "true" && 
             <table>
                 <tr>
                     <td class='td-color'>comp</td>
@@ -103,7 +111,7 @@ const Final= () => {
                   <td><a href='https://d8aspring.post-survey.com/ans/back/?status=scrout'>https://d8aspring.post-survey.com/ans/back/?status=scrout</a></td>
                 </tr>
             </table>
-          }
+          } */}
         
       </div>
     </Layout>
