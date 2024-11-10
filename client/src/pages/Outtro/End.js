@@ -19,7 +19,7 @@ const Final= () => {
   else {
     console.log('here')
     var condition_seen = localStorage.getItem('robot_seen') === 'false'
-    var condition_name = !localStorage.getItem('asked_name') === 'false'
+    var condition_name = localStorage.getItem('asked_name') === 'false'
     console.log(condition_seen)
     console.log(condition_name)
     var condition_suffice = condition_seen && condition_name
