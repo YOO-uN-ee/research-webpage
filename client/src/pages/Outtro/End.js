@@ -16,8 +16,12 @@ const Final= () => {
   const condition_suffice = (extension === 'FFSRWM' && localStorage.getItem('asked_name')) || (extension !== 'FFSRWM' && !localStorage.getItem('robot_seen') && !localStorage.getItem('asked_name'))
   const the_condition = (age_suffice && condition_suffice).toString()
 
+  console.log(age_suffice)
+  console.log(condition_suffice)
   console.log(the_condition)
   console.log(extension)
+  console.log(localStorage.getItem('robot_seen'))
+  console.log(localStorage.getItem('asked_name'))
 
   const storeData = async() => {
     const experiment_type = localStorage.getItem('experiment_type')
