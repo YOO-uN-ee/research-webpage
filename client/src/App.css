@@ -137,6 +137,7 @@
 .homepage-button {
     background: white;
     border: 2px solid #6a760c;
+    border-radius: 5px;
 }
 
 .homepage-button:hover {
