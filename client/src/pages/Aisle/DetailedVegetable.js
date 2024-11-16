@@ -52,6 +52,8 @@ const Detailed = () => {
       var endTime = new Date()
       var timeDiff = endTime - startTime
 
+      tmp_cart = [...localStorage.getItem('my_cart'), JSON.parse(localStorage.getItem('tmp_item'))]
+      localStorage.setItem('my_cart', tmp_cart)
       localStorage.setItem('vegetable_time', elapsedTime + timeDiff);
       localStorage.setItem('item1_bool', item1_bool);
       localStorage.setItem('item2_bool', item2_bool);
@@ -152,9 +154,11 @@ const Detailed = () => {
 
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
+                  localStorage.setItem('item1_bool', 1)
                 }
                 else if(p.slug === slug_mapping[item2]){
                   setItem2Bool(1)
+                  localStorage.setItem('item2_bool', 1)
                 }
               }}
             />
@@ -187,12 +191,15 @@ const Detailed = () => {
 
                   if(slug_idx1 === -1){
                     setItem1Bool(-1)
+                    localStorage.setItem('item1_bool', -1)
                   }
                   else if(slug_idx2 === -1){
                     setItem2Bool(-1)
+                    localStorage.setItem('item2_bool', -1)
                   }
 
                   setMyCart(tmp_cart)
+                  localStorage.setItem('my_cart', JSON.stringify(tmp_cart));
                 }}/>
               </div>
             ))}
