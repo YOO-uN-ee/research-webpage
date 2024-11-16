@@ -41,8 +41,9 @@ const Detailed = () => {
   //   })
   // }
 
-  const redirectionEvent = () => {
-    localStorage.setItem('robot_interacted', 1);
+  const redirect = () => {
+    if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
+      localStorage.setItem('robot_interacted', 1);
       localStorage.setItem('treatment_visited', 1);
       localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
       localStorage.setItem('treatment_option', JSON.stringify([]));
@@ -51,21 +52,6 @@ const Detailed = () => {
 
       exitScreen();
       change_location();
-  }
-
-  const redirect = () => {
-    if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
-
-      addEventListener('change', redirectionEvent)
-  
-      // localStorage.setItem('robot_interacted', 1);
-      // localStorage.setItem('treatment_visited', 1);
-      // localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
-      // localStorage.setItem('treatment_option', JSON.stringify([]));
-      // localStorage.setItem('sub_action', JSON.stringify([]));
-      // localStorage.setItem('my_cart', JSON.stringify(my_cart));
-
-      // exitScreen();
     }
   }
 
