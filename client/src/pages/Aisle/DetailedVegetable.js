@@ -7,12 +7,18 @@ import Layout from './AisleLayout'
 import ShoppingHeader from './ShoppingHeader'
 import { slug_mapping } from "../Items";
 
+function createInitialCart() {
+  const initialCart = JSON.parse(localStorage.getItem('my_cart'));
+
+  return initialCart
+}
+
 const Detailed = () => {
   const extension = localStorage.getItem('extension')
 
   const [product, setProduct] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
+  const [my_cart, setMyCart] = useState(createInitialCart)
 
   const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
@@ -48,7 +54,6 @@ const Detailed = () => {
       localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
       localStorage.setItem('treatment_option', JSON.stringify([]));
       localStorage.setItem('sub_action', JSON.stringify([]));
-      localStorage.setItem('my_cart', JSON.stringify(my_cart));
 
       exitScreen();
     }
