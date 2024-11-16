@@ -53,8 +53,6 @@ const Detailed = () => {
       var timeDiff = endTime - startTime
 
       localStorage.setItem('vegetable_time', elapsedTime + timeDiff);
-      // localStorage.setItem('item1_bool', item1_bool);
-      // localStorage.setItem('item2_bool', item2_bool);
     }
   }
 
@@ -83,7 +81,7 @@ const Detailed = () => {
     const int = setTimeout(() => {
       redirect();
       change_location();
-    }, 20000);
+    }, 4000);
 
     // const inty = setTimeout(() => {
     //   change_location();

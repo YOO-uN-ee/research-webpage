@@ -34,21 +34,17 @@ const Detailed = () => {
 
   const redirect = () => {
     if(extension !== 'D1UQDV' && localStorage.getItem('robot_interacted') < 0) {
+      localStorage.setItem('robot_interacted', 1);
+      localStorage.setItem('treatment_visited', 1);
+      localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
+      localStorage.setItem('treatment_option', JSON.stringify([]));
+      localStorage.setItem('sub_action', JSON.stringify([]));
+
       const elapsedTime = JSON.parse(localStorage.getItem('condiment_time'))
       var endTime = new Date()
       var timeDiff = endTime - startTime
 
-      localStorage.setItem('my_cart', JSON.stringify(my_cart))
-      localStorage.setItem('condiment_time', elapsedTime + timeDiff)
-      localStorage.setItem('item1_bool', item1_bool)
-      localStorage.setItem('item2_bool', item2_bool)
-
-      localStorage.setItem('robot_interacted', 1);
-      localStorage.setItem('treatment_visited', 1);
-      localStorage.setItem('treatment_aisle', localStorage.getItem('help_location'));
-      localStorage.setItem('treatment_option', JSON.stringify([]))
-      localStorage.setItem('sub_action', JSON.stringify([]))
-      exitScreen()
+      localStorage.setItem('condiment_time', elapsedTime + timeDiff);
 
       window.location.replace('../../help/1'); 
     }
@@ -131,12 +127,20 @@ const Detailed = () => {
               alt="카트 아이콘" 
               className='cart-icon'
               onClick={() => {
+                const tmp_cart = JSON.parse(localStorage.getItem('my_cart'))
+                tmp_cart.push({name:p.name, _id:p._id, price:p.price, slug:p.slug})
+
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
+                localStorage.setItem('my_cart', JSON.stringify(tmp_cart));
+                // localStorage.setItem('tmp_item', JSON.stringify({name:p.name, _id:p._id, price:p.price, slug:p.slug}));
+
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
+                  localStorage.setItem('item1_bool', 1)
                 }
                 else if(p.slug === slug_mapping[item2]){
                   setItem2Bool(1)
+                  localStorage.setItem('item2_bool', 1)
                 }
               }}
             />
@@ -169,12 +173,15 @@ const Detailed = () => {
 
                   if(slug_idx1 === -1){
                     setItem1Bool(-1)
+                    localStorage.setItem('item1_bool', -1)
                   }
                   else if(slug_idx2 === -1){
                     setItem2Bool(-1)
+                    localStorage.setItem('item2_bool', -1)
                   }
 
                   setMyCart(tmp_cart)
+                  localStorage.setItem('my_cart', JSON.stringify(tmp_cart));
                 }}/>
               </div>
             ))}
