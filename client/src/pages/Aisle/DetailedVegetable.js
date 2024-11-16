@@ -146,10 +146,9 @@ const Detailed = () => {
               alt="카트 아이콘" 
               className='cart-icon'
               onClick={() => {
-                localStorage.setItem('my_cart', JSON.stringify(my_cart));
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
-                setMyCart(oldArray => [...oldArray]);
                 localStorage.setItem('my_cart', JSON.stringify(my_cart));
+                localStorage.setItem('tmp_item', JSON.stringify({name:p.name, _id:p._id, price:p.price, slug:p.slug}));
 
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
