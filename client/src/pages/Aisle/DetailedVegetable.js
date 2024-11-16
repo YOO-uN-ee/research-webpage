@@ -27,6 +27,7 @@ const Detailed = () => {
     var timeDiff = endTime - startTime
 
     localStorage.setItem('my_cart', JSON.stringify(my_cart));
+    console.log(my_cart)
     localStorage.setItem('vegetable_time', elapsedTime + timeDiff);
     localStorage.setItem('item1_bool', item1_bool);
     localStorage.setItem('item2_bool', item2_bool);
