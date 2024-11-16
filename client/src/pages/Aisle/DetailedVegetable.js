@@ -7,10 +7,10 @@ import Layout from './AisleLayout'
 import ShoppingHeader from './ShoppingHeader'
 import { slug_mapping } from "../Items";
 
-function createInitialCart() {
-  const initialCart = JSON.parse(localStorage.getItem('my_cart'));
-
-  return initialCart
+function saveCart() {
+  console.log(localStorage.getItem('my_cart'))
+  console.log(my_cart)
+  console.log(localStroage.setItem('my_cart'))
 }
 
 const Detailed = () => {
@@ -18,7 +18,7 @@ const Detailed = () => {
 
   const [product, setProduct] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [my_cart, setMyCart] = useState(createInitialCart)
+  const [my_cart, setMyCart] = useState(JSON.parse(localStorage.getItem('my_cart')))
 
   const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
@@ -81,17 +81,20 @@ const Detailed = () => {
 
     localStorage.setItem('help_location', 'vegetable');
 
+    const intervalID = setInterval(saveCart, 1);
+
     const int = setTimeout(() => {
       redirect();
-    }, 4000);
-
-    const inty = setTimeout(() => {
       change_location();
-    }, 4010);
+    }, 100000);
+
+    // const inty = setTimeout(() => {
+    //   change_location();
+    // }, 4010);
 
     // setInterval(redirect(), 4000);
 
-    return () => {clearTimeout(int); clearTimeout(inty);};
+    return () => clearTimeout(int);
 
   }, []);
 
@@ -147,7 +150,7 @@ const Detailed = () => {
               className='cart-icon'
               onClick={() => {
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
-                localStorage.setItem('my_cart', JSON.stringify(my_cart));
+                // localStorage.setItem('my_cart', JSON.stringify(my_cart));
 
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
