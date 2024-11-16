@@ -148,6 +148,7 @@ const Detailed = () => {
               onClick={() => {
                 localStorage.setItem('my_cart', JSON.stringify(my_cart));
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
+                setMyCart(oldArray => [...oldArray]);
                 localStorage.setItem('my_cart', JSON.stringify(my_cart));
 
                 if(p.slug === slug_mapping[item1]){
