@@ -7,12 +7,6 @@ import Layout from './AisleLayout'
 import ShoppingHeader from './ShoppingHeader'
 import { slug_mapping } from "../Items";
 
-function saveCart() {
-  console.log(localStorage.getItem('my_cart'))
-  console.log(my_cart)
-  console.log(localStroage.setItem('my_cart'))
-}
-
 const Detailed = () => {
   const extension = localStorage.getItem('extension')
 
@@ -37,6 +31,12 @@ const Detailed = () => {
     localStorage.setItem('vegetable_time', elapsedTime + timeDiff);
     localStorage.setItem('item1_bool', item1_bool);
     localStorage.setItem('item2_bool', item2_bool);
+  }
+
+  const saveCart = () => {
+    console.log(localStorage.getItem('my_cart'))
+    console.log(my_cart)
+    console.log(localStorage.setItem('my_cart'))
   }
 
   // const updateRobotLocation = async() => {
