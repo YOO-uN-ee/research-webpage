@@ -48,6 +48,8 @@ const Detailed = () => {
       localStorage.setItem('treatment_option', JSON.stringify([]));
       localStorage.setItem('sub_action', JSON.stringify([]));
 
+      console.log(my_cart)
+
       localStorage.setItem('my_cart', JSON.stringify(my_cart));
 
       exitScreen();
