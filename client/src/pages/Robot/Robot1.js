@@ -74,12 +74,15 @@ const Robot = () => {
 
                  if(slug_idx1 === -1){
                    setItem1Bool(-1)
+                   localStorage.setItem('item1_bool', -1)
                  }
                  else if(slug_idx2 === -1){
                    setItem2Bool(-1)
+                   localStorage.setItem('item2_bool', -1)
                  }
 
                  setMyCart(tmp_cart)
+                 localStorage.setItem('my_cart', JSON.stringify(tmp_cart));
                 }}/>
               </div>
             ))}
