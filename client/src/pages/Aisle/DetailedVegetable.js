@@ -27,7 +27,6 @@ const Detailed = () => {
     var timeDiff = endTime - startTime
 
     localStorage.setItem('my_cart', JSON.stringify(my_cart));
-    console.log(my_cart)
     localStorage.setItem('vegetable_time', elapsedTime + timeDiff);
     localStorage.setItem('item1_bool', item1_bool);
     localStorage.setItem('item2_bool', item2_bool);
@@ -78,7 +77,7 @@ const Detailed = () => {
     const int = setTimeout(() => {
       redirect();
       change_location();
-    }, 50000);
+    }, 20000);
 
     // const inty = setTimeout(() => {
     //   change_location();
@@ -141,8 +140,9 @@ const Detailed = () => {
               alt="카트 아이콘" 
               className='cart-icon'
               onClick={() => {
+                localStorage.setItem('my_cart', JSON.stringify(my_cart));
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
-                // localStorage.setItem('my_cart', JSON.stringify(my_cart));
+                localStorage.setItem('my_cart', JSON.stringify(my_cart));
 
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
