@@ -33,12 +33,6 @@ const Detailed = () => {
     localStorage.setItem('item2_bool', item2_bool);
   }
 
-  const saveCart = () => {
-    console.log(localStorage.getItem('my_cart'))
-    console.log(my_cart)
-    console.log(localStorage.setItem('my_cart'))
-  }
-
   // const updateRobotLocation = async() => {
   //   const user_id = localStorage.getItem('user_id')
   //   const res = await axios.put(`https://research-backend-3mwd.onrender.com/api/item/${user_id}`, {
@@ -81,12 +75,10 @@ const Detailed = () => {
 
     localStorage.setItem('help_location', 'vegetable');
 
-    const intervalID = setInterval(saveCart, 1);
-
     const int = setTimeout(() => {
       redirect();
       change_location();
-    }, 100000);
+    }, 50000);
 
     // const inty = setTimeout(() => {
     //   change_location();
