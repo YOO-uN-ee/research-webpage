@@ -101,12 +101,7 @@ const Detailed = () => {
               alt="카트 아이콘" 
               className='cart-icon'
               onClick={() => {
-                setMyCart(oldArray => {[...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]; 
-                  localStorage.setItem('my_cart', JSON.stringify(my_cart));
-                });
-                // console.log(my_cart);
-                // localStorage.setItem('my_cart', JSON.stringify(my_cart));
-                // console.log(localStorage.getItem('my_cart'))
+                setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
 
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
