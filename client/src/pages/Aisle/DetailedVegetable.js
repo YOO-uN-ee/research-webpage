@@ -48,11 +48,13 @@ const Detailed = () => {
       localStorage.setItem('treatment_option', JSON.stringify([]));
       localStorage.setItem('sub_action', JSON.stringify([]));
 
-      console.log(my_cart)
+      const elapsedTime = JSON.parse(localStorage.getItem('vegetable_time'))
+      var endTime = new Date()
+      var timeDiff = endTime - startTime
 
-      localStorage.setItem('my_cart', JSON.stringify(my_cart));
-
-      exitScreen();
+      localStorage.setItem('vegetable_time', elapsedTime + timeDiff);
+      localStorage.setItem('item1_bool', item1_bool);
+      localStorage.setItem('item2_bool', item2_bool);
     }
   }
 
