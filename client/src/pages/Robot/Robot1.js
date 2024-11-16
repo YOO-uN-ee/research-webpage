@@ -16,8 +16,6 @@ const Robot = () => {
   const [item1_bool, setItem1Bool] = useState(localStorage.getItem('item1_bool'))
   const [item2_bool, setItem2Bool] = useState(localStorage.getItem('item2_bool'))
 
-  console.log(my_cart)
-
   return (
     <>
     <Layout>
@@ -71,6 +69,9 @@ const Robot = () => {
 
                  const slug_idx1 = tmp_cart.findIndex((i) => i.slug === slug_mapping[item1])
                  const slug_idx2 = tmp_cart.findIndex((i) => i.slug === slug_mapping[item2])
+
+                 console.log(slug_idx1)
+                 console.log(slug_idx2)
 
                  if(slug_idx1 === -1){
                    setItem1Bool(-1)
