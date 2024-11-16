@@ -51,7 +51,6 @@ const Detailed = () => {
       localStorage.setItem('my_cart', JSON.stringify(my_cart));
 
       exitScreen();
-      change_location();
     }
   }
 
@@ -81,9 +80,13 @@ const Detailed = () => {
       redirect();
     }, 4000);
 
+    const inty = setTimeout(() => {
+      change_location();
+    }, 4010);
+
     // setInterval(redirect(), 4000);
 
-    return () => clearTimeout(int);
+    return () => {clearTimeout(int); clearTimeout(inty);};
 
   }, []);
 
