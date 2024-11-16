@@ -145,6 +145,8 @@ const Detailed = () => {
               className='cart-icon'
               onClick={() => {
                 setMyCart(oldArray => [...oldArray, {name:p.name, _id:p._id, price:p.price, slug:p.slug}]);
+                console.log(my_cart);
+                localStorage.setItem('my_cart', JSON.stringify(my_cart));
 
                 if(p.slug === slug_mapping[item1]){
                   setItem1Bool(1)
