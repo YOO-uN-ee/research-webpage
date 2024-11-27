@@ -220,7 +220,11 @@ const userSchema = new mongoose.Schema({
     asked_name: {
         type: String,
         required:true,
-    }
+    },
+    agent_emotion: {
+        type: String,
+        required:true,
+    },
 },
 { timestamps: true }
 )

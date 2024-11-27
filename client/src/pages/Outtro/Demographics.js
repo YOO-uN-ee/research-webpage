@@ -116,6 +116,23 @@ export const demographicsJSON = {
          ],
         "isRequired": true,
        },
+       {
+        "type": "radiogroup",
+        "name": "agent_emotion",
+        "title": "쇼핑을 도와준 점원의 표정이 어땠나요?",
+        "visibleIf": "{robot_seen} = false && {window.location.pathname.split('/')[1]} != 'FFSRWM'",
+        "choices": [
+          {
+           "value": "friendly",
+           "text": "친절한 표정이었습니다"
+          },
+          {
+           "value": "grumpy",
+           "text": "어두운 표정이었습니다"
+          }
+         ],
+        "isRequired": true,
+       },
       ]
      }
     ],
@@ -139,6 +156,7 @@ const Demographics = () => {
     localStorage.setItem('familiar', sender.data.familiar);
     localStorage.setItem('robot_seen', sender.data.robot_seen);
     localStorage.setItem('asked_name', sender.data.asked_name || 'false');
+    localStorage.setItem('agent_emotion', sender.data.agent_emotion || 'Not Applicable');
     window.location.replace('./end');
   });
 
