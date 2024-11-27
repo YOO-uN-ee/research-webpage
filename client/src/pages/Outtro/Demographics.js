@@ -5,6 +5,9 @@ import "survey-core/defaultV2.min.css";
 import * as SurveyTheme from "survey-core/themes";
 import "survey-core/i18n/korean"
 
+const experiment_types = window.location.pathname.split('/')[1]
+console.log(experiment_types)
+
 export const demographicsJSON = {
     "pages": [
      {
@@ -120,7 +123,7 @@ export const demographicsJSON = {
         "type": "radiogroup",
         "name": "agent_emotion",
         "title": "쇼핑을 도와준 점원의 표정이 어땠나요?",
-        "visibleIf": "{robot_seen} = false && {window.location.pathname.split('/')[1]} != 'FFSRWM'",
+        "visibleIf": "{robot_seen} = false && {experiment_types} != 'FFSRWM'",
         "choices": [
           {
            "value": "friendly",
