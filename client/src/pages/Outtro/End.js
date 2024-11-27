@@ -51,7 +51,7 @@ const Final= () => {
       "post_distressed":localStorage.getItem('post-distressed'), "post_upset":localStorage.getItem('post-upset'), "post_irritable":localStorage.getItem('post-irritable'), 
       "post_nervous":localStorage.getItem('post-nervous'), "post_afraid":localStorage.getItem('post-afraid'),
       "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'),
-      "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')), "robot_seen":localStorage.getItem('robot_seen'), "asked_name":localStorage.getItem('asked_name')
+      "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')), "robot_seen":localStorage.getItem('robot_seen'), "asked_name":localStorage.getItem('asked_name'), "agent_emotion":localStorage.getItem('agent_emotion'),
     });
     console.log('data saved')
     }
@@ -80,7 +80,7 @@ const Final= () => {
         "post_nervous":localStorage.getItem('post-nervous'), "post_afraid":localStorage.getItem('post-afraid'),
         "gender":localStorage.getItem('gender'), "age":localStorage.getItem('age'), "location":localStorage.getItem('location'), "frequency":localStorage.getItem('frequency'), "familiar":localStorage.getItem('familiar')||0,
         "treatment_visited":localStorage.getItem('treatment_visited') || 0, "treatment_aisle":localStorage.getItem('treatment_aisle'), "treatment_option":JSON.parse(localStorage.getItem('treatment_option')), "treatment_time":JSON.parse(localStorage.getItem('treatment_time')),"sub_action":JSON.parse(localStorage.getItem('sub_action')),
-        "robot_seen":localStorage.getItem('robot_seen'), "asked_name":localStorage.getItem('asked_name')
+        "robot_seen":localStorage.getItem('robot_seen'), "asked_name":localStorage.getItem('asked_name'), "agent_emotion":localStorage.getItem('agent_emotion'),
       });
     
     console.log('data saved')
