@@ -5,9 +5,6 @@ import "survey-core/defaultV2.min.css";
 import * as SurveyTheme from "survey-core/themes";
 import "survey-core/i18n/korean"
 
-const experiment_types = window.location.pathname.split('/')[1]
-console.log(experiment_types)
-
 export const demographicsJSONRobot = {
   "pages": [
    {
@@ -268,7 +265,9 @@ export const demographicsJSONHuman = {
 }
 
 const Demographics = () => {
-  if (extension === 'FFSRWM') {
+  const experiment_types = window.location.pathname.split('/')[1]
+  
+  if (experiment_types === 'FFSRWM') {
     var survey = new Model(demographicsJSONRobot);
   }
   else {
