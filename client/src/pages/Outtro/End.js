@@ -17,19 +17,19 @@ const Final= () => {
     var condition_suffice = localStorage.getItem('asked_name') === 'true'
   }
   else {
-    console.log('here')
     var condition_seen = localStorage.getItem('robot_seen') === 'false'
     var condition_name = localStorage.getItem('asked_name') === 'false'
-    console.log(condition_seen)
-    console.log(condition_name)
-    var condition_suffice = condition_seen && condition_name
+
+    if(extension === 'BIKTPB') {
+      face_match = localStorage.getItem('agent_emotion') === 'grumpy'
+      var condition_suffice = condition_seen && condition_name && face_match
+    }
+    else {
+      face_match = localStorage.getItem('agent_emotion') === 'friendly'
+      var condition_suffice = condition_seen && condition_name && face_match
+    }
   }
   const the_condition = (age_suffice && condition_suffice).toString()
-
-  console.log(age_suffice)
-  console.log(condition_suffice)
-  // console.log(the_condition)
-  // console.log(extension)
 
   const storeData = async() => {
     const experiment_type = localStorage.getItem('experiment_type')
