@@ -21,11 +21,11 @@ const Final= () => {
     var condition_name = localStorage.getItem('asked_name') === 'false'
 
     if(extension === 'BIKTPB') {
-      face_match = localStorage.getItem('agent_emotion') === 'grumpy'
+      var face_match = localStorage.getItem('agent_emotion') === 'grumpy'
       var condition_suffice = condition_seen && condition_name && face_match
     }
     else {
-      face_match = localStorage.getItem('agent_emotion') === 'friendly'
+      var face_match = localStorage.getItem('agent_emotion') === 'friendly'
       var condition_suffice = condition_seen && condition_name && face_match
     }
   }
